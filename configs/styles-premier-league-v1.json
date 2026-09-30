@@ -1,0 +1,19 @@
+{
+  "version": "styles-premier-league-v1",
+  "window_minutes": 15,
+  "minimum_passes": 10,
+  "clusters": 4,
+  "pca_variance": 0.9,
+  "seed": 42,
+  "stability_seeds": [
+    7,
+    19,
+    73,
+    101,
+    137
+  ],
+  "bootstrap_repeats": 20,
+  "fit_partition": "train",
+  "split_manifest": "configs/splits/premier-league-v1.json",
+  "test_disclosure": "Premier League 2015/16 whole-date chronological holdout. All protocols frozen before evaluation; later model evaluations share the xG holdout and are not independent untouched tests."
+}

@@ -1,0 +1,8 @@
+{
+  "version": "analyst-groq-v1",
+  "model": "openai/gpt-oss-20b",
+  "request_spacing_seconds": 6,
+  "maximum_repairs": 1,
+  "selection": "Fixed candidate, no hyperparameter selection on these cases.",
+  "limitations": "Reuses the 60 authored cases previously inspected for the deterministic workflow; this is a provider regression evaluation, not a fresh unseen-question benchmark. Aggregate claim selection only. Human semantic review remains pending. Hosted weights are not digest-pinned."
+}

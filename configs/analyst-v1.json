@@ -1,0 +1,11 @@
+{
+  "version": "analyst-v1",
+  "development_match_ids": [19714, 19715, 19716, 19717, 19718],
+  "held_out_match_ids": [19719, 19720, 19722, 19723, 19724],
+  "selection_rule": "The first ten available training-season match IDs, ascending. First five development, next five held out. Selection uses IDs and required second-half coverage, never model scores or tactical findings.",
+  "windows": {"before": {"period":2,"start_ms":0,"end_ms":900000}, "after":{"period":2,"start_ms":900000,"end_ms":1800000}},
+  "cases_per_partition": {"answerable":15,"false_premise":5,"unavailable":5,"adversarial":5},
+  "expected": "Independent raw-JSON counts/rates/concentration for core metrics; exact claim field reconciliation; every evidence reference resolves. False-premise answers must test metrics and retain the no-causality qualification. Unsupported and malformed questions must be refused before analytical reporting.",
+  "review": "Machine checks and author-written expectations only; independent human semantic review remains pending. Local-generation success is counted only when local_selection mode was used, never from fallback.",
+  "local_generation": "Compare deterministic reports with digest-pinned Qwen3 claim selection on the same cases. At most one repair. Store rejection rate, repair count, input/output tokens and latency separately from deterministic numerical correctness."
+}

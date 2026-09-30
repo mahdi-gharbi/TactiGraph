@@ -1,0 +1,3082 @@
+{
+  "version": "premier-league-chronological-v1",
+  "competition_id": 2,
+  "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "algorithm": "Closest cumulative 60/75/85 percent at whole-date boundaries; earliest tie wins",
+  "boundaries": [
+    "2016-01-23",
+    "2016-03-05",
+    "2016-04-10"
+  ],
+  "assignments": [
+    {
+      "match_id": 3754078,
+      "season_id": 27,
+      "match_date": "2015-08-08",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754097,
+      "season_id": 27,
+      "match_date": "2015-08-08",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754128,
+      "season_id": 27,
+      "match_date": "2015-08-08",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754138,
+      "season_id": 27,
+      "match_date": "2015-08-08",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754237,
+      "season_id": 27,
+      "match_date": "2015-08-08",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754300,
+      "season_id": 27,
+      "match_date": "2015-08-08",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3753985,
+      "season_id": 27,
+      "match_date": "2015-08-09",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754112,
+      "season_id": 27,
+      "match_date": "2015-08-09",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754141,
+      "season_id": 27,
+      "match_date": "2015-08-09",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754145,
+      "season_id": 27,
+      "match_date": "2015-08-10",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754107,
+      "season_id": 27,
+      "match_date": "2015-08-14",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3753993,
+      "season_id": 27,
+      "match_date": "2015-08-15",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754034,
+      "season_id": 27,
+      "match_date": "2015-08-15",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754203,
+      "season_id": 27,
+      "match_date": "2015-08-15",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754267,
+      "season_id": 27,
+      "match_date": "2015-08-15",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754270,
+      "season_id": 27,
+      "match_date": "2015-08-15",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754344,
+      "season_id": 27,
+      "match_date": "2015-08-15",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754066,
+      "season_id": 27,
+      "match_date": "2015-08-16",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754312,
+      "season_id": 27,
+      "match_date": "2015-08-16",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754020,
+      "season_id": 27,
+      "match_date": "2015-08-17",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3753987,
+      "season_id": 27,
+      "match_date": "2015-08-22",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754104,
+      "season_id": 27,
+      "match_date": "2015-08-22",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754131,
+      "season_id": 27,
+      "match_date": "2015-08-22",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754180,
+      "season_id": 27,
+      "match_date": "2015-08-22",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754190,
+      "season_id": 27,
+      "match_date": "2015-08-22",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754254,
+      "season_id": 27,
+      "match_date": "2015-08-22",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754059,
+      "season_id": 27,
+      "match_date": "2015-08-23",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754189,
+      "season_id": 27,
+      "match_date": "2015-08-23",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754233,
+      "season_id": 27,
+      "match_date": "2015-08-23",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754129,
+      "season_id": 27,
+      "match_date": "2015-08-24",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3753984,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754007,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754023,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754083,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754204,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754205,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754246,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754268,
+      "season_id": 27,
+      "match_date": "2015-08-29",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754221,
+      "season_id": 27,
+      "match_date": "2015-08-30",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754337,
+      "season_id": 27,
+      "match_date": "2015-08-30",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754003,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754213,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754240,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754257,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754315,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754325,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754336,
+      "season_id": 27,
+      "match_date": "2015-09-12",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754106,
+      "season_id": 27,
+      "match_date": "2015-09-13",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754148,
+      "season_id": 27,
+      "match_date": "2015-09-13",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754329,
+      "season_id": 27,
+      "match_date": "2015-09-14",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754010,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754068,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754077,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754146,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754169,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754217,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754298,
+      "season_id": 27,
+      "match_date": "2015-09-19",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754011,
+      "season_id": 27,
+      "match_date": "2015-09-20",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754040,
+      "season_id": 27,
+      "match_date": "2015-09-20",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754222,
+      "season_id": 27,
+      "match_date": "2015-09-20",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3753978,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754001,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754008,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754174,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754197,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754212,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754323,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754339,
+      "season_id": 27,
+      "match_date": "2015-09-26",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754266,
+      "season_id": 27,
+      "match_date": "2015-09-27",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754105,
+      "season_id": 27,
+      "match_date": "2015-09-28",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3753995,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754076,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754079,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754099,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754278,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754330,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754335,
+      "season_id": 27,
+      "match_date": "2015-10-03",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754060,
+      "season_id": 27,
+      "match_date": "2015-10-04",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754074,
+      "season_id": 27,
+      "match_date": "2015-10-04",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754171,
+      "season_id": 27,
+      "match_date": "2015-10-04",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3753999,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754067,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754115,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754193,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754198,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754245,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754256,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754302,
+      "season_id": 27,
+      "match_date": "2015-10-17",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754102,
+      "season_id": 27,
+      "match_date": "2015-10-18",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754269,
+      "season_id": 27,
+      "match_date": "2015-10-19",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754017,
+      "season_id": 27,
+      "match_date": "2015-10-24",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754091,
+      "season_id": 27,
+      "match_date": "2015-10-24",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754126,
+      "season_id": 27,
+      "match_date": "2015-10-24",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754133,
+      "season_id": 27,
+      "match_date": "2015-10-24",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754263,
+      "season_id": 27,
+      "match_date": "2015-10-24",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754288,
+      "season_id": 27,
+      "match_date": "2015-10-24",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754015,
+      "season_id": 27,
+      "match_date": "2015-10-25",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754119,
+      "season_id": 27,
+      "match_date": "2015-10-25",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754230,
+      "season_id": 27,
+      "match_date": "2015-10-25",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754234,
+      "season_id": 27,
+      "match_date": "2015-10-25",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3753983,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754006,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754090,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754098,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754167,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754223,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754273,
+      "season_id": 27,
+      "match_date": "2015-10-31",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754082,
+      "season_id": 27,
+      "match_date": "2015-11-01",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754191,
+      "season_id": 27,
+      "match_date": "2015-11-01",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754029,
+      "season_id": 27,
+      "match_date": "2015-11-02",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754000,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754156,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754194,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754238,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754293,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754297,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754311,
+      "season_id": 27,
+      "match_date": "2015-11-07",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754258,
+      "season_id": 27,
+      "match_date": "2015-11-08",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754265,
+      "season_id": 27,
+      "match_date": "2015-11-08",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754351,
+      "season_id": 27,
+      "match_date": "2015-11-08",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3753972,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3753996,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754185,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754208,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754211,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754247,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754283,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754301,
+      "season_id": 27,
+      "match_date": "2015-11-21",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754109,
+      "season_id": 27,
+      "match_date": "2015-11-22",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3753979,
+      "season_id": 27,
+      "match_date": "2015-11-23",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754028,
+      "season_id": 27,
+      "match_date": "2015-11-28",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754150,
+      "season_id": 27,
+      "match_date": "2015-11-28",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754157,
+      "season_id": 27,
+      "match_date": "2015-11-28",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754178,
+      "season_id": 27,
+      "match_date": "2015-11-28",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754186,
+      "season_id": 27,
+      "match_date": "2015-11-28",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754304,
+      "season_id": 27,
+      "match_date": "2015-11-28",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754038,
+      "season_id": 27,
+      "match_date": "2015-11-29",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754047,
+      "season_id": 27,
+      "match_date": "2015-11-29",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754093,
+      "season_id": 27,
+      "match_date": "2015-11-29",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754235,
+      "season_id": 27,
+      "match_date": "2015-11-29",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754073,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754085,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754113,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754135,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754160,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754215,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754286,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754347,
+      "season_id": 27,
+      "match_date": "2015-12-05",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754143,
+      "season_id": 27,
+      "match_date": "2015-12-06",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754046,
+      "season_id": 27,
+      "match_date": "2015-12-07",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754072,
+      "season_id": 27,
+      "match_date": "2015-12-12",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754096,
+      "season_id": 27,
+      "match_date": "2015-12-12",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754162,
+      "season_id": 27,
+      "match_date": "2015-12-12",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754182,
+      "season_id": 27,
+      "match_date": "2015-12-12",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754218,
+      "season_id": 27,
+      "match_date": "2015-12-12",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754328,
+      "season_id": 27,
+      "match_date": "2015-12-12",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754117,
+      "season_id": 27,
+      "match_date": "2015-12-13",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754255,
+      "season_id": 27,
+      "match_date": "2015-12-13",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754276,
+      "season_id": 27,
+      "match_date": "2015-12-13",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754013,
+      "season_id": 27,
+      "match_date": "2015-12-14",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754025,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754044,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754136,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754153,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754166,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754188,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754219,
+      "season_id": 27,
+      "match_date": "2015-12-19",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754051,
+      "season_id": 27,
+      "match_date": "2015-12-20",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754259,
+      "season_id": 27,
+      "match_date": "2015-12-20",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754296,
+      "season_id": 27,
+      "match_date": "2015-12-21",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3753974,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754014,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754054,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754057,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754248,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754279,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754285,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754287,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754309,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754343,
+      "season_id": 27,
+      "match_date": "2015-12-26",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3753998,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754019,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754056,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754130,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754173,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754195,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754291,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754326,
+      "season_id": 27,
+      "match_date": "2015-12-28",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754045,
+      "season_id": 27,
+      "match_date": "2015-12-29",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754226,
+      "season_id": 27,
+      "match_date": "2015-12-30",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754036,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754058,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754069,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 1,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754101,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754122,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754251,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754319,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754346,
+      "season_id": 27,
+      "match_date": "2016-01-02",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754114,
+      "season_id": 27,
+      "match_date": "2016-01-03",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754140,
+      "season_id": 27,
+      "match_date": "2016-01-03",
+      "partition": "train",
+      "home_team_id": 29,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3753981,
+      "season_id": 27,
+      "match_date": "2016-01-12",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754021,
+      "season_id": 27,
+      "match_date": "2016-01-12",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754088,
+      "season_id": 27,
+      "match_date": "2016-01-12",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754032,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754062,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754065,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754071,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754142,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754183,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754305,
+      "season_id": 27,
+      "match_date": "2016-01-13",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754004,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 28,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754027,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 38,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754125,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 33,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754168,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 25,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754250,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 59,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754260,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 36,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754338,
+      "season_id": 27,
+      "match_date": "2016-01-16",
+      "partition": "train",
+      "home_team_id": 37,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754202,
+      "season_id": 27,
+      "match_date": "2016-01-17",
+      "partition": "train",
+      "home_team_id": 30,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754345,
+      "season_id": 27,
+      "match_date": "2016-01-17",
+      "partition": "train",
+      "home_team_id": 24,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754161,
+      "season_id": 27,
+      "match_date": "2016-01-18",
+      "partition": "train",
+      "home_team_id": 26,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3753975,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 41,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754084,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 27,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754110,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 40,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754179,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 31,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754200,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 39,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754271,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 23,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754341,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 22,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754348,
+      "season_id": 27,
+      "match_date": "2016-01-23",
+      "partition": "train",
+      "home_team_id": 56,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754111,
+      "season_id": 27,
+      "match_date": "2016-01-24",
+      "partition": "tuning",
+      "home_team_id": 1,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754163,
+      "season_id": 27,
+      "match_date": "2016-01-24",
+      "partition": "tuning",
+      "home_team_id": 29,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3753997,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 40,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754089,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 31,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754094,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 39,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754095,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 41,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754201,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 1,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754275,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 22,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754317,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 56,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754340,
+      "season_id": 27,
+      "match_date": "2016-02-02",
+      "partition": "tuning",
+      "home_team_id": 27,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754103,
+      "season_id": 27,
+      "match_date": "2016-02-03",
+      "partition": "tuning",
+      "home_team_id": 23,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754252,
+      "season_id": 27,
+      "match_date": "2016-02-03",
+      "partition": "tuning",
+      "home_team_id": 29,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754080,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 38,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754120,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 25,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754127,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 30,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754290,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 36,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754292,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 37,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754303,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 26,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754306,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 59,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754316,
+      "season_id": 27,
+      "match_date": "2016-02-06",
+      "partition": "tuning",
+      "home_team_id": 24,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754253,
+      "season_id": 27,
+      "match_date": "2016-02-07",
+      "partition": "tuning",
+      "home_team_id": 28,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754281,
+      "season_id": 27,
+      "match_date": "2016-02-07",
+      "partition": "tuning",
+      "home_team_id": 33,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754031,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 41,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754039,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 31,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754139,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 26,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754244,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 56,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754264,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 33,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754274,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 28,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754350,
+      "season_id": 27,
+      "match_date": "2016-02-13",
+      "partition": "tuning",
+      "home_team_id": 29,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754147,
+      "season_id": 27,
+      "match_date": "2016-02-14",
+      "partition": "tuning",
+      "home_team_id": 36,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754214,
+      "season_id": 27,
+      "match_date": "2016-02-14",
+      "partition": "tuning",
+      "home_team_id": 59,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754261,
+      "season_id": 27,
+      "match_date": "2016-02-14",
+      "partition": "tuning",
+      "home_team_id": 1,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754012,
+      "season_id": 27,
+      "match_date": "2016-02-27",
+      "partition": "tuning",
+      "home_team_id": 25,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754049,
+      "season_id": 27,
+      "match_date": "2016-02-27",
+      "partition": "tuning",
+      "home_team_id": 22,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754121,
+      "season_id": 27,
+      "match_date": "2016-02-27",
+      "partition": "tuning",
+      "home_team_id": 23,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754236,
+      "season_id": 27,
+      "match_date": "2016-02-27",
+      "partition": "tuning",
+      "home_team_id": 27,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754321,
+      "season_id": 27,
+      "match_date": "2016-02-27",
+      "partition": "tuning",
+      "home_team_id": 30,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754331,
+      "season_id": 27,
+      "match_date": "2016-02-27",
+      "partition": "tuning",
+      "home_team_id": 40,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754239,
+      "season_id": 27,
+      "match_date": "2016-02-28",
+      "partition": "tuning",
+      "home_team_id": 39,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754324,
+      "season_id": 27,
+      "match_date": "2016-02-28",
+      "partition": "tuning",
+      "home_team_id": 38,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754050,
+      "season_id": 27,
+      "match_date": "2016-03-01",
+      "partition": "tuning",
+      "home_team_id": 41,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754231,
+      "season_id": 27,
+      "match_date": "2016-03-01",
+      "partition": "tuning",
+      "home_team_id": 22,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754280,
+      "season_id": 27,
+      "match_date": "2016-03-01",
+      "partition": "tuning",
+      "home_team_id": 56,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754327,
+      "season_id": 27,
+      "match_date": "2016-03-01",
+      "partition": "tuning",
+      "home_team_id": 59,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754334,
+      "season_id": 27,
+      "match_date": "2016-03-01",
+      "partition": "tuning",
+      "home_team_id": 28,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3753976,
+      "season_id": 27,
+      "match_date": "2016-03-02",
+      "partition": "tuning",
+      "home_team_id": 1,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3753991,
+      "season_id": 27,
+      "match_date": "2016-03-02",
+      "partition": "tuning",
+      "home_team_id": 24,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754005,
+      "season_id": 27,
+      "match_date": "2016-03-02",
+      "partition": "tuning",
+      "home_team_id": 30,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754232,
+      "season_id": 27,
+      "match_date": "2016-03-02",
+      "partition": "tuning",
+      "home_team_id": 39,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754349,
+      "season_id": 27,
+      "match_date": "2016-03-02",
+      "partition": "tuning",
+      "home_team_id": 40,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754061,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 33,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754151,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 26,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754164,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 25,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754177,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 37,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754249,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 36,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754277,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 29,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754289,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 23,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754318,
+      "season_id": 27,
+      "match_date": "2016-03-05",
+      "partition": "tuning",
+      "home_team_id": 38,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754081,
+      "season_id": 27,
+      "match_date": "2016-03-06",
+      "partition": "calibration",
+      "home_team_id": 27,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754220,
+      "season_id": 27,
+      "match_date": "2016-03-06",
+      "partition": "calibration",
+      "home_team_id": 31,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3753988,
+      "season_id": 27,
+      "match_date": "2016-03-12",
+      "partition": "calibration",
+      "home_team_id": 28,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754196,
+      "season_id": 27,
+      "match_date": "2016-03-12",
+      "partition": "calibration",
+      "home_team_id": 30,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754313,
+      "season_id": 27,
+      "match_date": "2016-03-12",
+      "partition": "calibration",
+      "home_team_id": 56,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754053,
+      "season_id": 27,
+      "match_date": "2016-03-13",
+      "partition": "calibration",
+      "home_team_id": 59,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754002,
+      "season_id": 27,
+      "match_date": "2016-03-14",
+      "partition": "calibration",
+      "home_team_id": 22,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3753973,
+      "season_id": 27,
+      "match_date": "2016-03-19",
+      "partition": "calibration",
+      "home_team_id": 33,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3753977,
+      "season_id": 27,
+      "match_date": "2016-03-19",
+      "partition": "calibration",
+      "home_team_id": 23,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3753980,
+      "season_id": 27,
+      "match_date": "2016-03-19",
+      "partition": "calibration",
+      "home_team_id": 29,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754052,
+      "season_id": 27,
+      "match_date": "2016-03-19",
+      "partition": "calibration",
+      "home_team_id": 27,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754181,
+      "season_id": 27,
+      "match_date": "2016-03-19",
+      "partition": "calibration",
+      "home_team_id": 31,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754224,
+      "season_id": 27,
+      "match_date": "2016-03-19",
+      "partition": "calibration",
+      "home_team_id": 26,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754043,
+      "season_id": 27,
+      "match_date": "2016-03-20",
+      "partition": "calibration",
+      "home_team_id": 38,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754064,
+      "season_id": 27,
+      "match_date": "2016-03-20",
+      "partition": "calibration",
+      "home_team_id": 25,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754100,
+      "season_id": 27,
+      "match_date": "2016-03-20",
+      "partition": "calibration",
+      "home_team_id": 37,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754124,
+      "season_id": 27,
+      "match_date": "2016-03-20",
+      "partition": "calibration",
+      "home_team_id": 36,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754075,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 59,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754087,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 24,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754118,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 1,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754144,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 28,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754175,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 41,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754176,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 40,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754243,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 56,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754272,
+      "season_id": 27,
+      "match_date": "2016-04-02",
+      "partition": "calibration",
+      "home_team_id": 30,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3753982,
+      "season_id": 27,
+      "match_date": "2016-04-03",
+      "partition": "calibration",
+      "home_team_id": 22,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754299,
+      "season_id": 27,
+      "match_date": "2016-04-03",
+      "partition": "calibration",
+      "home_team_id": 39,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754016,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 25,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754022,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 31,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754030,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 23,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754035,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 36,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754116,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 26,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754241,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 40,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754262,
+      "season_id": 27,
+      "match_date": "2016-04-09",
+      "partition": "calibration",
+      "home_team_id": 59,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3753986,
+      "season_id": 27,
+      "match_date": "2016-04-10",
+      "partition": "calibration",
+      "home_team_id": 24,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754152,
+      "season_id": 27,
+      "match_date": "2016-04-10",
+      "partition": "calibration",
+      "home_team_id": 41,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754209,
+      "season_id": 27,
+      "match_date": "2016-04-10",
+      "partition": "calibration",
+      "home_team_id": 38,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754048,
+      "season_id": 27,
+      "match_date": "2016-04-13",
+      "partition": "test",
+      "home_team_id": 31,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754024,
+      "season_id": 27,
+      "match_date": "2016-04-16",
+      "partition": "test",
+      "home_team_id": 37,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754137,
+      "season_id": 27,
+      "match_date": "2016-04-16",
+      "partition": "test",
+      "home_team_id": 29,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754155,
+      "season_id": 27,
+      "match_date": "2016-04-16",
+      "partition": "test",
+      "home_team_id": 27,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754172,
+      "season_id": 27,
+      "match_date": "2016-04-16",
+      "partition": "test",
+      "home_team_id": 56,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754295,
+      "season_id": 27,
+      "match_date": "2016-04-16",
+      "partition": "test",
+      "home_team_id": 39,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754322,
+      "season_id": 27,
+      "match_date": "2016-04-16",
+      "partition": "test",
+      "home_team_id": 33,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754009,
+      "season_id": 27,
+      "match_date": "2016-04-17",
+      "partition": "test",
+      "home_team_id": 1,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754216,
+      "season_id": 27,
+      "match_date": "2016-04-17",
+      "partition": "test",
+      "home_team_id": 28,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754227,
+      "season_id": 27,
+      "match_date": "2016-04-17",
+      "partition": "test",
+      "home_team_id": 22,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754187,
+      "season_id": 27,
+      "match_date": "2016-04-18",
+      "partition": "test",
+      "home_team_id": 30,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754206,
+      "season_id": 27,
+      "match_date": "2016-04-19",
+      "partition": "test",
+      "home_team_id": 37,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754086,
+      "season_id": 27,
+      "match_date": "2016-04-20",
+      "partition": "test",
+      "home_team_id": 40,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754294,
+      "season_id": 27,
+      "match_date": "2016-04-20",
+      "partition": "test",
+      "home_team_id": 24,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754310,
+      "season_id": 27,
+      "match_date": "2016-04-20",
+      "partition": "test",
+      "home_team_id": 39,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754284,
+      "season_id": 27,
+      "match_date": "2016-04-21",
+      "partition": "test",
+      "home_team_id": 1,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754154,
+      "season_id": 27,
+      "match_date": "2016-04-23",
+      "partition": "test",
+      "home_team_id": 24,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754242,
+      "season_id": 27,
+      "match_date": "2016-04-23",
+      "partition": "test",
+      "home_team_id": 28,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754282,
+      "season_id": 27,
+      "match_date": "2016-04-23",
+      "partition": "test",
+      "home_team_id": 59,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754307,
+      "season_id": 27,
+      "match_date": "2016-04-23",
+      "partition": "test",
+      "home_team_id": 36,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3753990,
+      "season_id": 27,
+      "match_date": "2016-04-24",
+      "partition": "test",
+      "home_team_id": 41,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754228,
+      "season_id": 27,
+      "match_date": "2016-04-24",
+      "partition": "test",
+      "home_team_id": 22,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754332,
+      "season_id": 27,
+      "match_date": "2016-04-25",
+      "partition": "test",
+      "home_team_id": 38,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3754037,
+      "season_id": 27,
+      "match_date": "2016-04-30",
+      "partition": "test",
+      "home_team_id": 29,
+      "away_team_id": 28
+    },
+    {
+      "match_id": 3754063,
+      "season_id": 27,
+      "match_date": "2016-04-30",
+      "partition": "test",
+      "home_team_id": 23,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754132,
+      "season_id": 27,
+      "match_date": "2016-04-30",
+      "partition": "test",
+      "home_team_id": 30,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754170,
+      "season_id": 27,
+      "match_date": "2016-04-30",
+      "partition": "test",
+      "home_team_id": 37,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754184,
+      "season_id": 27,
+      "match_date": "2016-04-30",
+      "partition": "test",
+      "home_team_id": 1,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754192,
+      "season_id": 27,
+      "match_date": "2016-04-30",
+      "partition": "test",
+      "home_team_id": 27,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754018,
+      "season_id": 27,
+      "match_date": "2016-05-01",
+      "partition": "test",
+      "home_team_id": 26,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754165,
+      "season_id": 27,
+      "match_date": "2016-05-01",
+      "partition": "test",
+      "home_team_id": 39,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754320,
+      "season_id": 27,
+      "match_date": "2016-05-01",
+      "partition": "test",
+      "home_team_id": 25,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754092,
+      "season_id": 27,
+      "match_date": "2016-05-02",
+      "partition": "test",
+      "home_team_id": 33,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754026,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 31,
+      "away_team_id": 30
+    },
+    {
+      "match_id": 3754033,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 22,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754070,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 59,
+      "away_team_id": 37
+    },
+    {
+      "match_id": 3754108,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 41,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754158,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 40,
+      "away_team_id": 26
+    },
+    {
+      "match_id": 3754210,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 56,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3754225,
+      "season_id": 27,
+      "match_date": "2016-05-07",
+      "partition": "test",
+      "home_team_id": 28,
+      "away_team_id": 27
+    },
+    {
+      "match_id": 3753992,
+      "season_id": 27,
+      "match_date": "2016-05-08",
+      "partition": "test",
+      "home_team_id": 38,
+      "away_team_id": 25
+    },
+    {
+      "match_id": 3754314,
+      "season_id": 27,
+      "match_date": "2016-05-08",
+      "partition": "test",
+      "home_team_id": 36,
+      "away_team_id": 1
+    },
+    {
+      "match_id": 3754342,
+      "season_id": 27,
+      "match_date": "2016-05-08",
+      "partition": "test",
+      "home_team_id": 24,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3754134,
+      "season_id": 27,
+      "match_date": "2016-05-10",
+      "partition": "test",
+      "home_team_id": 40,
+      "away_team_id": 39
+    },
+    {
+      "match_id": 3753989,
+      "season_id": 27,
+      "match_date": "2016-05-11",
+      "partition": "test",
+      "home_team_id": 41,
+      "away_team_id": 29
+    },
+    {
+      "match_id": 3754055,
+      "season_id": 27,
+      "match_date": "2016-05-11",
+      "partition": "test",
+      "home_team_id": 24,
+      "away_team_id": 33
+    },
+    {
+      "match_id": 3754207,
+      "season_id": 27,
+      "match_date": "2016-05-11",
+      "partition": "test",
+      "home_team_id": 56,
+      "away_team_id": 23
+    },
+    {
+      "match_id": 3753994,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 25,
+      "away_team_id": 31
+    },
+    {
+      "match_id": 3754041,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 1,
+      "away_team_id": 59
+    },
+    {
+      "match_id": 3754042,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 27,
+      "away_team_id": 24
+    },
+    {
+      "match_id": 3754123,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 29,
+      "away_team_id": 56
+    },
+    {
+      "match_id": 3754149,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 26,
+      "away_team_id": 36
+    },
+    {
+      "match_id": 3754199,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 30,
+      "away_team_id": 40
+    },
+    {
+      "match_id": 3754229,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 33,
+      "away_team_id": 22
+    },
+    {
+      "match_id": 3754308,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 23,
+      "away_team_id": 41
+    },
+    {
+      "match_id": 3754333,
+      "season_id": 27,
+      "match_date": "2016-05-15",
+      "partition": "test",
+      "home_team_id": 37,
+      "away_team_id": 38
+    },
+    {
+      "match_id": 3754159,
+      "season_id": 27,
+      "match_date": "2016-05-17",
+      "partition": "test",
+      "home_team_id": 39,
+      "away_team_id": 28
+    }
+  ],
+  "team_stress_groups": {
+    "1": 0,
+    "22": 1,
+    "23": 2,
+    "24": 3,
+    "25": 4,
+    "26": 0,
+    "27": 1,
+    "28": 2,
+    "29": 3,
+    "30": 4,
+    "31": 0,
+    "33": 1,
+    "36": 2,
+    "37": 3,
+    "38": 4,
+    "39": 0,
+    "40": 1,
+    "41": 2,
+    "56": 3,
+    "59": 4
+  },
+  "counts": {
+    "train": 228,
+    "tuning": 58,
+    "calibration": 37,
+    "test": 57
+  },
+  "sha256": "a82f8aa502ee6f3c1b7f37b210f00ca3b5eb28f7b776c5bd74f1f18e1065a27a"
+}

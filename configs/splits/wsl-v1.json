@@ -1,0 +1,3688 @@
+{
+  "version": "wsl-chronological-v1",
+  "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "algorithm": "Closest 2/3 tuning count at a whole-date boundary; earliest tie wins",
+  "tuning_last_date": "2021-03-07",
+  "assignments": [
+    {
+      "match_id": 19714,
+      "season_id": 4,
+      "match_date": "2018-09-09",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19715,
+      "season_id": 4,
+      "match_date": "2018-09-09",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19716,
+      "season_id": 4,
+      "match_date": "2018-09-09",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19717,
+      "season_id": 4,
+      "match_date": "2018-09-09",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19718,
+      "season_id": 4,
+      "match_date": "2018-09-09",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19719,
+      "season_id": 4,
+      "match_date": "2018-09-19",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19720,
+      "season_id": 4,
+      "match_date": "2018-09-19",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19722,
+      "season_id": 4,
+      "match_date": "2018-09-19",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19723,
+      "season_id": 4,
+      "match_date": "2018-09-20",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19724,
+      "season_id": 4,
+      "match_date": "2018-09-23",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19725,
+      "season_id": 4,
+      "match_date": "2018-09-23",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19726,
+      "season_id": 4,
+      "match_date": "2018-09-23",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19727,
+      "season_id": 4,
+      "match_date": "2018-09-23",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19728,
+      "season_id": 4,
+      "match_date": "2018-09-23",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19730,
+      "season_id": 4,
+      "match_date": "2018-09-30",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19731,
+      "season_id": 4,
+      "match_date": "2018-09-30",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19732,
+      "season_id": 4,
+      "match_date": "2018-09-30",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19733,
+      "season_id": 4,
+      "match_date": "2018-09-30",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19734,
+      "season_id": 4,
+      "match_date": "2018-10-14",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19735,
+      "season_id": 4,
+      "match_date": "2018-10-14",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19736,
+      "season_id": 4,
+      "match_date": "2018-10-14",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19737,
+      "season_id": 4,
+      "match_date": "2018-10-14",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19738,
+      "season_id": 4,
+      "match_date": "2018-10-14",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19739,
+      "season_id": 4,
+      "match_date": "2018-10-21",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19740,
+      "season_id": 4,
+      "match_date": "2018-10-21",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19741,
+      "season_id": 4,
+      "match_date": "2018-10-21",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19742,
+      "season_id": 4,
+      "match_date": "2018-10-21",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19743,
+      "season_id": 4,
+      "match_date": "2018-10-21",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19747,
+      "season_id": 4,
+      "match_date": "2018-10-26",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19744,
+      "season_id": 4,
+      "match_date": "2018-10-28",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19745,
+      "season_id": 4,
+      "match_date": "2018-10-28",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19746,
+      "season_id": 4,
+      "match_date": "2018-10-28",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19748,
+      "season_id": 4,
+      "match_date": "2018-10-28",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19749,
+      "season_id": 4,
+      "match_date": "2018-11-04",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19750,
+      "season_id": 4,
+      "match_date": "2018-11-04",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19751,
+      "season_id": 4,
+      "match_date": "2018-11-04",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19752,
+      "season_id": 4,
+      "match_date": "2018-11-04",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19753,
+      "season_id": 4,
+      "match_date": "2018-11-04",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19761,
+      "season_id": 4,
+      "match_date": "2018-11-17",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19759,
+      "season_id": 4,
+      "match_date": "2018-11-18",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19760,
+      "season_id": 4,
+      "match_date": "2018-11-18",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19762,
+      "season_id": 4,
+      "match_date": "2018-11-18",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19763,
+      "season_id": 4,
+      "match_date": "2018-11-18",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19764,
+      "season_id": 4,
+      "match_date": "2018-11-25",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19765,
+      "season_id": 4,
+      "match_date": "2018-11-25",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19766,
+      "season_id": 4,
+      "match_date": "2018-11-25",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19767,
+      "season_id": 4,
+      "match_date": "2018-11-25",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19768,
+      "season_id": 4,
+      "match_date": "2018-11-25",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19769,
+      "season_id": 4,
+      "match_date": "2018-12-02",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19770,
+      "season_id": 4,
+      "match_date": "2018-12-02",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19771,
+      "season_id": 4,
+      "match_date": "2018-12-02",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19772,
+      "season_id": 4,
+      "match_date": "2018-12-02",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19773,
+      "season_id": 4,
+      "match_date": "2018-12-02",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19774,
+      "season_id": 4,
+      "match_date": "2018-12-09",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19775,
+      "season_id": 4,
+      "match_date": "2018-12-09",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19776,
+      "season_id": 4,
+      "match_date": "2018-12-09",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19777,
+      "season_id": 4,
+      "match_date": "2018-12-09",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19778,
+      "season_id": 4,
+      "match_date": "2018-12-09",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19779,
+      "season_id": 4,
+      "match_date": "2019-01-06",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19780,
+      "season_id": 4,
+      "match_date": "2019-01-06",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19781,
+      "season_id": 4,
+      "match_date": "2019-01-06",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19782,
+      "season_id": 4,
+      "match_date": "2019-01-06",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19783,
+      "season_id": 4,
+      "match_date": "2019-01-06",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19784,
+      "season_id": 4,
+      "match_date": "2019-01-13",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19785,
+      "season_id": 4,
+      "match_date": "2019-01-13",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19786,
+      "season_id": 4,
+      "match_date": "2019-01-13",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19787,
+      "season_id": 4,
+      "match_date": "2019-01-13",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19788,
+      "season_id": 4,
+      "match_date": "2019-01-13",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19789,
+      "season_id": 4,
+      "match_date": "2019-01-27",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19790,
+      "season_id": 4,
+      "match_date": "2019-01-27",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19791,
+      "season_id": 4,
+      "match_date": "2019-01-27",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19792,
+      "season_id": 4,
+      "match_date": "2019-01-27",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19793,
+      "season_id": 4,
+      "match_date": "2019-01-28",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19755,
+      "season_id": 4,
+      "match_date": "2019-02-10",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19757,
+      "season_id": 4,
+      "match_date": "2019-02-10",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19794,
+      "season_id": 4,
+      "match_date": "2019-02-20",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19795,
+      "season_id": 4,
+      "match_date": "2019-02-20",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19796,
+      "season_id": 4,
+      "match_date": "2019-02-20",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19797,
+      "season_id": 4,
+      "match_date": "2019-02-20",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19798,
+      "season_id": 4,
+      "match_date": "2019-02-20",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19799,
+      "season_id": 4,
+      "match_date": "2019-03-13",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19801,
+      "season_id": 4,
+      "match_date": "2019-03-13",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19802,
+      "season_id": 4,
+      "match_date": "2019-03-13",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19803,
+      "season_id": 4,
+      "match_date": "2019-03-13",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19800,
+      "season_id": 4,
+      "match_date": "2019-03-14",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19729,
+      "season_id": 4,
+      "match_date": "2019-03-24",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19754,
+      "season_id": 4,
+      "match_date": "2019-03-24",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19804,
+      "season_id": 4,
+      "match_date": "2019-03-31",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19805,
+      "season_id": 4,
+      "match_date": "2019-03-31",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19806,
+      "season_id": 4,
+      "match_date": "2019-03-31",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19807,
+      "season_id": 4,
+      "match_date": "2019-03-31",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19808,
+      "season_id": 4,
+      "match_date": "2019-03-31",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19756,
+      "season_id": 4,
+      "match_date": "2019-04-17",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19758,
+      "season_id": 4,
+      "match_date": "2019-04-17",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19809,
+      "season_id": 4,
+      "match_date": "2019-04-20",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19810,
+      "season_id": 4,
+      "match_date": "2019-04-21",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 19811,
+      "season_id": 4,
+      "match_date": "2019-04-21",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 19813,
+      "season_id": 4,
+      "match_date": "2019-04-21",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 19814,
+      "season_id": 4,
+      "match_date": "2019-04-28",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 19815,
+      "season_id": 4,
+      "match_date": "2019-04-28",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 19816,
+      "season_id": 4,
+      "match_date": "2019-04-28",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 19817,
+      "season_id": 4,
+      "match_date": "2019-04-28",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 19818,
+      "season_id": 4,
+      "match_date": "2019-04-28",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 970
+    },
+    {
+      "match_id": 19819,
+      "season_id": 4,
+      "match_date": "2019-05-11",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 19820,
+      "season_id": 4,
+      "match_date": "2019-05-11",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 19821,
+      "season_id": 4,
+      "match_date": "2019-05-11",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 19822,
+      "season_id": 4,
+      "match_date": "2019-05-11",
+      "partition": "train",
+      "home_team_id": 970,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275061,
+      "season_id": 42,
+      "match_date": "2019-09-07",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275136,
+      "season_id": 42,
+      "match_date": "2019-09-07",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 2275096,
+      "season_id": 42,
+      "match_date": "2019-09-08",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275099,
+      "season_id": 42,
+      "match_date": "2019-09-08",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 2275120,
+      "season_id": 42,
+      "match_date": "2019-09-08",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275132,
+      "season_id": 42,
+      "match_date": "2019-09-08",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275034,
+      "season_id": 42,
+      "match_date": "2019-09-15",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275041,
+      "season_id": 42,
+      "match_date": "2019-09-15",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275052,
+      "season_id": 42,
+      "match_date": "2019-09-15",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275094,
+      "season_id": 42,
+      "match_date": "2019-09-15",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275107,
+      "season_id": 42,
+      "match_date": "2019-09-15",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275156,
+      "season_id": 42,
+      "match_date": "2019-09-16",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275138,
+      "season_id": 42,
+      "match_date": "2019-09-28",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275048,
+      "season_id": 42,
+      "match_date": "2019-09-29",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275108,
+      "season_id": 42,
+      "match_date": "2019-09-29",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275121,
+      "season_id": 42,
+      "match_date": "2019-09-29",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275131,
+      "season_id": 42,
+      "match_date": "2019-09-29",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275028,
+      "season_id": 42,
+      "match_date": "2019-10-12",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275040,
+      "season_id": 42,
+      "match_date": "2019-10-13",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275063,
+      "season_id": 42,
+      "match_date": "2019-10-13",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275070,
+      "season_id": 42,
+      "match_date": "2019-10-13",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275127,
+      "season_id": 42,
+      "match_date": "2019-10-13",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275139,
+      "season_id": 42,
+      "match_date": "2019-10-13",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 2275033,
+      "season_id": 42,
+      "match_date": "2019-10-27",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275044,
+      "season_id": 42,
+      "match_date": "2019-10-27",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275051,
+      "season_id": 42,
+      "match_date": "2019-10-27",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275084,
+      "season_id": 42,
+      "match_date": "2019-10-27",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275110,
+      "season_id": 42,
+      "match_date": "2019-10-27",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275157,
+      "season_id": 42,
+      "match_date": "2019-10-27",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 2275042,
+      "season_id": 42,
+      "match_date": "2019-11-17",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275056,
+      "season_id": 42,
+      "match_date": "2019-11-17",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275065,
+      "season_id": 42,
+      "match_date": "2019-11-17",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275082,
+      "season_id": 42,
+      "match_date": "2019-11-17",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275122,
+      "season_id": 42,
+      "match_date": "2019-11-17",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275154,
+      "season_id": 42,
+      "match_date": "2019-11-17",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 2275026,
+      "season_id": 42,
+      "match_date": "2019-11-24",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275049,
+      "season_id": 42,
+      "match_date": "2019-11-24",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 2275079,
+      "season_id": 42,
+      "match_date": "2019-11-24",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275093,
+      "season_id": 42,
+      "match_date": "2019-11-24",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275126,
+      "season_id": 42,
+      "match_date": "2019-11-24",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275140,
+      "season_id": 42,
+      "match_date": "2019-11-24",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275102,
+      "season_id": 42,
+      "match_date": "2019-11-29",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 2275104,
+      "season_id": 42,
+      "match_date": "2019-12-01",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275116,
+      "season_id": 42,
+      "match_date": "2019-12-01",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275150,
+      "season_id": 42,
+      "match_date": "2019-12-01",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 2275109,
+      "season_id": 42,
+      "match_date": "2019-12-04",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275086,
+      "season_id": 42,
+      "match_date": "2019-12-08",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275088,
+      "season_id": 42,
+      "match_date": "2019-12-08",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275091,
+      "season_id": 42,
+      "match_date": "2019-12-08",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275103,
+      "season_id": 42,
+      "match_date": "2019-12-08",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275130,
+      "season_id": 42,
+      "match_date": "2019-12-08",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275146,
+      "season_id": 42,
+      "match_date": "2019-12-08",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275045,
+      "season_id": 42,
+      "match_date": "2019-12-15",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275075,
+      "season_id": 42,
+      "match_date": "2019-12-15",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275097,
+      "season_id": 42,
+      "match_date": "2019-12-15",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275117,
+      "season_id": 42,
+      "match_date": "2019-12-15",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275054,
+      "season_id": 42,
+      "match_date": "2020-01-05",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275072,
+      "season_id": 42,
+      "match_date": "2020-01-05",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 2275085,
+      "season_id": 42,
+      "match_date": "2020-01-05",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275089,
+      "season_id": 42,
+      "match_date": "2020-01-05",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275142,
+      "season_id": 42,
+      "match_date": "2020-01-05",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275078,
+      "season_id": 42,
+      "match_date": "2020-01-11",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275050,
+      "season_id": 42,
+      "match_date": "2020-01-12",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275077,
+      "season_id": 42,
+      "match_date": "2020-01-12",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275080,
+      "season_id": 42,
+      "match_date": "2020-01-12",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275098,
+      "season_id": 42,
+      "match_date": "2020-01-12",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275029,
+      "season_id": 42,
+      "match_date": "2020-01-19",
+      "partition": "train",
+      "home_team_id": 973,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275036,
+      "season_id": 42,
+      "match_date": "2020-01-19",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 2275090,
+      "season_id": 42,
+      "match_date": "2020-01-19",
+      "partition": "train",
+      "home_team_id": 968,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275092,
+      "season_id": 42,
+      "match_date": "2020-01-19",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 2275113,
+      "season_id": 42,
+      "match_date": "2020-01-19",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 2275137,
+      "season_id": 42,
+      "match_date": "2020-01-19",
+      "partition": "train",
+      "home_team_id": 1475,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275027,
+      "season_id": 42,
+      "match_date": "2020-02-02",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275037,
+      "season_id": 42,
+      "match_date": "2020-02-02",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275057,
+      "season_id": 42,
+      "match_date": "2020-02-02",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275153,
+      "season_id": 42,
+      "match_date": "2020-02-02",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 2275038,
+      "season_id": 42,
+      "match_date": "2020-02-12",
+      "partition": "train",
+      "home_team_id": 974,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 2275073,
+      "season_id": 42,
+      "match_date": "2020-02-12",
+      "partition": "train",
+      "home_team_id": 749,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 2275074,
+      "season_id": 42,
+      "match_date": "2020-02-12",
+      "partition": "train",
+      "home_team_id": 971,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 2275106,
+      "season_id": 42,
+      "match_date": "2020-02-12",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275151,
+      "season_id": 42,
+      "match_date": "2020-02-12",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 2275062,
+      "season_id": 42,
+      "match_date": "2020-02-13",
+      "partition": "train",
+      "home_team_id": 966,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 2275030,
+      "season_id": 42,
+      "match_date": "2020-02-23",
+      "partition": "train",
+      "home_team_id": 965,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 2275083,
+      "season_id": 42,
+      "match_date": "2020-02-23",
+      "partition": "train",
+      "home_team_id": 969,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 2275105,
+      "season_id": 42,
+      "match_date": "2020-02-23",
+      "partition": "train",
+      "home_team_id": 746,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 2275133,
+      "season_id": 42,
+      "match_date": "2020-02-23",
+      "partition": "train",
+      "home_team_id": 972,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 2275144,
+      "season_id": 42,
+      "match_date": "2020-02-23",
+      "partition": "train",
+      "home_team_id": 967,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3764234,
+      "season_id": 90,
+      "match_date": "2020-09-05",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3764230,
+      "season_id": 90,
+      "match_date": "2020-09-06",
+      "partition": "tuning",
+      "home_team_id": 749,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3764231,
+      "season_id": 90,
+      "match_date": "2020-09-06",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3764232,
+      "season_id": 90,
+      "match_date": "2020-09-06",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3764233,
+      "season_id": 90,
+      "match_date": "2020-09-06",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3764240,
+      "season_id": 90,
+      "match_date": "2020-09-06",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3764238,
+      "season_id": 90,
+      "match_date": "2020-09-12",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3764235,
+      "season_id": 90,
+      "match_date": "2020-09-13",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3764236,
+      "season_id": 90,
+      "match_date": "2020-09-13",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3764237,
+      "season_id": 90,
+      "match_date": "2020-09-13",
+      "partition": "tuning",
+      "home_team_id": 969,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3764239,
+      "season_id": 90,
+      "match_date": "2020-09-13",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3764241,
+      "season_id": 90,
+      "match_date": "2020-09-13",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775575,
+      "season_id": 90,
+      "match_date": "2020-10-03",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775545,
+      "season_id": 90,
+      "match_date": "2020-10-04",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775562,
+      "season_id": 90,
+      "match_date": "2020-10-04",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775572,
+      "season_id": 90,
+      "match_date": "2020-10-04",
+      "partition": "tuning",
+      "home_team_id": 969,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775602,
+      "season_id": 90,
+      "match_date": "2020-10-04",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775657,
+      "season_id": 90,
+      "match_date": "2020-10-04",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775644,
+      "season_id": 90,
+      "match_date": "2020-10-10",
+      "partition": "tuning",
+      "home_team_id": 749,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775543,
+      "season_id": 90,
+      "match_date": "2020-10-11",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775611,
+      "season_id": 90,
+      "match_date": "2020-10-11",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775618,
+      "season_id": 90,
+      "match_date": "2020-10-11",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775620,
+      "season_id": 90,
+      "match_date": "2020-10-11",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775561,
+      "season_id": 90,
+      "match_date": "2020-10-18",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775582,
+      "season_id": 90,
+      "match_date": "2020-10-18",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775586,
+      "season_id": 90,
+      "match_date": "2020-10-18",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775636,
+      "season_id": 90,
+      "match_date": "2020-10-18",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775659,
+      "season_id": 90,
+      "match_date": "2020-10-18",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775592,
+      "season_id": 90,
+      "match_date": "2020-11-07",
+      "partition": "tuning",
+      "home_team_id": 749,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775625,
+      "season_id": 90,
+      "match_date": "2020-11-07",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775551,
+      "season_id": 90,
+      "match_date": "2020-11-08",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775553,
+      "season_id": 90,
+      "match_date": "2020-11-08",
+      "partition": "tuning",
+      "home_team_id": 969,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775556,
+      "season_id": 90,
+      "match_date": "2020-11-08",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775645,
+      "season_id": 90,
+      "match_date": "2020-11-08",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775554,
+      "season_id": 90,
+      "match_date": "2020-11-14",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775624,
+      "season_id": 90,
+      "match_date": "2020-11-14",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775631,
+      "season_id": 90,
+      "match_date": "2020-11-14",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775641,
+      "season_id": 90,
+      "match_date": "2020-11-14",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775623,
+      "season_id": 90,
+      "match_date": "2020-11-15",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775627,
+      "season_id": 90,
+      "match_date": "2020-11-15",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775566,
+      "season_id": 90,
+      "match_date": "2020-12-05",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775584,
+      "season_id": 90,
+      "match_date": "2020-12-06",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775588,
+      "season_id": 90,
+      "match_date": "2020-12-06",
+      "partition": "tuning",
+      "home_team_id": 749,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775621,
+      "season_id": 90,
+      "match_date": "2020-12-06",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775632,
+      "season_id": 90,
+      "match_date": "2020-12-06",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775650,
+      "season_id": 90,
+      "match_date": "2020-12-06",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775637,
+      "season_id": 90,
+      "match_date": "2020-12-09",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775558,
+      "season_id": 90,
+      "match_date": "2020-12-13",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775580,
+      "season_id": 90,
+      "match_date": "2020-12-13",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775583,
+      "season_id": 90,
+      "match_date": "2020-12-13",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775615,
+      "season_id": 90,
+      "match_date": "2020-12-13",
+      "partition": "tuning",
+      "home_team_id": 749,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775616,
+      "season_id": 90,
+      "match_date": "2020-12-13",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775559,
+      "season_id": 90,
+      "match_date": "2020-12-20",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775610,
+      "season_id": 90,
+      "match_date": "2020-12-20",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775619,
+      "season_id": 90,
+      "match_date": "2020-12-20",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775606,
+      "season_id": 90,
+      "match_date": "2021-01-10",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775542,
+      "season_id": 90,
+      "match_date": "2021-01-17",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775567,
+      "season_id": 90,
+      "match_date": "2021-01-17",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775589,
+      "season_id": 90,
+      "match_date": "2021-01-17",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775608,
+      "season_id": 90,
+      "match_date": "2021-01-17",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775626,
+      "season_id": 90,
+      "match_date": "2021-01-17",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775647,
+      "season_id": 90,
+      "match_date": "2021-01-17",
+      "partition": "tuning",
+      "home_team_id": 969,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775571,
+      "season_id": 90,
+      "match_date": "2021-01-23",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775594,
+      "season_id": 90,
+      "match_date": "2021-01-24",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775629,
+      "season_id": 90,
+      "match_date": "2021-01-24",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775646,
+      "season_id": 90,
+      "match_date": "2021-01-27",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775595,
+      "season_id": 90,
+      "match_date": "2021-01-30",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775587,
+      "season_id": 90,
+      "match_date": "2021-01-31",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775605,
+      "season_id": 90,
+      "match_date": "2021-01-31",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775651,
+      "season_id": 90,
+      "match_date": "2021-01-31",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775633,
+      "season_id": 90,
+      "match_date": "2021-02-06",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775590,
+      "season_id": 90,
+      "match_date": "2021-02-07",
+      "partition": "tuning",
+      "home_team_id": 967,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775600,
+      "season_id": 90,
+      "match_date": "2021-02-07",
+      "partition": "tuning",
+      "home_team_id": 968,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775640,
+      "season_id": 90,
+      "match_date": "2021-02-07",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775652,
+      "season_id": 90,
+      "match_date": "2021-02-07",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775655,
+      "season_id": 90,
+      "match_date": "2021-02-07",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775548,
+      "season_id": 90,
+      "match_date": "2021-02-10",
+      "partition": "tuning",
+      "home_team_id": 971,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775603,
+      "season_id": 90,
+      "match_date": "2021-02-10",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775658,
+      "season_id": 90,
+      "match_date": "2021-02-12",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775578,
+      "season_id": 90,
+      "match_date": "2021-02-14",
+      "partition": "tuning",
+      "home_team_id": 974,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775614,
+      "season_id": 90,
+      "match_date": "2021-02-14",
+      "partition": "tuning",
+      "home_team_id": 973,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775547,
+      "season_id": 90,
+      "match_date": "2021-02-28",
+      "partition": "tuning",
+      "home_team_id": 969,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775552,
+      "season_id": 90,
+      "match_date": "2021-02-28",
+      "partition": "tuning",
+      "home_team_id": 749,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775648,
+      "season_id": 90,
+      "match_date": "2021-02-28",
+      "partition": "tuning",
+      "home_team_id": 2647,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775541,
+      "season_id": 90,
+      "match_date": "2021-03-07",
+      "partition": "tuning",
+      "home_team_id": 1475,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775591,
+      "season_id": 90,
+      "match_date": "2021-03-07",
+      "partition": "tuning",
+      "home_team_id": 972,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775630,
+      "season_id": 90,
+      "match_date": "2021-03-07",
+      "partition": "tuning",
+      "home_team_id": 969,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775638,
+      "season_id": 90,
+      "match_date": "2021-03-07",
+      "partition": "tuning",
+      "home_team_id": 965,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775639,
+      "season_id": 90,
+      "match_date": "2021-03-07",
+      "partition": "tuning",
+      "home_team_id": 746,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775607,
+      "season_id": 90,
+      "match_date": "2021-03-08",
+      "partition": "calibration",
+      "home_team_id": 973,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775653,
+      "season_id": 90,
+      "match_date": "2021-03-11",
+      "partition": "calibration",
+      "home_team_id": 969,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775598,
+      "season_id": 90,
+      "match_date": "2021-03-14",
+      "partition": "calibration",
+      "home_team_id": 974,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775550,
+      "season_id": 90,
+      "match_date": "2021-03-17",
+      "partition": "calibration",
+      "home_team_id": 967,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775596,
+      "season_id": 90,
+      "match_date": "2021-03-17",
+      "partition": "calibration",
+      "home_team_id": 973,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775642,
+      "season_id": 90,
+      "match_date": "2021-03-17",
+      "partition": "calibration",
+      "home_team_id": 2647,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775643,
+      "season_id": 90,
+      "match_date": "2021-03-17",
+      "partition": "calibration",
+      "home_team_id": 972,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775597,
+      "season_id": 90,
+      "match_date": "2021-03-19",
+      "partition": "calibration",
+      "home_team_id": 968,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775546,
+      "season_id": 90,
+      "match_date": "2021-03-21",
+      "partition": "calibration",
+      "home_team_id": 749,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775564,
+      "season_id": 90,
+      "match_date": "2021-03-27",
+      "partition": "calibration",
+      "home_team_id": 746,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775613,
+      "season_id": 90,
+      "match_date": "2021-03-27",
+      "partition": "calibration",
+      "home_team_id": 749,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775628,
+      "season_id": 90,
+      "match_date": "2021-03-27",
+      "partition": "calibration",
+      "home_team_id": 1475,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775570,
+      "season_id": 90,
+      "match_date": "2021-03-28",
+      "partition": "calibration",
+      "home_team_id": 965,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775581,
+      "season_id": 90,
+      "match_date": "2021-03-28",
+      "partition": "calibration",
+      "home_team_id": 971,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775654,
+      "season_id": 90,
+      "match_date": "2021-03-28",
+      "partition": "calibration",
+      "home_team_id": 969,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775649,
+      "season_id": 90,
+      "match_date": "2021-04-03",
+      "partition": "calibration",
+      "home_team_id": 974,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775565,
+      "season_id": 90,
+      "match_date": "2021-04-04",
+      "partition": "calibration",
+      "home_team_id": 971,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775569,
+      "season_id": 90,
+      "match_date": "2021-04-04",
+      "partition": "calibration",
+      "home_team_id": 973,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775604,
+      "season_id": 90,
+      "match_date": "2021-04-04",
+      "partition": "calibration",
+      "home_team_id": 749,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775617,
+      "season_id": 90,
+      "match_date": "2021-04-04",
+      "partition": "calibration",
+      "home_team_id": 965,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775634,
+      "season_id": 90,
+      "match_date": "2021-04-04",
+      "partition": "calibration",
+      "home_team_id": 967,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775599,
+      "season_id": 90,
+      "match_date": "2021-04-20",
+      "partition": "calibration",
+      "home_team_id": 972,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775576,
+      "season_id": 90,
+      "match_date": "2021-04-21",
+      "partition": "calibration",
+      "home_team_id": 746,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775540,
+      "season_id": 90,
+      "match_date": "2021-04-24",
+      "partition": "calibration",
+      "home_team_id": 2647,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775557,
+      "season_id": 90,
+      "match_date": "2021-04-25",
+      "partition": "calibration",
+      "home_team_id": 968,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775612,
+      "season_id": 90,
+      "match_date": "2021-04-25",
+      "partition": "calibration",
+      "home_team_id": 969,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3775622,
+      "season_id": 90,
+      "match_date": "2021-04-25",
+      "partition": "calibration",
+      "home_team_id": 1475,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775635,
+      "season_id": 90,
+      "match_date": "2021-04-25",
+      "partition": "calibration",
+      "home_team_id": 972,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775568,
+      "season_id": 90,
+      "match_date": "2021-04-28",
+      "partition": "calibration",
+      "home_team_id": 969,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775609,
+      "season_id": 90,
+      "match_date": "2021-04-28",
+      "partition": "calibration",
+      "home_team_id": 968,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775544,
+      "season_id": 90,
+      "match_date": "2021-05-02",
+      "partition": "calibration",
+      "home_team_id": 2647,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3775574,
+      "season_id": 90,
+      "match_date": "2021-05-02",
+      "partition": "calibration",
+      "home_team_id": 746,
+      "away_team_id": 969
+    },
+    {
+      "match_id": 3775577,
+      "season_id": 90,
+      "match_date": "2021-05-02",
+      "partition": "calibration",
+      "home_team_id": 967,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3775579,
+      "season_id": 90,
+      "match_date": "2021-05-02",
+      "partition": "calibration",
+      "home_team_id": 974,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3775601,
+      "season_id": 90,
+      "match_date": "2021-05-02",
+      "partition": "calibration",
+      "home_team_id": 973,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3775555,
+      "season_id": 90,
+      "match_date": "2021-05-05",
+      "partition": "calibration",
+      "home_team_id": 749,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3775549,
+      "season_id": 90,
+      "match_date": "2021-05-09",
+      "partition": "calibration",
+      "home_team_id": 969,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3775560,
+      "season_id": 90,
+      "match_date": "2021-05-09",
+      "partition": "calibration",
+      "home_team_id": 968,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3775563,
+      "season_id": 90,
+      "match_date": "2021-05-09",
+      "partition": "calibration",
+      "home_team_id": 1475,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3775573,
+      "season_id": 90,
+      "match_date": "2021-05-09",
+      "partition": "calibration",
+      "home_team_id": 972,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3775585,
+      "season_id": 90,
+      "match_date": "2021-05-09",
+      "partition": "calibration",
+      "home_team_id": 965,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3775593,
+      "season_id": 90,
+      "match_date": "2021-05-09",
+      "partition": "calibration",
+      "home_team_id": 971,
+      "away_team_id": 974
+    },
+    {
+      "match_id": 3912592,
+      "season_id": 281,
+      "match_date": "2023-10-01",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3912593,
+      "season_id": 281,
+      "match_date": "2023-10-01",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3912594,
+      "season_id": 281,
+      "match_date": "2023-10-01",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3912595,
+      "season_id": 281,
+      "match_date": "2023-10-01",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3912596,
+      "season_id": 281,
+      "match_date": "2023-10-01",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3912597,
+      "season_id": 281,
+      "match_date": "2023-10-01",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3912598,
+      "season_id": 281,
+      "match_date": "2023-10-06",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3912599,
+      "season_id": 281,
+      "match_date": "2023-10-08",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3912600,
+      "season_id": 281,
+      "match_date": "2023-10-08",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3912601,
+      "season_id": 281,
+      "match_date": "2023-10-08",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3912602,
+      "season_id": 281,
+      "match_date": "2023-10-08",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3912603,
+      "season_id": 281,
+      "match_date": "2023-10-08",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913069,
+      "season_id": 281,
+      "match_date": "2023-10-14",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913070,
+      "season_id": 281,
+      "match_date": "2023-10-15",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913071,
+      "season_id": 281,
+      "match_date": "2023-10-15",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913072,
+      "season_id": 281,
+      "match_date": "2023-10-15",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913073,
+      "season_id": 281,
+      "match_date": "2023-10-15",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913074,
+      "season_id": 281,
+      "match_date": "2023-10-15",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913075,
+      "season_id": 281,
+      "match_date": "2023-10-21",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913076,
+      "season_id": 281,
+      "match_date": "2023-10-21",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913077,
+      "season_id": 281,
+      "match_date": "2023-10-22",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913078,
+      "season_id": 281,
+      "match_date": "2023-10-22",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913079,
+      "season_id": 281,
+      "match_date": "2023-10-22",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913080,
+      "season_id": 281,
+      "match_date": "2023-10-22",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913081,
+      "season_id": 281,
+      "match_date": "2023-11-04",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913082,
+      "season_id": 281,
+      "match_date": "2023-11-05",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913083,
+      "season_id": 281,
+      "match_date": "2023-11-05",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913084,
+      "season_id": 281,
+      "match_date": "2023-11-05",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913085,
+      "season_id": 281,
+      "match_date": "2023-11-05",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913086,
+      "season_id": 281,
+      "match_date": "2023-11-05",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913087,
+      "season_id": 281,
+      "match_date": "2023-11-12",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913088,
+      "season_id": 281,
+      "match_date": "2023-11-12",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913089,
+      "season_id": 281,
+      "match_date": "2023-11-12",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913090,
+      "season_id": 281,
+      "match_date": "2023-11-12",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913091,
+      "season_id": 281,
+      "match_date": "2023-11-12",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913092,
+      "season_id": 281,
+      "match_date": "2023-11-12",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913093,
+      "season_id": 281,
+      "match_date": "2023-11-18",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913094,
+      "season_id": 281,
+      "match_date": "2023-11-19",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913095,
+      "season_id": 281,
+      "match_date": "2023-11-19",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913096,
+      "season_id": 281,
+      "match_date": "2023-11-19",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913097,
+      "season_id": 281,
+      "match_date": "2023-11-19",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913098,
+      "season_id": 281,
+      "match_date": "2023-11-19",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913099,
+      "season_id": 281,
+      "match_date": "2023-11-26",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913100,
+      "season_id": 281,
+      "match_date": "2023-11-26",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913101,
+      "season_id": 281,
+      "match_date": "2023-11-26",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913102,
+      "season_id": 281,
+      "match_date": "2023-11-26",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913103,
+      "season_id": 281,
+      "match_date": "2023-11-26",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913104,
+      "season_id": 281,
+      "match_date": "2023-11-26",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913107,
+      "season_id": 281,
+      "match_date": "2023-12-09",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913105,
+      "season_id": 281,
+      "match_date": "2023-12-10",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913106,
+      "season_id": 281,
+      "match_date": "2023-12-10",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913108,
+      "season_id": 281,
+      "match_date": "2023-12-10",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913109,
+      "season_id": 281,
+      "match_date": "2023-12-10",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913110,
+      "season_id": 281,
+      "match_date": "2023-12-10",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913113,
+      "season_id": 281,
+      "match_date": "2023-12-16",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913111,
+      "season_id": 281,
+      "match_date": "2023-12-17",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913112,
+      "season_id": 281,
+      "match_date": "2023-12-17",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913114,
+      "season_id": 281,
+      "match_date": "2023-12-17",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913115,
+      "season_id": 281,
+      "match_date": "2023-12-17",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913116,
+      "season_id": 281,
+      "match_date": "2023-12-17",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913119,
+      "season_id": 281,
+      "match_date": "2024-01-19",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913117,
+      "season_id": 281,
+      "match_date": "2024-01-20",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913118,
+      "season_id": 281,
+      "match_date": "2024-01-21",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913120,
+      "season_id": 281,
+      "match_date": "2024-01-21",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913121,
+      "season_id": 281,
+      "match_date": "2024-01-21",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913122,
+      "season_id": 281,
+      "match_date": "2024-01-21",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913123,
+      "season_id": 281,
+      "match_date": "2024-01-27",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913124,
+      "season_id": 281,
+      "match_date": "2024-01-28",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913125,
+      "season_id": 281,
+      "match_date": "2024-01-28",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913126,
+      "season_id": 281,
+      "match_date": "2024-01-28",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913127,
+      "season_id": 281,
+      "match_date": "2024-01-28",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913128,
+      "season_id": 281,
+      "match_date": "2024-01-28",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913129,
+      "season_id": 281,
+      "match_date": "2024-02-03",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913130,
+      "season_id": 281,
+      "match_date": "2024-02-04",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913131,
+      "season_id": 281,
+      "match_date": "2024-02-04",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913132,
+      "season_id": 281,
+      "match_date": "2024-02-04",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913133,
+      "season_id": 281,
+      "match_date": "2024-02-04",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913134,
+      "season_id": 281,
+      "match_date": "2024-02-04",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913138,
+      "season_id": 281,
+      "match_date": "2024-02-16",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913135,
+      "season_id": 281,
+      "match_date": "2024-02-17",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913136,
+      "season_id": 281,
+      "match_date": "2024-02-18",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913137,
+      "season_id": 281,
+      "match_date": "2024-02-18",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913139,
+      "season_id": 281,
+      "match_date": "2024-02-18",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913140,
+      "season_id": 281,
+      "match_date": "2024-02-18",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913143,
+      "season_id": 281,
+      "match_date": "2024-03-02",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913141,
+      "season_id": 281,
+      "match_date": "2024-03-03",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913142,
+      "season_id": 281,
+      "match_date": "2024-03-03",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913144,
+      "season_id": 281,
+      "match_date": "2024-03-03",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913145,
+      "season_id": 281,
+      "match_date": "2024-03-03",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913146,
+      "season_id": 281,
+      "match_date": "2024-03-03",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913152,
+      "season_id": 281,
+      "match_date": "2024-03-15",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913147,
+      "season_id": 281,
+      "match_date": "2024-03-16",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913148,
+      "season_id": 281,
+      "match_date": "2024-03-17",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913149,
+      "season_id": 281,
+      "match_date": "2024-03-17",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913150,
+      "season_id": 281,
+      "match_date": "2024-03-17",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913151,
+      "season_id": 281,
+      "match_date": "2024-03-17",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913155,
+      "season_id": 281,
+      "match_date": "2024-03-23",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913153,
+      "season_id": 281,
+      "match_date": "2024-03-24",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913154,
+      "season_id": 281,
+      "match_date": "2024-03-24",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913156,
+      "season_id": 281,
+      "match_date": "2024-03-24",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913157,
+      "season_id": 281,
+      "match_date": "2024-03-24",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913158,
+      "season_id": 281,
+      "match_date": "2024-03-24",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913159,
+      "season_id": 281,
+      "match_date": "2024-03-30",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913162,
+      "season_id": 281,
+      "match_date": "2024-03-30",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913161,
+      "season_id": 281,
+      "match_date": "2024-03-31",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913164,
+      "season_id": 281,
+      "match_date": "2024-03-31",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913160,
+      "season_id": 281,
+      "match_date": "2024-04-14",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913165,
+      "season_id": 281,
+      "match_date": "2024-04-17",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913166,
+      "season_id": 281,
+      "match_date": "2024-04-19",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913170,
+      "season_id": 281,
+      "match_date": "2024-04-20",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913167,
+      "season_id": 281,
+      "match_date": "2024-04-21",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913168,
+      "season_id": 281,
+      "match_date": "2024-04-21",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913169,
+      "season_id": 281,
+      "match_date": "2024-04-21",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913171,
+      "season_id": 281,
+      "match_date": "2024-04-28",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913172,
+      "season_id": 281,
+      "match_date": "2024-04-28",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913174,
+      "season_id": 281,
+      "match_date": "2024-04-28",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913175,
+      "season_id": 281,
+      "match_date": "2024-04-28",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 972
+    },
+    {
+      "match_id": 3913176,
+      "season_id": 281,
+      "match_date": "2024-04-28",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913173,
+      "season_id": 281,
+      "match_date": "2024-05-01",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913181,
+      "season_id": 281,
+      "match_date": "2024-05-04",
+      "partition": "test",
+      "home_team_id": 967,
+      "away_team_id": 749
+    },
+    {
+      "match_id": 3913182,
+      "season_id": 281,
+      "match_date": "2024-05-04",
+      "partition": "test",
+      "home_team_id": 965,
+      "away_team_id": 2647
+    },
+    {
+      "match_id": 3913177,
+      "season_id": 281,
+      "match_date": "2024-05-05",
+      "partition": "test",
+      "home_team_id": 746,
+      "away_team_id": 968
+    },
+    {
+      "match_id": 3913178,
+      "season_id": 281,
+      "match_date": "2024-05-05",
+      "partition": "test",
+      "home_team_id": 972,
+      "away_team_id": 2652
+    },
+    {
+      "match_id": 3913179,
+      "season_id": 281,
+      "match_date": "2024-05-05",
+      "partition": "test",
+      "home_team_id": 966,
+      "away_team_id": 1475
+    },
+    {
+      "match_id": 3913180,
+      "season_id": 281,
+      "match_date": "2024-05-05",
+      "partition": "test",
+      "home_team_id": 971,
+      "away_team_id": 973
+    },
+    {
+      "match_id": 3913163,
+      "season_id": 281,
+      "match_date": "2024-05-15",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913183,
+      "season_id": 281,
+      "match_date": "2024-05-18",
+      "partition": "test",
+      "home_team_id": 973,
+      "away_team_id": 967
+    },
+    {
+      "match_id": 3913184,
+      "season_id": 281,
+      "match_date": "2024-05-18",
+      "partition": "test",
+      "home_team_id": 2647,
+      "away_team_id": 746
+    },
+    {
+      "match_id": 3913185,
+      "season_id": 281,
+      "match_date": "2024-05-18",
+      "partition": "test",
+      "home_team_id": 968,
+      "away_team_id": 965
+    },
+    {
+      "match_id": 3913186,
+      "season_id": 281,
+      "match_date": "2024-05-18",
+      "partition": "test",
+      "home_team_id": 2652,
+      "away_team_id": 966
+    },
+    {
+      "match_id": 3913187,
+      "season_id": 281,
+      "match_date": "2024-05-18",
+      "partition": "test",
+      "home_team_id": 1475,
+      "away_team_id": 971
+    },
+    {
+      "match_id": 3913188,
+      "season_id": 281,
+      "match_date": "2024-05-18",
+      "partition": "test",
+      "home_team_id": 749,
+      "away_team_id": 972
+    }
+  ],
+  "team_stress_groups": {
+    "746": 0,
+    "749": 1,
+    "965": 2,
+    "966": 3,
+    "967": 4,
+    "968": 0,
+    "969": 1,
+    "970": 2,
+    "971": 3,
+    "972": 4,
+    "973": 0,
+    "974": 1,
+    "1475": 2,
+    "2647": 3,
+    "2652": 4
+  },
+  "counts": {
+    "train": 194,
+    "tuning": 89,
+    "calibration": 42,
+    "test": 132
+  },
+  "sha256": "ab2d58e2a548f86911b5a80fe86a84a9634eb46a202a44d56f8abbbaed30cee4"
+}

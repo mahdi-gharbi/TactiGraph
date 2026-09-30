@@ -1,0 +1,1233 @@
+{
+  "version": "xg-v1",
+  "status": "evaluated",
+  "serving": "logistic",
+  "evaluated_at": "2026-09-22T14:32:30.863038+00:00",
+  "lock": {
+    "version": "xg-v1",
+    "created_at": "2026-09-22T14:31:30.222471+00:00",
+    "protocol_hash": "8423a1f0fd9590bd4c32b405f4e12d787e82efd76c6f6055381038db7f764b42",
+    "code_hash": "9071b70369d810f06dede8a94542a03ea0c7922efd092ed251e75bb7b33c9eab",
+    "artifact_hash": "47620ca7bf99cec3bc12fe5ca0eebe2d83915339cb87d464d9eb32697b68cf55",
+    "development_hash": "3a744b88423fdbd0b9ec32a911627cc966051d1a1184196ca33c548f3c1d705e",
+    "split_hash": "ab2d58e2a548f86911b5a80fe86a84a9634eb46a202a44d56f8abbbaed30cee4",
+    "run_id": "ae025333a0104cf7875732739d848183"
+  },
+  "test_matches": 132,
+  "test_non_penalty_shots": 3506,
+  "metrics": {
+    "prevalence": {
+      "log_loss": 0.3562345316140343,
+      "brier": 0.10153037269573333,
+      "roc_auc": 0.5,
+      "pr_auc": 0.11466058185966914,
+      "n": 3506,
+      "goals": 402,
+      "intervals": {
+        "log_loss": [
+          0.33436561656407904,
+          0.3765191197693534
+        ],
+        "brier": [
+          0.09336113289310287,
+          0.10910777946510744
+        ]
+      },
+      "reliability": [
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 3506,
+          "predicted": 0.11055694098088112,
+          "observed": 0.11466058185966914
+        }
+      ],
+      "calibration": null
+    },
+    "logistic_raw": {
+      "log_loss": 0.3146179602100766,
+      "brier": 0.09066928320763341,
+      "roc_auc": 0.7356893047648356,
+      "pr_auc": 0.3261072128037761,
+      "n": 3506,
+      "goals": 402,
+      "intervals": {
+        "log_loss": [
+          0.2954182091218512,
+          0.33356535585264463
+        ],
+        "brier": [
+          0.08370291645401079,
+          0.09739123701743391
+        ]
+      },
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 2032,
+          "predicted": 0.057613263610467834,
+          "observed": 0.05265748031496063
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 1051,
+          "predicted": 0.13859340419092023,
+          "observed": 0.15318744053282587
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 263,
+          "predicted": 0.23968363817379176,
+          "observed": 0.23574144486692014
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 82,
+          "predicted": 0.34452287618352506,
+          "observed": 0.3048780487804878
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 38,
+          "predicted": 0.4346285527249705,
+          "observed": 0.4473684210526316
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 14,
+          "predicted": 0.5529848236716866,
+          "observed": 0.6428571428571429
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 15,
+          "predicted": 0.6315716664525705,
+          "observed": 0.8
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 7,
+          "predicted": 0.7672552722536673,
+          "observed": 0.7142857142857143
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 4,
+          "predicted": 0.8494619488301177,
+          "observed": 1.0
+        }
+      ],
+      "calibration": {
+        "intercept": 0.10561831520441634,
+        "slope": 1.0482328659241225
+      }
+    },
+    "logistic": {
+      "log_loss": 0.3146179602100766,
+      "brier": 0.09066928320763341,
+      "roc_auc": 0.7356893047648356,
+      "pr_auc": 0.3261072128037761,
+      "n": 3506,
+      "goals": 402,
+      "intervals": {
+        "log_loss": [
+          0.2954182091218512,
+          0.33356535585264463
+        ],
+        "brier": [
+          0.08370291645401079,
+          0.09739123701743391
+        ]
+      },
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 2032,
+          "predicted": 0.057613263610467834,
+          "observed": 0.05265748031496063
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 1051,
+          "predicted": 0.13859340419092023,
+          "observed": 0.15318744053282587
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 263,
+          "predicted": 0.23968363817379176,
+          "observed": 0.23574144486692014
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 82,
+          "predicted": 0.34452287618352506,
+          "observed": 0.3048780487804878
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 38,
+          "predicted": 0.4346285527249705,
+          "observed": 0.4473684210526316
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 14,
+          "predicted": 0.5529848236716866,
+          "observed": 0.6428571428571429
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 15,
+          "predicted": 0.6315716664525705,
+          "observed": 0.8
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 7,
+          "predicted": 0.7672552722536673,
+          "observed": 0.7142857142857143
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 4,
+          "predicted": 0.8494619488301177,
+          "observed": 1.0
+        }
+      ],
+      "calibration": {
+        "intercept": 0.10561831520441634,
+        "slope": 1.0482328659241225
+      }
+    },
+    "lightgbm_raw": {
+      "log_loss": 0.31503282191045556,
+      "brier": 0.0911836788097309,
+      "roc_auc": 0.7388404305790635,
+      "pr_auc": 0.32077604041587515,
+      "n": 3506,
+      "goals": 402,
+      "intervals": {
+        "log_loss": [
+          0.29613919483195195,
+          0.3331836455525435
+        ],
+        "brier": [
+          0.08461496178821225,
+          0.09777501831904771
+        ]
+      },
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 2059,
+          "predicted": 0.057491611161130204,
+          "observed": 0.056338028169014086
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 921,
+          "predicted": 0.1375430927142247,
+          "observed": 0.14006514657980457
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 287,
+          "predicted": 0.24435524590977473,
+          "observed": 0.1986062717770035
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 151,
+          "predicted": 0.33849154911183305,
+          "observed": 0.33774834437086093
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 61,
+          "predicted": 0.44688908826677665,
+          "observed": 0.47540983606557374
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 27,
+          "predicted": 0.5325502107953994,
+          "observed": 0.7407407407407407
+        }
+      ],
+      "calibration": {
+        "intercept": 0.0595744978676916,
+        "slope": 1.044014067628558
+      }
+    },
+    "lightgbm": {
+      "log_loss": 0.31503282191045556,
+      "brier": 0.0911836788097309,
+      "roc_auc": 0.7388404305790635,
+      "pr_auc": 0.32077604041587515,
+      "n": 3506,
+      "goals": 402,
+      "intervals": {
+        "log_loss": [
+          0.29613919483195195,
+          0.3331836455525435
+        ],
+        "brier": [
+          0.08461496178821225,
+          0.09777501831904771
+        ]
+      },
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 2059,
+          "predicted": 0.057491611161130204,
+          "observed": 0.056338028169014086
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 921,
+          "predicted": 0.1375430927142247,
+          "observed": 0.14006514657980457
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 287,
+          "predicted": 0.24435524590977473,
+          "observed": 0.1986062717770035
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 151,
+          "predicted": 0.33849154911183305,
+          "observed": 0.33774834437086093
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 61,
+          "predicted": 0.44688908826677665,
+          "observed": 0.47540983606557374
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 27,
+          "predicted": 0.5325502107953994,
+          "observed": 0.7407407407407407
+        }
+      ],
+      "calibration": {
+        "intercept": 0.0595744978676916,
+        "slope": 1.044014067628558
+      }
+    }
+  },
+  "paired_lightgbm_minus_logistic": {
+    "log_loss": [
+      -0.003828581727109004,
+      0.004627663159307273
+    ],
+    "brier": [
+      -0.000722457200234191,
+      0.0017510203675831948
+    ]
+  },
+  "reference": {
+    "name": "StatsBomb xG (uncontrolled reference)",
+    "metrics": {
+      "log_loss": 0.29981090422502193,
+      "brier": 0.08587465497521352,
+      "roc_auc": 0.7746584410422117,
+      "pr_auc": 0.3948295113094208,
+      "n": 3506,
+      "goals": 402
+    }
+  },
+  "penalties": {
+    "probability": 0.7464788732394366,
+    "test_metrics": {
+      "log_loss": 0.5271532147187497,
+      "brier": 0.17143768920935293,
+      "roc_auc": 0.5,
+      "pr_auc": 0.782608695652174,
+      "n": 23,
+      "goals": 18
+    }
+  },
+  "slices": [
+    {
+      "field": "shot_type",
+      "value": "Corner",
+      "n": 1,
+      "metrics": null,
+      "warning": "Small slice; uncertainty is high"
+    },
+    {
+      "field": "shot_type",
+      "value": "Free Kick",
+      "n": 64,
+      "metrics": {
+        "log_loss": 0.16170097173181525,
+        "brier": 0.03377762567497631,
+        "roc_auc": 0.8064516129032258,
+        "pr_auc": 0.10833333333333334,
+        "n": 64,
+        "goals": 2
+      },
+      "warning": "Small slice; uncertainty is high"
+    },
+    {
+      "field": "shot_type",
+      "value": "Open Play",
+      "n": 3441,
+      "metrics": {
+        "log_loss": 0.317183144787155,
+        "brier": 0.09160294056428887,
+        "roc_auc": 0.7348260526398177,
+        "pr_auc": 0.32676689543916204,
+        "n": 3441,
+        "goals": 399
+      },
+      "warning": null
+    },
+    {
+      "field": "body_part",
+      "value": "Head",
+      "n": 654,
+      "metrics": {
+        "log_loss": 0.3462595372736849,
+        "brier": 0.1021696397878286,
+        "roc_auc": 0.7242634136255557,
+        "pr_auc": 0.3373296518793203,
+        "n": 654,
+        "goals": 85
+      },
+      "warning": null
+    },
+    {
+      "field": "body_part",
+      "value": "Left Foot",
+      "n": 915,
+      "metrics": {
+        "log_loss": 0.3100787943220634,
+        "brier": 0.08723540455205074,
+        "roc_auc": 0.6840693196405648,
+        "pr_auc": 0.2570258474247139,
+        "n": 915,
+        "goals": 95
+      },
+      "warning": null
+    },
+    {
+      "field": "body_part",
+      "value": "Other",
+      "n": 13,
+      "metrics": null,
+      "warning": "Small slice; uncertainty is high"
+    },
+    {
+      "field": "body_part",
+      "value": "Right Foot",
+      "n": 1924,
+      "metrics": {
+        "log_loss": 0.30238753623881515,
+        "brier": 0.08716011538232206,
+        "roc_auc": 0.7598582921328823,
+        "pr_auc": 0.3508939473192068,
+        "n": 1924,
+        "goals": 216
+      },
+      "warning": null
+    },
+    {
+      "field": "season_id",
+      "value": "281",
+      "n": 3506,
+      "metrics": {
+        "log_loss": 0.3146179602100766,
+        "brier": 0.09066928320763341,
+        "roc_auc": 0.7356893047648356,
+        "pr_auc": 0.3261072128037761,
+        "n": 3506,
+        "goals": 402
+      },
+      "warning": null
+    }
+  ],
+  "logistic_coefficients": [
+    {
+      "feature": "numeric__x0",
+      "coefficient": 0.2861945299397011
+    },
+    {
+      "feature": "numeric__x1",
+      "coefficient": 0.1072081481784758
+    },
+    {
+      "feature": "numeric__x2",
+      "coefficient": -0.4992111947234334
+    },
+    {
+      "feature": "numeric__x3",
+      "coefficient": 0.497604511483523
+    },
+    {
+      "feature": "numeric__x4",
+      "coefficient": 0.12103425726022164
+    },
+    {
+      "feature": "numeric__x5",
+      "coefficient": -0.07865256227987075
+    },
+    {
+      "feature": "numeric__x6",
+      "coefficient": -0.087192462702556
+    },
+    {
+      "feature": "numeric__x7",
+      "coefficient": -0.01001977205776678
+    },
+    {
+      "feature": "numeric__x8",
+      "coefficient": 0.0
+    },
+    {
+      "feature": "numeric__x9",
+      "coefficient": -0.16765376332584156
+    },
+    {
+      "feature": "numeric__x10",
+      "coefficient": -0.06723620452477741
+    },
+    {
+      "feature": "numeric__missingindicator_x6",
+      "coefficient": 0.35405186069735917
+    },
+    {
+      "feature": "numeric__missingindicator_x7",
+      "coefficient": -0.002895110137591693
+    },
+    {
+      "feature": "numeric__missingindicator_x8",
+      "coefficient": -0.002895110137591693
+    },
+    {
+      "feature": "numeric__missingindicator_x9",
+      "coefficient": -0.002895110137591693
+    },
+    {
+      "feature": "numeric__missingindicator_x10",
+      "coefficient": -0.002895110137591693
+    },
+    {
+      "feature": "category__x11_Head",
+      "coefficient": -0.33751791422092614
+    },
+    {
+      "feature": "category__x11_Left Foot",
+      "coefficient": 0.15171458397275397
+    },
+    {
+      "feature": "category__x11_Other",
+      "coefficient": -0.502473985111721
+    },
+    {
+      "feature": "category__x11_Right Foot",
+      "coefficient": 0.1246310216842582
+    },
+    {
+      "feature": "category__x12_Corner",
+      "coefficient": 1.181244808761635
+    },
+    {
+      "feature": "category__x12_Free Kick",
+      "coefficient": -1.3381583916584558
+    },
+    {
+      "feature": "category__x12_Open Play",
+      "coefficient": -0.40673271077880235
+    },
+    {
+      "feature": "category__x13_Backheel",
+      "coefficient": -1.531796086590513
+    },
+    {
+      "feature": "category__x13_Diving Header",
+      "coefficient": 0.5011380977854484
+    },
+    {
+      "feature": "category__x13_Half Volley",
+      "coefficient": -0.4446961095101243
+    },
+    {
+      "feature": "category__x13_Lob",
+      "coefficient": 2.0389115866259186
+    },
+    {
+      "feature": "category__x13_Normal",
+      "coefficient": -0.19965819918754799
+    },
+    {
+      "feature": "category__x13_Overhead Kick",
+      "coefficient": -0.2775335449708962
+    },
+    {
+      "feature": "category__x13_Volley",
+      "coefficient": -0.6500120378279283
+    },
+    {
+      "feature": "category__x14_From Corner",
+      "coefficient": -0.6061663167998907
+    },
+    {
+      "feature": "category__x14_From Counter",
+      "coefficient": -0.060052002388497554
+    },
+    {
+      "feature": "category__x14_From Free Kick",
+      "coefficient": -0.11914417458701428
+    },
+    {
+      "feature": "category__x14_From Goal Kick",
+      "coefficient": 0.46307449167922915
+    },
+    {
+      "feature": "category__x14_From Keeper",
+      "coefficient": 0.011129656409902693
+    },
+    {
+      "feature": "category__x14_From Kick Off",
+      "coefficient": -0.08499961550129667
+    },
+    {
+      "feature": "category__x14_From Throw In",
+      "coefficient": -0.27565632253332045
+    },
+    {
+      "feature": "category__x14_Other",
+      "coefficient": 0.056446507528740385
+    },
+    {
+      "feature": "category__x14_Regular Play",
+      "coefficient": 0.051721482516506455
+    },
+    {
+      "feature": "category__x15_Ball Recovery",
+      "coefficient": -0.5554582129680256
+    },
+    {
+      "feature": "category__x15_Carry",
+      "coefficient": -0.1182887072375306
+    },
+    {
+      "feature": "category__x15_Dribble",
+      "coefficient": 0.8871327024550331
+    },
+    {
+      "feature": "category__x15_Interception",
+      "coefficient": -0.156941934297165
+    },
+    {
+      "feature": "category__x15_None",
+      "coefficient": 0.04468988210518675
+    },
+    {
+      "feature": "category__x15_Pass",
+      "coefficient": -0.23533063901549686
+    },
+    {
+      "feature": "category__x15_Shot",
+      "coefficient": -0.42944938471763305
+    },
+    {
+      "feature": "category__x16_Ground Pass",
+      "coefficient": -0.05316217854514113
+    },
+    {
+      "feature": "category__x16_High Pass",
+      "coefficient": -0.22568275262206805
+    },
+    {
+      "feature": "category__x16_Low Pass",
+      "coefficient": -0.10606762731050427
+    },
+    {
+      "feature": "category__x16_None",
+      "coefficient": -0.17873373519792665
+    }
+  ],
+  "permutation_importance": [
+    {
+      "feature": "opening_angle",
+      "mean_log_loss_increase": 0.032625660949972504,
+      "std": 0.0023109684280085193,
+      "repeats": 5
+    },
+    {
+      "feature": "distance",
+      "mean_log_loss_increase": 0.017655716343376704,
+      "std": 0.0013061109772800532,
+      "repeats": 5
+    },
+    {
+      "feature": "technique",
+      "mean_log_loss_increase": 0.008153499472144799,
+      "std": 0.0008192212190780194,
+      "repeats": 5
+    },
+    {
+      "feature": "previous_elapsed_seconds",
+      "mean_log_loss_increase": 0.006870683574905179,
+      "std": 0.0006129076491165652,
+      "repeats": 5
+    },
+    {
+      "feature": "x",
+      "mean_log_loss_increase": 0.004721875956288535,
+      "std": 0.0013933037737871945,
+      "repeats": 5
+    },
+    {
+      "feature": "play_pattern",
+      "mean_log_loss_increase": 0.004143963282661411,
+      "std": 0.0014335147760654798,
+      "repeats": 5
+    },
+    {
+      "feature": "assist_x",
+      "mean_log_loss_increase": 0.003520438529470904,
+      "std": 0.0006344381087682019,
+      "repeats": 5
+    },
+    {
+      "feature": "body_part",
+      "mean_log_loss_increase": 0.002688084828874493,
+      "std": 0.000659577801217097,
+      "repeats": 5
+    },
+    {
+      "feature": "shot_type",
+      "mean_log_loss_increase": 0.002564333814482356,
+      "std": 0.0003217695972413536,
+      "repeats": 5
+    },
+    {
+      "feature": "pressure",
+      "mean_log_loss_increase": 0.0018728544311207406,
+      "std": 0.00034176096818069185,
+      "repeats": 5
+    },
+    {
+      "feature": "first_time",
+      "mean_log_loss_increase": 0.0009290164457292805,
+      "std": 0.0007491304677969262,
+      "repeats": 5
+    },
+    {
+      "feature": "previous_action",
+      "mean_log_loss_increase": 0.0007523091802920323,
+      "std": 0.0002733209541714497,
+      "repeats": 5
+    },
+    {
+      "feature": "assist_height",
+      "mean_log_loss_increase": 0.0005568491408562304,
+      "std": 0.00038148992919313925,
+      "repeats": 5
+    },
+    {
+      "feature": "assist_y",
+      "mean_log_loss_increase": 0.00042590587036784867,
+      "std": 0.0003519171688312841,
+      "repeats": 5
+    },
+    {
+      "feature": "assist_cross",
+      "mean_log_loss_increase": 2.6232933603664855e-05,
+      "std": 5.3352848716481866e-05,
+      "repeats": 5
+    },
+    {
+      "feature": "assist_cutback",
+      "mean_log_loss_increase": -1.2124175571304185e-05,
+      "std": 1.483847244802389e-05,
+      "repeats": 5
+    },
+    {
+      "feature": "y",
+      "mean_log_loss_increase": -0.00017031528414525044,
+      "std": 0.0004456527029376777,
+      "repeats": 5
+    }
+  ],
+  "team_stress": [
+    {
+      "group": 0,
+      "teams": [
+        746,
+        968,
+        973
+      ],
+      "fit_shots": 3697,
+      "fit_matches": 148,
+      "calibration_shots": 510,
+      "test_shots": 1024,
+      "test_matches": 60,
+      "status": "evaluated",
+      "metrics": {
+        "log_loss": 0.33425320942753145,
+        "brier": 0.09656729738000763,
+        "roc_auc": 0.7186398168005526,
+        "pr_auc": 0.2973972051591966,
+        "n": 1024,
+        "goals": 122
+      }
+    },
+    {
+      "group": 1,
+      "teams": [
+        749,
+        969,
+        974
+      ],
+      "fit_shots": 4337,
+      "fit_matches": 167,
+      "calibration_shots": 541,
+      "test_shots": 304,
+      "test_matches": 22,
+      "status": "evaluated",
+      "metrics": {
+        "log_loss": 0.3076094539994532,
+        "brier": 0.0853427427198037,
+        "roc_auc": 0.6643034384969868,
+        "pr_auc": 0.28717593715821743,
+        "n": 304,
+        "goals": 31
+      }
+    },
+    {
+      "group": 2,
+      "teams": [
+        965,
+        970,
+        1475
+      ],
+      "fit_shots": 4786,
+      "fit_matches": 188,
+      "calibration_shots": 725,
+      "test_shots": 542,
+      "test_matches": 42,
+      "status": "evaluated",
+      "metrics": {
+        "log_loss": 0.28900319081737297,
+        "brier": 0.0832061223836208,
+        "roc_auc": 0.8152556039348492,
+        "pr_auc": 0.5182337992442927,
+        "n": 542,
+        "goals": 65
+      }
+    },
+    {
+      "group": 3,
+      "teams": [
+        966,
+        971,
+        2647
+      ],
+      "fit_shots": 4785,
+      "fit_matches": 190,
+      "calibration_shots": 699,
+      "test_shots": 948,
+      "test_matches": 60,
+      "status": "evaluated",
+      "metrics": {
+        "log_loss": 0.3254349871198279,
+        "brier": 0.0974686938152094,
+        "roc_auc": 0.7828454935193421,
+        "pr_auc": 0.3717353111420842,
+        "n": 948,
+        "goals": 121
+      }
+    },
+    {
+      "group": 4,
+      "teams": [
+        967,
+        972,
+        2652
+      ],
+      "fit_shots": 4896,
+      "fit_matches": 190,
+      "calibration_shots": 684,
+      "test_shots": 688,
+      "test_matches": 60,
+      "status": "evaluated",
+      "metrics": {
+        "log_loss": 0.29834224702527506,
+        "brier": 0.08088833169887608,
+        "roc_auc": 0.6318730158730158,
+        "pr_auc": 0.22335871253027806,
+        "n": 688,
+        "goals": 63
+      }
+    }
+  ],
+  "prediction_batch_ms": 37.0320999994874,
+  "limitations": [
+    "Sampled WSL event data; no tracking or freeze-frame features.",
+    "The 2020/21 to 2023/24 gap introduces temporal distribution shift.",
+    "Serving selection was locked on tuning data; final-test results do not change it.",
+    "Calibration and family selection reuse tuning data; only final-test results are held-out estimates.",
+    "Intervals resample whole matches; PR-AUC is average precision.",
+    "Permutation importance is descriptive, not causal; correlated features can share importance.",
+    "Stress folds refit preprocessing and calibration without held-out teams; primary hyperparameters stay fixed.",
+    "Training/tuning match predictions are in-sample; calibration matches fit the calibrator when retained.",
+    "StatsBomb xG has uncontrolled training data and information access."
+  ],
+  "development": {
+    "search": [
+      {
+        "family": "logistic",
+        "params": {
+          "C": 0.1
+        },
+        "metrics": {
+          "log_loss": 0.31519496007668735,
+          "brier": 0.0922414809930148,
+          "roc_auc": 0.7648700232851091,
+          "pr_auc": 0.3681420254180364,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "logistic",
+        "params": {
+          "C": 1.0
+        },
+        "metrics": {
+          "log_loss": 0.3136258795777547,
+          "brier": 0.0917184084502847,
+          "roc_auc": 0.7676088865137229,
+          "pr_auc": 0.37251226240539037,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "logistic",
+        "params": {
+          "C": 10.0
+        },
+        "metrics": {
+          "log_loss": 0.31430274597207575,
+          "brier": 0.0918461156677384,
+          "roc_auc": 0.7657556208726188,
+          "pr_auc": 0.36874038332691855,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 7,
+          "min_child_samples": 40,
+          "reg_lambda": 1.0,
+          "learning_rate": 0.04,
+          "n_estimators": 134,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.31148920077536696,
+          "brier": 0.09097149572643559,
+          "roc_auc": 0.7724586784746346,
+          "pr_auc": 0.385983630878026,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 7,
+          "min_child_samples": 40,
+          "reg_lambda": 5.0,
+          "learning_rate": 0.04,
+          "n_estimators": 144,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.31139252372524345,
+          "brier": 0.09105270592147388,
+          "roc_auc": 0.7736229339237317,
+          "pr_auc": 0.3753660078939434,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 7,
+          "min_child_samples": 80,
+          "reg_lambda": 1.0,
+          "learning_rate": 0.04,
+          "n_estimators": 125,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.315592135063993,
+          "brier": 0.09203790004849671,
+          "roc_auc": 0.7612827804710462,
+          "pr_auc": 0.3592085910034649,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 7,
+          "min_child_samples": 80,
+          "reg_lambda": 5.0,
+          "learning_rate": 0.04,
+          "n_estimators": 189,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.3151617568892246,
+          "brier": 0.09195728287259516,
+          "roc_auc": 0.7626350345459403,
+          "pr_auc": 0.35944689307235117,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 15,
+          "min_child_samples": 40,
+          "reg_lambda": 1.0,
+          "learning_rate": 0.04,
+          "n_estimators": 86,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.31249371274969395,
+          "brier": 0.09127672387499478,
+          "roc_auc": 0.7693085086078559,
+          "pr_auc": 0.3729342319913696,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 15,
+          "min_child_samples": 40,
+          "reg_lambda": 5.0,
+          "learning_rate": 0.04,
+          "n_estimators": 108,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.3123532314669828,
+          "brier": 0.09130580859739586,
+          "roc_auc": 0.7703105317402756,
+          "pr_auc": 0.36533822392506266,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 15,
+          "min_child_samples": 80,
+          "reg_lambda": 1.0,
+          "learning_rate": 0.04,
+          "n_estimators": 122,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.3165985312191191,
+          "brier": 0.09225690208095946,
+          "roc_auc": 0.7599830133221362,
+          "pr_auc": 0.34776047761026574,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      {
+        "family": "lightgbm",
+        "params": {
+          "num_leaves": 15,
+          "min_child_samples": 80,
+          "reg_lambda": 5.0,
+          "learning_rate": 0.04,
+          "n_estimators": 111,
+          "max_depth": 5
+        },
+        "metrics": {
+          "log_loss": 0.3164546146815761,
+          "brier": 0.09209453521665303,
+          "roc_auc": 0.7579827842882774,
+          "pr_auc": 0.35706989922566795,
+          "n": 2223,
+          "goals": 268
+        }
+      }
+    ],
+    "calibration_decisions": {
+      "logistic": {
+        "retain_sigmoid": false,
+        "raw": {
+          "log_loss": 0.3136258795777547,
+          "brier": 0.0917184084502847,
+          "roc_auc": 0.7676088865137229,
+          "pr_auc": 0.37251226240539037,
+          "n": 2223,
+          "goals": 268
+        },
+        "sigmoid": {
+          "log_loss": 0.3146125262909631,
+          "brier": 0.09215092687475153,
+          "roc_auc": 0.7676088865137229,
+          "pr_auc": 0.37251226240539037,
+          "n": 2223,
+          "goals": 268
+        }
+      },
+      "lightgbm": {
+        "retain_sigmoid": false,
+        "raw": {
+          "log_loss": 0.31139252372524345,
+          "brier": 0.09105270592147388,
+          "roc_auc": 0.7736229339237317,
+          "pr_auc": 0.3753660078939434,
+          "n": 2223,
+          "goals": 268
+        },
+        "sigmoid": {
+          "log_loss": 0.311737489469782,
+          "brier": 0.091208568978683,
+          "roc_auc": 0.7736229339237317,
+          "pr_auc": 0.3753660078939434,
+          "n": 2223,
+          "goals": 268
+        }
+      }
+    },
+    "tuning_paired_difference": {
+      "log_loss": [
+        -0.007922623890474666,
+        0.0030056130451837915
+      ],
+      "brier": [
+        -0.002436938958721979,
+        0.0008513713498463283
+      ]
+    },
+    "counts": {
+      "train": 4993,
+      "tuning": 2223,
+      "calibration": 988
+    },
+    "penalty": {
+      "fitting_n": 69,
+      "fitting_goals": 52,
+      "probability": 0.7464788732394366
+    },
+    "protocol": {
+      "version": "xg-v1",
+      "feature_version": "shot-prefix-v1",
+      "seed": 2026,
+      "logistic_c": [
+        0.1,
+        1.0,
+        10.0
+      ],
+      "lightgbm_num_leaves": [
+        7,
+        15
+      ],
+      "lightgbm_min_child_samples": [
+        40,
+        80
+      ],
+      "lightgbm_reg_lambda": [
+        1.0,
+        5.0
+      ],
+      "learning_rate": 0.04,
+      "max_estimators": 1200,
+      "early_stopping_rounds": 70,
+      "calibration_folds": 3,
+      "calibration_min_log_loss_improvement": 0.001,
+      "bootstrap_replicates": 1000,
+      "penalty_prior_successes": 1,
+      "penalty_prior_failures": 1,
+      "selection": "Select by tuning log loss; deploy LightGBM only if the paired tuning match-bootstrap 95% log-loss difference upper bound versus logistic is below zero and Brier is no worse. Otherwise logistic.",
+      "calibration_selection": "Fit sigmoid on three-fold match-grouped training OOF predictions. Retain only if tuning log loss improves by at least 0.001 and Brier does not worsen. Refit base models on train+tuning, then fit retained sigmoid only on calibration.",
+      "test_policy": "Freeze protocol, code hashes and fitted artifacts before reading final-test outcomes. Evaluate once; repeat CLI calls read the stored result. A new version must disclose prior test inspection.",
+      "stress_test": "Use frozen five team-ID groups. For each group exclude every train, tuning and calibration match involving those teams; refit the locked serving family and its preprocessing/calibrator. Evaluate that group's 2023/24 shots separately. Hyperparameter family is fixed from the primary development experiment; this is not independently retuned unseen-team selection."
+    }
+  },
+  "feature_names": [
+    "x",
+    "y",
+    "distance",
+    "opening_angle",
+    "first_time",
+    "pressure",
+    "previous_elapsed_seconds",
+    "assist_cross",
+    "assist_cutback",
+    "assist_x",
+    "assist_y",
+    "body_part",
+    "shot_type",
+    "technique",
+    "play_pattern",
+    "previous_action",
+    "assist_height"
+  ],
+  "attribution": {
+    "provider": "StatsBomb",
+    "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+    "source_url": "https://github.com/hudl/open-data",
+    "terms": "Upstream data and branding are excluded from the project code license."
+  }
+}

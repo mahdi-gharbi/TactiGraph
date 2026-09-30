@@ -1,0 +1,12 @@
+{
+  "version": "retrieval-v1",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "max_tokens": 256,
+  "pooling": "attention-mask mean pooling followed by L2 normalization",
+  "rrf_constant": 60,
+  "top_k": 5,
+  "selection": "Choose hybrid as a candidate only when development Recall@5 is no worse and MRR@5 strictly higher than BM25. Promote it only if the same improvement holds on the held-out set; otherwise retain BM25. This deployment gate is fixed before evaluation, with no held-out retuning.",
+  "corpus": "Project-authored definitions and limitations only; no match facts or executable retrieved instructions.",
+  "evaluation": "60 authored queries with relevance labels; first 30 development, final 30 held out. Recall@5 is relevant chunks found / all labeled relevant chunks; MRR@5 uses the first relevant hit. Query bootstrap intervals are descriptive and do not correct for shared topics."
+}

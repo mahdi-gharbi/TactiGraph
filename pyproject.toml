@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tactigraph-ai"
+version = "0.5.0"
+description = "Evidence-first football analytics from pinned open event data"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi==0.141.1",
+  "uvicorn==0.34.2",
+  "sqlalchemy==2.0.40",
+  "pydantic-settings==2.8.1",
+  "httpx==0.28.1",
+  "polars==1.27.1",
+  "psycopg[binary]==3.2.6",
+  "alembic==1.16.5",
+  "networkx==3.4.2",
+]
+
+[project.optional-dependencies]
+retrieval = ["transformers==4.51.3", "safetensors==0.5.3", "torch==2.7.1"]
+graph = ["torch==2.7.1", "torch-geometric==2.6.1"]
+dev = ["pytest==8.3.5", "ruff==0.11.5"]
+modeling = [
+    "joblib==1.5.2",
+    "lightgbm==4.6.0",
+    "mlflow-skinny==3.1.4",
+    "numpy==2.2.6",
+    "scikit-learn==1.7.2",
+    "scipy==1.15.3",
+]
+
+[project.scripts]
+tactigraph = "tactigraph.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tactigraph"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform != 'darwin'" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

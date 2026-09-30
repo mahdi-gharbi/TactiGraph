@@ -1,0 +1,275 @@
+.tactical-lab {
+  margin-top: 28px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #dce2d8;
+  border-radius: 14px;
+  min-width: 0;
+}
+.tactical-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.tactical-heading h2 {
+  margin: 8px 0;
+  font-size: 24px;
+}
+.tactical-lab p {
+  line-height: 1.65;
+}
+.tactical-badge {
+  color: #35634b;
+  font-size: 11px;
+  padding: 7px 10px;
+  background: #edf3e9;
+  border-radius: 20px;
+}
+.tactical-controls {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr repeat(4, 0.8fr);
+  gap: 10px;
+  margin-top: 22px;
+}
+.tactical-controls label,
+.network-select {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 0;
+}
+.tactical-lab select,
+.tactical-lab input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d3dbd0;
+  border-radius: 7px;
+  background: #fcfdfb;
+  color: #284534;
+  font: inherit;
+}
+.tactical-lab button,
+.tactical-dialog button {
+  border: 1px solid #cfd9c9;
+  border-radius: 7px;
+  padding: 8px 11px;
+  color: #285a40;
+  background: #f5f8f1;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+.tactical-controls > button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  background: #285a40;
+  color: white;
+}
+.tactical-note {
+  font-size: 11px;
+  color: #667360;
+}
+.comparison-verdict {
+  background: #edf3e9;
+  border-left: 3px solid #477257;
+  padding: 15px;
+  margin: 22px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.comparison-verdict span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+}
+.tactical-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.tactical-metric {
+  border: 1px solid #e2e7df;
+  padding: 14px;
+  border-radius: 9px;
+  min-width: 0;
+}
+.tactical-metric h3 {
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+.metric-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+.metric-pair button {
+  border: none;
+  background: transparent;
+  padding: 2px;
+  text-align: left;
+}
+.metric-pair strong {
+  display: block;
+  font-size: 19px;
+  margin-top: 6px;
+}
+.metric-pair small,
+.tactical-metric > small {
+  color: #697563;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.tactical-metric > p {
+  font-size: 11px;
+}
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 26px;
+}
+.network-panel {
+  min-width: 0;
+}
+.network-panel h3 {
+  font-size: 13px;
+}
+.network-pitch {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.network-node {
+  cursor: pointer;
+}
+.network-node:focus circle {
+  stroke: #172b20;
+  stroke-width: 1.3;
+}
+.network-summary,
+.player-statistics {
+  font-size: 12px;
+}
+.tactical-quality {
+  margin-top: 20px;
+  border-top: 1px solid #e0e6dc;
+  padding-top: 15px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.tactical-quality summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.tactical-code {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  color: #65715e;
+  line-height: 1.7;
+}
+.tactical-error {
+  padding: 12px;
+  border: 1px solid #c78969;
+  color: #8a3920;
+}
+.tactical-trends {
+  margin-top: 24px;
+  border-top: 1px solid #e0e6dc;
+  padding-top: 16px;
+}
+.tactical-trends h3 {
+  font-size: 16px;
+}
+.tactical-trends h4 {
+  font-size: 13px;
+  margin: 0;
+}
+.trend-inspector {
+  font-size: 12px;
+  background: #f5f8f1;
+  padding: 14px;
+  border-radius: 8px;
+}
+.trend-inspector label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.trend-inspector select {
+  width: auto;
+}
+.experiment-table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.xt-experiment details {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+.xt-experiment summary {
+  cursor: pointer;
+}
+.tactical-dialog {
+  border: 1px solid #d3dbcd;
+  border-radius: 14px;
+  padding: 25px;
+  width: min(680px, calc(100vw - 24px));
+  max-height: 86vh;
+  overflow: auto;
+  color: #263b2d;
+}
+.tactical-dialog::backdrop {
+  background: #152d2388;
+}
+.tactical-dialog p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.tactical-dialog button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.tactical-references {
+  padding-left: 24px;
+}
+.tactical-references li {
+  font-size: 12px;
+  margin: 15px 0;
+}
+.tactical-references code {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-top: 5px;
+  font-size: 10px;
+}
+@media (max-width: 1000px) {
+  .tactical-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tactical-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 650px) {
+  .tactical-lab {
+    padding: 16px;
+  }
+  .network-grid,
+  .tactical-metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tactical-heading h2 {
+    font-size: 21px;
+  }
+  .tactical-dialog {
+    padding: 16px;
+  }
+}

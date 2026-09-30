@@ -1,0 +1,453 @@
+{
+  "matches": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": true,
+        "foreign_key": null
+      },
+      {
+        "name": "competition_id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "competition",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "season_id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "season",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "date",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "home_id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "home_name",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "away_id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "away_name",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "home_score",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "away_score",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "source_commit",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "event_count",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "source_schema",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      }
+    ],
+    "indexes": []
+  },
+  "source_manifest": {
+    "columns": [
+      {
+        "name": "path",
+        "type": "String",
+        "nullable": false,
+        "primary_key": true,
+        "foreign_key": null
+      },
+      {
+        "name": "commit",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "sha256",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "retrieved_at",
+        "type": "DateTime",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "schema_version",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "validation_status",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      }
+    ],
+    "indexes": []
+  },
+  "events": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "String",
+        "nullable": false,
+        "primary_key": true,
+        "foreign_key": null
+      },
+      {
+        "name": "match_id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": "matches.id"
+      },
+      {
+        "name": "index",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "period",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "timestamp",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "period_ms",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "minute",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "second",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "team_id",
+        "type": "Integer",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "team_name",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "player_id",
+        "type": "Integer",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "player_name",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "possession",
+        "type": "Integer",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "possession_team_id",
+        "type": "Integer",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "x",
+        "type": "Float",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "y",
+        "type": "Float",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "under_pressure",
+        "type": "Boolean",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      }
+    ],
+    "indexes": [
+      {
+        "name": "ix_events_match_id",
+        "columns": [
+          "match_id"
+        ],
+        "unique": false
+      }
+    ]
+  },
+  "lineup_sources": {
+    "columns": [
+      {
+        "name": "match_id",
+        "type": "Integer",
+        "nullable": false,
+        "primary_key": true,
+        "foreign_key": "matches.id"
+      },
+      {
+        "name": "payload",
+        "type": "JSON",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      }
+    ],
+    "indexes": []
+  },
+  "passes": {
+    "columns": [
+      {
+        "name": "event_id",
+        "type": "String",
+        "nullable": false,
+        "primary_key": true,
+        "foreign_key": "events.id"
+      },
+      {
+        "name": "recipient_id",
+        "type": "Integer",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "recipient_name",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "end_x",
+        "type": "Float",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "end_y",
+        "type": "Float",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "completed",
+        "type": "Boolean",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "outcome",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "length",
+        "type": "Float",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "height",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "body_part",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "technique",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      }
+    ],
+    "indexes": []
+  },
+  "shots": {
+    "columns": [
+      {
+        "name": "event_id",
+        "type": "String",
+        "nullable": false,
+        "primary_key": true,
+        "foreign_key": "events.id"
+      },
+      {
+        "name": "outcome",
+        "type": "String",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "goal",
+        "type": "Boolean",
+        "nullable": false,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "body_part",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "shot_type",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "technique",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      },
+      {
+        "name": "key_pass_id",
+        "type": "String",
+        "nullable": true,
+        "primary_key": false,
+        "foreign_key": null
+      }
+    ],
+    "indexes": []
+  }
+}

@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: tactigraph-web
+    runtime: docker
+    plan: 1c-2g
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/ready
+    autoDeployTrigger: "off"
+    envVars:
+      - key: TACTIGRAPH_MODE
+        value: public
+      - key: TACTIGRAPH_DATABASE_URL
+        fromDatabase:
+          name: tactigraph-db
+          property: connectionString
+databases:
+  - name: tactigraph-db
+    plan: 0.5c-1g
+    region: frankfurt
+    postgresMajorVersion: "16"
+    databaseName: tactigraph
+    user: tactigraph
+    diskSizeGB: 5
+    ipAllowList: []

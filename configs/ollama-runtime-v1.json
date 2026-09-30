@@ -1,0 +1,12 @@
+{
+  "runtime_version": "0.34.4",
+  "platform": "windows-amd64",
+  "source": "https://github.com/ollama/ollama/releases/download/v0.34.4/ollama-windows-amd64.zip",
+  "archive_sha256": "535193f38f3344e5b08f5d1c171c31ce11aa17f0124ff69ae26d8ec7fe06fa62",
+  "installation": "Portable project-local CPU runtime; CUDA and Vulkan libraries omitted.",
+  "model": "qwen3:4b",
+  "expected_manifest_sha256": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model_digest": null,
+  "evaluation_status": "manifest pinned; model download and local evaluation pending",
+  "publication": "No weights or runtime binaries are committed or included in public images."
+}

@@ -1,0 +1,700 @@
+{
+  "version": "analyst-v1",
+  "generated_at": "2026-09-24T14:16:28.112477+00:00",
+  "mode": "deterministic",
+  "protocol": {
+    "version": "analyst-v1",
+    "development_match_ids": [
+      19714,
+      19715,
+      19716,
+      19717,
+      19718
+    ],
+    "held_out_match_ids": [
+      19719,
+      19720,
+      19722,
+      19723,
+      19724
+    ],
+    "selection_rule": "The first ten available training-season match IDs, ascending. First five development, next five held out. Selection uses IDs and required second-half coverage, never model scores or tactical findings.",
+    "windows": {
+      "before": {
+        "period": 2,
+        "start_ms": 0,
+        "end_ms": 900000
+      },
+      "after": {
+        "period": 2,
+        "start_ms": 900000,
+        "end_ms": 1800000
+      }
+    },
+    "cases_per_partition": {
+      "answerable": 15,
+      "false_premise": 5,
+      "unavailable": 5,
+      "adversarial": 5
+    },
+    "expected": "Independent raw-JSON counts/rates/concentration for core metrics; exact claim field reconciliation; every evidence reference resolves. False-premise answers must test metrics and retain the no-causality qualification. Unsupported and malformed questions must be refused before analytical reporting.",
+    "review": "Machine checks and author-written expectations only; independent human semantic review remains pending. Local-generation success is counted only when local_selection mode was used, never from fallback.",
+    "local_generation": "Compare deterministic reports with digest-pinned Qwen3 claim selection on the same cases. At most one repair. Store rejection rate, repair count, input/output tokens and latency separately from deterministic numerical correctness."
+  },
+  "summary": {
+    "development": {
+      "cases": 30,
+      "passed": 30,
+      "local_generations": 0
+    },
+    "held_out": {
+      "cases": 30,
+      "passed": 30,
+      "local_generations": 0
+    }
+  },
+  "cases": [
+    {
+      "id": "development-19714-period_comparison",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 302.4504000786692
+    },
+    {
+      "id": "development-19714-chance_creation",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 1,
+      "generation": null,
+      "latency_ms": 316.3199999835342
+    },
+    {
+      "id": "development-19714-network_concentration",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 289.2580999759957
+    },
+    {
+      "id": "development-19714-premise",
+      "partition": "development",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 268.7273999908939
+    },
+    {
+      "id": "development-19714-unavailable",
+      "partition": "development",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.04780001472681761
+    },
+    {
+      "id": "development-19714-adversarial",
+      "partition": "development",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.013699987903237343
+    },
+    {
+      "id": "development-19715-period_comparison",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 406.4799000043422
+    },
+    {
+      "id": "development-19715-chance_creation",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 1,
+      "generation": null,
+      "latency_ms": 193.28160001896322
+    },
+    {
+      "id": "development-19715-network_concentration",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 147.87570002954453
+    },
+    {
+      "id": "development-19715-premise",
+      "partition": "development",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 182.46969999745488
+    },
+    {
+      "id": "development-19715-unavailable",
+      "partition": "development",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.027399975806474686
+    },
+    {
+      "id": "development-19715-adversarial",
+      "partition": "development",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.012599979527294636
+    },
+    {
+      "id": "development-19716-period_comparison",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 584.6295000519603
+    },
+    {
+      "id": "development-19716-chance_creation",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 271.5088000986725
+    },
+    {
+      "id": "development-19716-network_concentration",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 264.6352000301704
+    },
+    {
+      "id": "development-19716-premise",
+      "partition": "development",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 190.70310005918145
+    },
+    {
+      "id": "development-19716-unavailable",
+      "partition": "development",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.025499961338937283
+    },
+    {
+      "id": "development-19716-adversarial",
+      "partition": "development",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.01179997343569994
+    },
+    {
+      "id": "development-19717-period_comparison",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 266.75489998888224
+    },
+    {
+      "id": "development-19717-chance_creation",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 275.45269997790456
+    },
+    {
+      "id": "development-19717-network_concentration",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 276.24689997173846
+    },
+    {
+      "id": "development-19717-premise",
+      "partition": "development",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 269.5767000550404
+    },
+    {
+      "id": "development-19717-unavailable",
+      "partition": "development",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.06349990144371986
+    },
+    {
+      "id": "development-19717-adversarial",
+      "partition": "development",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.020700041204690933
+    },
+    {
+      "id": "development-19718-period_comparison",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 599.011900019832
+    },
+    {
+      "id": "development-19718-chance_creation",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 277.74749998934567
+    },
+    {
+      "id": "development-19718-network_concentration",
+      "partition": "development",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 399.98999994713813
+    },
+    {
+      "id": "development-19718-premise",
+      "partition": "development",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 363.98130003362894
+    },
+    {
+      "id": "development-19718-unavailable",
+      "partition": "development",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.04270009230822325
+    },
+    {
+      "id": "development-19718-adversarial",
+      "partition": "development",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.024399952962994576
+    },
+    {
+      "id": "held_out-19719-period_comparison",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 512.611799989827
+    },
+    {
+      "id": "held_out-19719-chance_creation",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 285.8005999587476
+    },
+    {
+      "id": "held_out-19719-network_concentration",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 203.9283000631258
+    },
+    {
+      "id": "held_out-19719-premise",
+      "partition": "held_out",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 260.14130003750324
+    },
+    {
+      "id": "held_out-19719-unavailable",
+      "partition": "held_out",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.031200004741549492
+    },
+    {
+      "id": "held_out-19719-adversarial",
+      "partition": "held_out",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.01279998105019331
+    },
+    {
+      "id": "held_out-19720-period_comparison",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 573.0705000460148
+    },
+    {
+      "id": "held_out-19720-chance_creation",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 1,
+      "generation": null,
+      "latency_ms": 360.97120004706085
+    },
+    {
+      "id": "held_out-19720-network_concentration",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 326.702699996531
+    },
+    {
+      "id": "held_out-19720-premise",
+      "partition": "held_out",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 341.9727999716997
+    },
+    {
+      "id": "held_out-19720-unavailable",
+      "partition": "held_out",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.04469999112188816
+    },
+    {
+      "id": "held_out-19720-adversarial",
+      "partition": "held_out",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.02159993164241314
+    },
+    {
+      "id": "held_out-19722-period_comparison",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 470.8771000150591
+    },
+    {
+      "id": "held_out-19722-chance_creation",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 1,
+      "generation": null,
+      "latency_ms": 341.89130004961044
+    },
+    {
+      "id": "held_out-19722-network_concentration",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 332.2640999685973
+    },
+    {
+      "id": "held_out-19722-premise",
+      "partition": "held_out",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 331.3607999589294
+    },
+    {
+      "id": "held_out-19722-unavailable",
+      "partition": "held_out",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.11020002420991659
+    },
+    {
+      "id": "held_out-19722-adversarial",
+      "partition": "held_out",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.03220001235604286
+    },
+    {
+      "id": "held_out-19723-period_comparison",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 571.032700012438
+    },
+    {
+      "id": "held_out-19723-chance_creation",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 1,
+      "generation": null,
+      "latency_ms": 422.01920005027205
+    },
+    {
+      "id": "held_out-19723-network_concentration",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 447.5899999961257
+    },
+    {
+      "id": "held_out-19723-premise",
+      "partition": "held_out",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 323.2904999749735
+    },
+    {
+      "id": "held_out-19723-unavailable",
+      "partition": "held_out",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.03520003519952297
+    },
+    {
+      "id": "held_out-19723-adversarial",
+      "partition": "held_out",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.016900012269616127
+    },
+    {
+      "id": "held_out-19724-period_comparison",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 482.4720999458805
+    },
+    {
+      "id": "held_out-19724-chance_creation",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 250.09059999138117
+    },
+    {
+      "id": "held_out-19724-network_concentration",
+      "partition": "held_out",
+      "category": "answerable",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 397.92170003056526
+    },
+    {
+      "id": "held_out-19724-premise",
+      "partition": "held_out",
+      "category": "false_premise",
+      "success": true,
+      "numerically_correct": true,
+      "citations_supported": true,
+      "mode": "deterministic",
+      "rejections": 0,
+      "generation": null,
+      "latency_ms": 359.96139992494136
+    },
+    {
+      "id": "held_out-19724-unavailable",
+      "partition": "held_out",
+      "category": "unavailable",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.03700004890561104
+    },
+    {
+      "id": "held_out-19724-adversarial",
+      "partition": "held_out",
+      "category": "adversarial",
+      "success": true,
+      "mode": "abstained",
+      "latency_ms": 0.015300000086426735
+    }
+  ],
+  "human_semantic_review": "pending",
+  "attribution": "Data provided by StatsBomb Open Data"
+}

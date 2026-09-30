@@ -1,0 +1,2789 @@
+{
+  "version": "retrieval-v1",
+  "generated_at": "2026-09-24T14:19:54.306850+00:00",
+  "lock": {
+    "protocol": "588f2c82daf146c5cb1818af87d23f0e3007652ed8f9250e27ff0c486c29387f",
+    "questions": "9404c664dd23b7d71b2bfaab7eb0f9a787ab915e8f99aa1183cd6a87095194cb",
+    "bm25_code": "a6373cc0d8c97920443cc41c026c3c68d2f0acfa2739fc0a1cdd48736a026f85",
+    "evaluation_code": "d4b8aa77de88eaf970ce5d85af6266916bffe61ae28adcf0b820f17973984913",
+    "corpus": "4f20591f3202d301e3e9e9036d2eec26dd2063b0a1118ce72b2ee06946a82196"
+  },
+  "protocol": {
+    "version": "retrieval-v1",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "max_tokens": 256,
+    "pooling": "attention-mask mean pooling followed by L2 normalization",
+    "rrf_constant": 60,
+    "top_k": 5,
+    "selection": "Choose hybrid as a candidate only when development Recall@5 is no worse and MRR@5 strictly higher than BM25. Promote it only if the same improvement holds on the held-out set; otherwise retain BM25. This deployment gate is fixed before evaluation, with no held-out retuning.",
+    "corpus": "Project-authored definitions and limitations only; no match facts or executable retrieved instructions.",
+    "evaluation": "60 authored queries with relevance labels; first 30 development, final 30 held out. Recall@5 is relevant chunks found / all labeled relevant chunks; MRR@5 uses the first relevant hit. Query bootstrap intervals are descriptive and do not correct for shared topics."
+  },
+  "results": {
+    "development": {
+      "bm25": {
+        "queries": 30,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.8594444444444443,
+        "recall_interval": [
+          1.0,
+          1.0
+        ],
+        "mrr_interval": [
+          0.7649583333333333,
+          0.9445416666666666
+        ],
+        "cases": [
+          {
+            "query": "How is field tilt calculated?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-xg",
+              "metric-network",
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What counts as a completed pass?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-network",
+              "xg-probability",
+              "metric-xg",
+              "metric-completed_passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.2
+          },
+          {
+            "query": "Do failed passes contribute to pass attempts?",
+            "relevant": [
+              "metric-passes"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-network",
+              "metric-final_third_entries",
+              "metric-movement_xt",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is the final third entry threshold?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-xg",
+              "metric-network",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are carries included in final third entries?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-shots",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Why are window intervals half open?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does the shot count include shootouts?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "xg-probability",
+              "metric-xg",
+              "metric-passes",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalties included in model xG totals?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What does expected goals estimate?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does high xG guarantee winning?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How are failed passes valued with expected threat?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-movement_xt",
+              "metric-passes",
+              "xg-probability",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Do shots also receive movement xT?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-shots",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How is passing network density defined?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is inverse count betweenness?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-xg",
+              "metric-passes",
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are average passing positions tracking data?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which WSL seasons have separate 360 coverage?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can a substitution be proven to cause tactical change?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "limitations-scope",
+              "xg-probability",
+              "metric-xg",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What information is available at the third pass cutoff?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-xg",
+              "metric-network",
+              "metric-final_third_entries",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does the graph model forecast a goal or a later shot?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Is pass completion a percentage or fraction?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-xg",
+              "metric-network",
+              "metric-completed_passes",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.25
+          },
+          {
+            "query": "Which denominator does field tilt use?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "xg-probability",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does zero attacking-third passing mean zero field tilt?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are entry rates based on ball in play time?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-movement_xt",
+              "limitations-scope",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What happens if a shot has no xG prediction?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are own network positions tactical formations?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What does outgoing pass concentration mean?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are turnovers included in signed movement value?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "graph-cutoff",
+              "metric-shots",
+              "metric-network",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can these events show off-ball runs?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-network",
+              "metric-final_third_entries",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is StatsBomb xG a controlled reference model?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "graph-cutoff",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are later events used for third pass predictions?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-network",
+              "metric-movement_xt",
+              "metric-xg",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          }
+        ]
+      },
+      "minilm": {
+        "queries": 30,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.9733333333333333,
+        "recall_interval": [
+          1.0,
+          1.0
+        ],
+        "mrr_interval": [
+          0.9199999999999999,
+          1.0
+        ],
+        "cases": [
+          {
+            "query": "How is field tilt calculated?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-xg",
+              "metric-final_third_entries",
+              "metric-movement_xt",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What counts as a completed pass?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-completed_passes",
+              "metric-passes",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Do failed passes contribute to pass attempts?",
+            "relevant": [
+              "metric-passes"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-completed_passes",
+              "graph-cutoff",
+              "metric-network",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is the final third entry threshold?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-network",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are carries included in final third entries?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "metric-completed_passes",
+              "metric-network",
+              "metric-passes",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Why are window intervals half open?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-field_tilt",
+              "metric-final_third_entries",
+              "metric-completed_passes",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does the shot count include shootouts?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-xg",
+              "xg-probability",
+              "metric-passes",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalties included in model xG totals?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-movement_xt",
+              "metric-passes",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What does expected goals estimate?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does high xG guarantee winning?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "metric-field_tilt",
+              "metric-movement_xt",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How are failed passes valued with expected threat?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-completed_passes",
+              "graph-cutoff",
+              "metric-network",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.2
+          },
+          {
+            "query": "Do shots also receive movement xT?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-xg",
+              "metric-shots",
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How is passing network density defined?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-completed_passes",
+              "metric-passes",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is inverse count betweenness?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-final_third_entries",
+              "metric-passes",
+              "metric-xg",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are average passing positions tracking data?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which WSL seasons have separate 360 coverage?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-shots",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can a substitution be proven to cause tactical change?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-movement_xt",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What information is available at the third pass cutoff?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-passes",
+              "metric-network",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does the graph model forecast a goal or a later shot?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "xg-probability",
+              "metric-shots",
+              "metric-network",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is pass completion a percentage or fraction?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-completed_passes",
+              "metric-passes",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which denominator does field tilt use?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-xg",
+              "metric-completed_passes",
+              "limitations-scope",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does zero attacking-third passing mean zero field tilt?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-xg",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are entry rates based on ball in play time?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "metric-shots",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What happens if a shot has no xG prediction?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are own network positions tactical formations?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-field_tilt",
+              "limitations-scope",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What does outgoing pass concentration mean?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-completed_passes",
+              "metric-final_third_entries",
+              "metric-passes",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are turnovers included in signed movement value?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-network",
+              "metric-completed_passes",
+              "metric-field_tilt",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can these events show off-ball runs?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-shots",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is StatsBomb xG a controlled reference model?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "metric-movement_xt",
+              "limitations-scope",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are later events used for third pass predictions?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-passes",
+              "metric-completed_passes",
+              "metric-final_third_entries",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          }
+        ]
+      },
+      "hybrid": {
+        "queries": 30,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.9277777777777777,
+        "recall_interval": [
+          1.0,
+          1.0
+        ],
+        "mrr_interval": [
+          0.8555555555555556,
+          0.9833333333333333
+        ],
+        "cases": [
+          {
+            "query": "How is field tilt calculated?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-xg",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What counts as a completed pass?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-network",
+              "metric-passes",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Do failed passes contribute to pass attempts?",
+            "relevant": [
+              "metric-passes"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-network",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-completed_passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is the final third entry threshold?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-network",
+              "metric-passes",
+              "metric-completed_passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are carries included in final third entries?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-network",
+              "metric-completed_passes",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Why are window intervals half open?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-final_third_entries",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does the shot count include shootouts?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-xg",
+              "xg-probability",
+              "metric-passes",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalties included in model xG totals?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-movement_xt",
+              "graph-cutoff",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What does expected goals estimate?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-field_tilt",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does high xG guarantee winning?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "metric-field_tilt",
+              "metric-movement_xt",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How are failed passes valued with expected threat?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-network",
+              "metric-movement_xt",
+              "metric-completed_passes",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Do shots also receive movement xT?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-shots",
+              "metric-xg",
+              "limitations-scope",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How is passing network density defined?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-xg",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is inverse count betweenness?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-xg",
+              "metric-passes",
+              "metric-final_third_entries",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are average passing positions tracking data?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-final_third_entries",
+              "metric-completed_passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which WSL seasons have separate 360 coverage?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-shots",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can a substitution be proven to cause tactical change?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-movement_xt",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What information is available at the third pass cutoff?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-network",
+              "metric-final_third_entries",
+              "metric-completed_passes",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does the graph model forecast a goal or a later shot?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "graph-cutoff",
+              "metric-xg",
+              "metric-shots",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Is pass completion a percentage or fraction?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-network",
+              "metric-passes",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Which denominator does field tilt use?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-xg",
+              "xg-probability",
+              "metric-completed_passes",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Does zero attacking-third passing mean zero field tilt?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "graph-cutoff",
+              "xg-probability",
+              "metric-movement_xt",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are entry rates based on ball in play time?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-shots",
+              "metric-movement_xt",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What happens if a shot has no xG prediction?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are own network positions tactical formations?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-movement_xt",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What does outgoing pass concentration mean?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "xg-probability",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are turnovers included in signed movement value?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-network",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-completed_passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can these events show off-ball runs?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-network",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is StatsBomb xG a controlled reference model?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "metric-network",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are later events used for third pass predictions?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-final_third_entries",
+              "metric-network",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          }
+        ]
+      }
+    },
+    "held_out": {
+      "bm25": {
+        "queries": 30,
+        "recall_at_5": 0.8333333333333334,
+        "mrr_at_5": 0.7027777777777777,
+        "recall_interval": [
+          0.6666666666666666,
+          0.9666666666666667
+        ],
+        "mrr_interval": [
+          0.5499305555555556,
+          0.8445138888888889
+        ],
+        "cases": [
+          {
+            "query": "Whose passes form the territorial share denominator?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-passes",
+              "metric-xg",
+              "metric-final_third_entries",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is unsuccessful passing excluded from attempts?",
+            "relevant": [
+              "metric-passes"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "metric-network",
+              "metric-xg",
+              "metric-shots",
+              "xg-probability"
+            ],
+            "recall_at_5": 0.0,
+            "reciprocal_rank_at_5": 0
+          },
+          {
+            "query": "How does successful passing relate to total attempts?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 0.0,
+            "reciprocal_rank_at_5": 0
+          },
+          {
+            "query": "What makes a movement cross into the attacking third?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-final_third_entries",
+              "metric-field_tilt",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "A player carries from x seventy to x eighty five: is that an entry?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "xg-probability",
+              "metric-xg",
+              "graph-cutoff",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalty shootout attempts counted in a selected period?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-movement_xt",
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which boundary rule determines whether a shot lies in a window?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-xg",
+              "graph-cutoff",
+              "xg-probability",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Must every shot have a prediction before xG can be summed?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Why does the side creating better chances still sometimes lose?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "graph-cutoff",
+              "metric-passes",
+              "metric-shots",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalty conversions modeled separately from normal shots?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "metric-shots",
+              "metric-movement_xt",
+              "metric-final_third_entries",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 0.0,
+            "reciprocal_rank_at_5": 0
+          },
+          {
+            "query": "How much value is lost through a dispossession?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-xg",
+              "xg-probability",
+              "metric-movement_xt",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.25
+          },
+          {
+            "query": "Would crediting both xG and movement threat to a shot double count it?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "metric-movement_xt",
+              "xg-probability",
+              "metric-final_third_entries",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Why do stronger passing links have shorter graph distances?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "How does network concentration relate to outgoing pass shares?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can average pass origins and receptions reveal a formation?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "xg-probability",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is defensive shape observed by this release?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-movement_xt",
+              "metric-network",
+              "metric-xg",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can event associations establish the effect of a coaching substitution?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-xg",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Where does the predictive episode prefix end?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "xg-probability",
+              "metric-movement_xt",
+              "metric-passes",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is the predicted later shot required to occur in the same control episode?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "metric-xg",
+              "xg-probability",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which metric divides completed passes by attempted passes?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-completed_passes",
+              "metric-passes",
+              "metric-final_third_entries",
+              "metric-field_tilt",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is reported if neither team completes a pass into the final third?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-xg",
+              "metric-final_third_entries",
+              "metric-network",
+              "metric-passes"
+            ],
+            "recall_at_5": 0.0,
+            "reciprocal_rank_at_5": 0
+          },
+          {
+            "query": "Does field tilt compare attacking directions for both teams?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "xg-probability",
+              "metric-xg",
+              "metric-final_third_entries",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Do entry rates include the elapsed stoppages within a window?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-final_third_entries",
+              "limitations-scope",
+              "graph-cutoff",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What units describe a sum of scoring probabilities?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-network",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which passing graph statistics use weighted edge counts?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Are passes to unknown recipients part of the network?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-passes",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What happens to invalid-coordinate movement actions in xT?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-final_third_entries",
+              "metric-field_tilt",
+              "metric-shots",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can the data identify an unseen runner who opened the defense?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "graph-cutoff",
+              "metric-passes",
+              "metric-shots",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 0.0,
+            "reciprocal_rank_at_5": 0
+          },
+          {
+            "query": "Why is provider xG outside the controlled model comparison?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-network",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Are the node locations current tracking coordinates or past ball observations?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-final_third_entries",
+              "metric-movement_xt",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          }
+        ]
+      },
+      "minilm": {
+        "queries": 30,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.726111111111111,
+        "recall_interval": [
+          1.0,
+          1.0
+        ],
+        "mrr_interval": [
+          0.618888888888889,
+          0.8317083333333333
+        ],
+        "cases": [
+          {
+            "query": "Whose passes form the territorial share denominator?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-completed_passes",
+              "metric-network",
+              "metric-field_tilt",
+              "metric-final_third_entries",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Is unsuccessful passing excluded from attempts?",
+            "relevant": [
+              "metric-passes"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-completed_passes",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How does successful passing relate to total attempts?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-completed_passes",
+              "metric-final_third_entries",
+              "metric-network",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What makes a movement cross into the attacking third?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-movement_xt",
+              "metric-passes",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.2
+          },
+          {
+            "query": "A player carries from x seventy to x eighty five: is that an entry?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "metric-field_tilt",
+              "limitations-scope",
+              "metric-network",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalty shootout attempts counted in a selected period?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "xg-probability",
+              "metric-passes",
+              "metric-xg",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which boundary rule determines whether a shot lies in a window?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "graph-cutoff",
+              "metric-xg",
+              "xg-probability",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Must every shot have a prediction before xG can be summed?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-shots",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Why does the side creating better chances still sometimes lose?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "xg-probability",
+              "graph-cutoff",
+              "metric-shots",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Are penalty conversions modeled separately from normal shots?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-shots",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "How much value is lost through a dispossession?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "metric-movement_xt",
+              "metric-completed_passes",
+              "graph-cutoff",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Would crediting both xG and movement threat to a shot double count it?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-movement_xt",
+              "metric-field_tilt",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Why do stronger passing links have shorter graph distances?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How does network concentration relate to outgoing pass shares?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-completed_passes",
+              "metric-field_tilt",
+              "graph-cutoff",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can average pass origins and receptions reveal a formation?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-passes",
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is defensive shape observed by this release?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-movement_xt",
+              "metric-network",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Can event associations establish the effect of a coaching substitution?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-field_tilt",
+              "metric-passes",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Where does the predictive episode prefix end?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-final_third_entries",
+              "metric-field_tilt",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is the predicted later shot required to occur in the same control episode?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-shots",
+              "metric-movement_xt",
+              "metric-xg",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which metric divides completed passes by attempted passes?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-completed_passes",
+              "metric-passes",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is reported if neither team completes a pass into the final third?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-passes",
+              "metric-completed_passes",
+              "graph-cutoff",
+              "metric-field_tilt",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.25
+          },
+          {
+            "query": "Does field tilt compare attacking directions for both teams?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "limitations-scope",
+              "metric-shots",
+              "graph-cutoff",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Do entry rates include the elapsed stoppages within a window?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-final_third_entries",
+              "metric-completed_passes",
+              "metric-network",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What units describe a sum of scoring probabilities?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "metric-xg",
+              "metric-completed_passes",
+              "metric-final_third_entries",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Which passing graph statistics use weighted edge counts?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-passes",
+              "metric-completed_passes",
+              "metric-final_third_entries",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are passes to unknown recipients part of the network?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-passes",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What happens to invalid-coordinate movement actions in xT?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-field_tilt",
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can the data identify an unseen runner who opened the defense?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-passes",
+              "limitations-scope",
+              "metric-shots",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Why is provider xG outside the controlled model comparison?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "metric-movement_xt",
+              "xg-probability",
+              "limitations-scope",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Are the node locations current tracking coordinates or past ball observations?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-network",
+              "metric-movement_xt",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          }
+        ]
+      },
+      "hybrid": {
+        "queries": 30,
+        "recall_at_5": 0.9666666666666667,
+        "mrr_at_5": 0.7744444444444444,
+        "recall_interval": [
+          0.9,
+          1.0
+        ],
+        "mrr_interval": [
+          0.6477361111111111,
+          0.8966666666666666
+        ],
+        "cases": [
+          {
+            "query": "Whose passes form the territorial share denominator?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is unsuccessful passing excluded from attempts?",
+            "relevant": [
+              "metric-passes"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "metric-passes",
+              "metric-completed_passes",
+              "metric-network",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "How does successful passing relate to total attempts?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "xg-probability",
+              "metric-passes",
+              "metric-completed_passes",
+              "metric-network"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.25
+          },
+          {
+            "query": "What makes a movement cross into the attacking third?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-field_tilt",
+              "metric-final_third_entries",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.25
+          },
+          {
+            "query": "A player carries from x seventy to x eighty five: is that an entry?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-final_third_entries",
+              "limitations-scope",
+              "metric-field_tilt",
+              "xg-probability",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalty shootout attempts counted in a selected period?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-final_third_entries",
+              "metric-movement_xt",
+              "xg-probability",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which boundary rule determines whether a shot lies in a window?",
+            "relevant": [
+              "metric-shots"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "graph-cutoff",
+              "metric-xg",
+              "xg-probability",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Must every shot have a prediction before xG can be summed?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "graph-cutoff",
+              "limitations-scope",
+              "metric-shots"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Why does the side creating better chances still sometimes lose?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "xg-probability",
+              "graph-cutoff",
+              "metric-shots",
+              "metric-field_tilt",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are penalty conversions modeled separately from normal shots?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "metric-shots",
+              "metric-movement_xt",
+              "graph-cutoff",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.2
+          },
+          {
+            "query": "How much value is lost through a dispossession?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-completed_passes",
+              "xg-probability"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.3333333333333333
+          },
+          {
+            "query": "Would crediting both xG and movement threat to a shot double count it?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "metric-movement_xt",
+              "xg-probability",
+              "metric-field_tilt",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Why do stronger passing links have shorter graph distances?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "limitations-scope",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "How does network concentration relate to outgoing pass shares?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-completed_passes",
+              "xg-probability",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can average pass origins and receptions reveal a formation?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "graph-cutoff",
+              "metric-passes",
+              "metric-movement_xt",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is defensive shape observed by this release?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-movement_xt",
+              "metric-network",
+              "graph-cutoff",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can event associations establish the effect of a coaching substitution?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "limitations-scope",
+              "metric-field_tilt",
+              "graph-cutoff",
+              "metric-xg",
+              "metric-passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Where does the predictive episode prefix end?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-movement_xt",
+              "xg-probability",
+              "metric-final_third_entries",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Is the predicted later shot required to occur in the same control episode?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-shots",
+              "metric-xg",
+              "metric-final_third_entries",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which metric divides completed passes by attempted passes?",
+            "relevant": [
+              "metric-completed_passes"
+            ],
+            "retrieved": [
+              "metric-completed_passes",
+              "metric-passes",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "metric-field_tilt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What is reported if neither team completes a pass into the final third?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-passes",
+              "metric-final_third_entries",
+              "metric-completed_passes",
+              "metric-xg"
+            ],
+            "recall_at_5": 0.0,
+            "reciprocal_rank_at_5": 0
+          },
+          {
+            "query": "Does field tilt compare attacking directions for both teams?",
+            "relevant": [
+              "metric-field_tilt"
+            ],
+            "retrieved": [
+              "metric-field_tilt",
+              "xg-probability",
+              "limitations-scope",
+              "metric-shots",
+              "metric-xg"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Do entry rates include the elapsed stoppages within a window?",
+            "relevant": [
+              "metric-final_third_entries"
+            ],
+            "retrieved": [
+              "metric-shots",
+              "metric-final_third_entries",
+              "metric-network",
+              "limitations-scope",
+              "metric-completed_passes"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "What units describe a sum of scoring probabilities?",
+            "relevant": [
+              "metric-xg"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-network",
+              "metric-completed_passes",
+              "graph-cutoff"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Which passing graph statistics use weighted edge counts?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "xg-probability",
+              "metric-passes",
+              "metric-completed_passes",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Are passes to unknown recipients part of the network?",
+            "relevant": [
+              "metric-network"
+            ],
+            "retrieved": [
+              "metric-network",
+              "metric-passes",
+              "graph-cutoff",
+              "metric-movement_xt",
+              "metric-final_third_entries"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "What happens to invalid-coordinate movement actions in xT?",
+            "relevant": [
+              "metric-movement_xt"
+            ],
+            "retrieved": [
+              "metric-movement_xt",
+              "metric-field_tilt",
+              "metric-final_third_entries",
+              "graph-cutoff",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          },
+          {
+            "query": "Can the data identify an unseen runner who opened the defense?",
+            "relevant": [
+              "limitations-scope"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-passes",
+              "metric-shots",
+              "xg-probability",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.2
+          },
+          {
+            "query": "Why is provider xG outside the controlled model comparison?",
+            "relevant": [
+              "xg-probability"
+            ],
+            "retrieved": [
+              "metric-xg",
+              "xg-probability",
+              "metric-movement_xt",
+              "graph-cutoff",
+              "limitations-scope"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 0.5
+          },
+          {
+            "query": "Are the node locations current tracking coordinates or past ball observations?",
+            "relevant": [
+              "graph-cutoff"
+            ],
+            "retrieved": [
+              "graph-cutoff",
+              "metric-final_third_entries",
+              "limitations-scope",
+              "metric-network",
+              "metric-movement_xt"
+            ],
+            "recall_at_5": 1.0,
+            "reciprocal_rank_at_5": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "development_candidate": "hybrid",
+  "selected": "hybrid",
+  "maximum_chunk_tokens": 103,
+  "acceptance_targets_met": false,
+  "limitations": "Small authored benchmark on 11 shared methodology chunks; no claim of general-purpose retrieval quality. Relevance labels have not had independent human review."
+}

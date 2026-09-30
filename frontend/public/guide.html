@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TactiGraph AI — Project Report and User Guide</title>
+<style>
+:root{color-scheme:light;--ink:#183c31;--muted:#4e625a;--line:#d3ded6;--accent:#26664c}
+*{box-sizing:border-box}body{margin:0;background:#f3f5f0;color:var(--ink);font:16px/1.7 system-ui,sans-serif}header,main,footer{max-width:1020px;margin:auto;padding:36px}header{padding-top:60px}h1{font-size:clamp(32px,5vw,54px);line-height:1.12;letter-spacing:-1.5px;margin:14px 0}h2{font-size:28px;line-height:1.25;margin:0 0 18px}h3{margin-top:26px;font-size:19px}p,li{color:var(--muted)}a{color:var(--accent);text-underline-offset:3px}section{background:white;border:1px solid var(--line);border-radius:16px;padding:30px;margin-bottom:24px}nav ul{columns:2;padding-left:22px}nav li{break-inside:avoid;margin:6px 0}.eyebrow{letter-spacing:2px;font-size:12px;font-weight:700}.notice{border-left:4px solid var(--accent);padding:12px 18px;background:#edf4ee;margin:22px 0}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:12px 10px}th{background:#f1f5f0}code{background:#edf1eb;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:#183c31;color:#fff;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;color:inherit;padding:0}.actions{display:flex;gap:12px;flex-wrap:wrap}.actions a,button{font:inherit;padding:10px 16px;border:1px solid var(--accent);border-radius:8px;background:white;color:var(--ink);cursor:pointer}.meta{font-size:14px}.table-wrap{overflow:auto}li{margin:7px 0}footer{font-size:13px}a:focus-visible,button:focus-visible{outline:3px solid #bc752d;outline-offset:4px}
+@media(max-width:650px){header,main,footer{padding:22px}section{padding:22px}nav ul{columns:1}th,td{padding:8px 5px;font-size:12px}}
+@media print{body{background:white;font-size:11pt}header,main,footer{max-width:none;padding:12px 0}section{border:0;border-radius:0;padding:12px 0;margin-bottom:16px}.actions,nav{display:none}h2,h3{break-after:avoid}tr,.notice{break-inside:avoid}a{color:inherit}pre{background:#eee;color:#111}h1{font-size:30pt}@page{margin:18mm}}
+</style>
+<style>
+/* Keep the standalone report in the same visual language as the match centre. */
+:root{--ink:#16282b;--muted:#455b51;--line:#cbd3ca;--accent:#245b4a}
+body{background:#f0f1eb;color:var(--ink);font-family:system-ui,sans-serif}
+header{max-width:none;padding:54px max(28px,calc((100vw - 1020px)/2));background:#153136;color:#f7faf1;border-bottom:3px solid #ddf46b}
+header .eyebrow{color:#ddf46b;font:700 12px/1.5 Consolas,monospace;letter-spacing:1px}
+header h1{max-width:860px;font-weight:800;text-transform:uppercase;letter-spacing:-2px}
+header p{color:#c5d6ce;max-width:720px}
+header .actions a,header .actions button{border:1px solid #ddf46b;border-radius:0;background:#ddf46b;color:#153136;font-weight:700;text-decoration:none}
+header .actions button{background:transparent;color:#ddf46b}
+header .notice{border-color:#ddf46b;background:#204146;color:#dcebe1}
+header .notice strong{color:#fff}
+main{max-width:1100px;padding-top:34px}
+nav{padding:23px 28px;margin-bottom:24px;border:1px solid var(--line);border-left:4px solid #b9d744;background:#e2eae2}
+nav h2{font-size:20px;text-transform:uppercase;letter-spacing:-.5px}
+nav ul{list-style:none;padding:0;margin:0}
+nav li{margin:5px 0}
+nav a{font-size:14px;font-weight:600}
+section{border-radius:0;padding:31px 34px}
+section h2{padding-bottom:13px;border-bottom:1px solid var(--line);font-size:24px;letter-spacing:-.6px}
+section h3{color:#173d35}
+a{color:#245b4a}
+th{background:#193c39;color:#f6faf2;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+td{color:#344a40}
+code{border-radius:0;background:#e6ece5}
+pre{border-radius:0;background:#153136}
+.notice{border-color:#b9d744;background:#f1f5e5}
+footer{max-width:none;background:#153136;color:#dce9de;padding:26px max(28px,calc((100vw - 1020px)/2))}
+@media(max-width:650px){header{padding:35px 22px}header h1{font-size:34px}main{padding:22px 14px}nav,section{padding:22px}footer{padding:24px 22px}}
+@media print{header,footer{background:white;color:#111;border:0}header p,footer{color:#333}section{padding:12px 0}th{background:#eee;color:#111}nav{display:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">TACTIGRAPH AI · PRODUCT, RESEARCH & OPERATION</div>
+<h1>Understand the app.<br>Use it with evidence.</h1>
+<p>A detailed project report and practical user guide. Updated 27 September 2026 for the current local release candidate.</p>
+<div class="actions"><a href="/">Open the application</a><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
+<div class="notice"><strong>Status: functional local research application; public release still pending.</strong><br>The planned core features are implemented. Human review, publication checks and cloud deployment remain unfinished. “Machine-verified” does not mean “human-approved” or “proven correct in every situation.”</div>
+</header>
+<main>
+<nav aria-label="Guide contents"><h2>Contents</h2><ul>
+<li><a href="#purpose">1. What the app is</a></li><li><a href="#status">2. What is finished and what is not</a></li>
+<li><a href="#start">3. Start the app and fix connection errors</a></li><li><a href="#tour">4. Navigation and first walkthrough</a></li>
+<li><a href="#overview">5. Overview: understand the dataset</a></li><li><a href="#lab">6. Match Lab: inspect a match</a></li>
+<li><a href="#analyst">7. Evidence Analyst and cached reports</a></li><li><a href="#experiments">8. Experiments: read the research</a></li>
+<li><a href="#metrics">9. Metric reference</a></li><li><a href="#architecture">10. Architecture and reproducibility</a></li>
+<li><a href="#limits">11. Limitations and interpretation</a></li><li><a href="#operations">12. Maintenance and next steps</a></li>
+</ul></nav>
+<section id="purpose"><h2>1. What the app is</h2>
+<p><strong>TactiGraph AI</strong> is a football analytics workbench built around a simple idea: a conclusion should be traceable to its data and calculation. It combines interactive match analysis, statistical models, passing networks, descriptive playing-style research and a constrained analytical assistant.</p>
+<p>It is a Data Science and Applied AI portfolio project as well as a working analysis tool. Its value is not merely a dashboard or a chatbot: it demonstrates ingestion, quality checks, chronological evaluation, reproducible experiments, model comparison and evidence-backed presentation in one system.</p>
+<h2>Choosing your league</h2>
+<p><strong>Premier League preparation is complete:</strong> 380 matches, 20 teams, 644 players and 1,313,773 events, with all corpus integrity checks passing. Separate xG, xT, third-pass forecasts and four passing-style profiles are published locally. For third-pass forecasts, the graph experiment did not establish an advantage over the selected LightGBM baseline; the app serves that baseline and exposes the full comparison. Two negative source durations are recorded as quality warnings and unavailable normalized durations; the original files remain unchanged.</p>
+<p>Use the league selector in the top bar to switch between the Women's Super League and <strong>men's Premier League 2015/16 (380 matches)</strong>. Every match, audit, evidence request and model result then uses that league's separate database. Premier League has its own model versions; unavailable model panels mean training or publication has not completed. <a href="/?league=premier-league">Open the Premier League workspace</a>.</p>
+<p>The Premier League chronological split has <strong>228 training, 58 tuning, 37 calibration and 57 test matches</strong>, grouped by whole dates. Training ends 23 January 2016, tuning ends 5 March and calibration ends 10 April. This tests later matches in one season, not a future season. The research figures below describe the original WSL experiment; consult Experiments in the selected league for its actual results. The existing analyst benchmark and curated showcase concern WSL; a separate Premier League analyst benchmark and human-reviewed showcase have not been established.</p>
+<p>The WSL dataset is a pinned snapshot of StatsBomb Open Data covering <strong>457 FA Women's Super League matches</strong> across 2018/19, 2019/20, 2020/21 and 2023/24. It is historical, not a live feed, and does not cover all football competitions. Match dates and team/player names come from the source.</p>
+<p>Typical questions include: Where did a team's shots occur? How did progression change between two periods? Which players exchanged passes? Was passing concentrated through a few players? How likely were particular shots or possession episodes to produce outcomes?</p>
+<p>The app cannot establish a coach's intentions, reconstruct every off-ball movement, show tracking-based formations, guarantee a result or prove that a substitution caused a change.</p>
+</section>
+<section id="status"><h2>2. What is finished and what is not</h2>
+<div class="table-wrap"><table><thead><tr><th>Area</th><th>Current delivery</th></tr></thead><tbody>
+<tr><td>Data foundation · M1–M2</td><td>Ingestion, source checksums, normalized events, lineups, quality reports, frozen splits, analytical API and dataset overview.</td></tr>
+<tr><td>Expected goals · M3</td><td>Evaluated xG models, stored predictions, calibration and comparisons.</td></tr>
+<tr><td>Threat and networks · M4</td><td>xT, period comparisons, passing networks, trends and supporting evidence.</td></tr>
+<tr><td>Graph experiment · M5</td><td>Third-pass forecasts and a documented negative GNN result. The stronger tabular model serves forecasts.</td></tr>
+<tr><td>Analyst and retrieval · M6</td><td>Guided verified reports, optional Groq selection, optional local Qwen and methodology search. Independent semantic review remains pending.</td></tr>
+<tr><td>Research and polish · M7</td><td>Four descriptive passing profiles, stability measurements and fixed-network player removal.</td></tr>
+<tr><td>Release preparation · M8</td><td>36 cached reports for 12 matches, review packet, Docker/PostgreSQL rehearsal, backup/restore checks and deployment configuration. No public deployment.</td></tr>
+</tbody></table></div>
+<p>The M8 checkpoint recorded <strong>125 passing Python tests</strong>, two local-preview browser journeys and eight public-mode browser journeys. All 36 reports were recomputed on SQLite and PostgreSQL; 72 core comparisons matched raw-source calculations and 192 evidence references resolved. These checks establish the tested behaviour, not universal correctness.</p>
+<p>There is still useful work to do: review the interpretations independently, improve onboarding and operational reliability, assess more diverse user questions, and eventually test hosting under real traffic. Adding more models is optional; it should follow a demonstrated need and a new evaluation protocol.</p>
+</section>
+<section id="start"><h2>3. Start the app and fix connection errors</h2>
+<h3>Normal startup on this Windows PC</h3><ol>
+<li>Open <code>C:\Users\Lenovo\Documents\ChatGPT\EuroSkill AI</code> in File Explorer.</li>
+<li>Double-click <strong>Start-TactiGraph.cmd</strong>. It starts the existing local Python server and opens the app. If the server is already running in local mode, it reuses it.</li>
+<li>Open <a href="http://127.0.0.1:8003/">http://127.0.0.1:8003/</a>. The guide is at <a href="http://127.0.0.1:8003/guide">http://127.0.0.1:8003/guide</a>.</li>
+</ol>
+<p>The launcher uses the existing environment, built frontend and research database. It does not reinstall dependencies, retrain models, reimport matches or deploy anything. Run it again after a PC restart. Startup is manual; there is no installed Windows service or automatic boot task.</p>
+<h3>Why “Failed to fetch” appeared</h3>
+<p>On 26 September, a direct check of port 8003 found no running server and a connection-refused response. The browser still displayed the previously loaded interface, but its API requests could no longer reach the backend. A browser tab is not the server itself.</p>
+<p>Start the launcher, then refresh the tab or use <strong>Retry</strong>. The interface now gives a more useful message when its network request cannot reach the local server. A future connection failure could also involve a port conflict, firewall or another network problem; the message alone is not a complete diagnosis.</p>
+<h3>Manual fallback</h3>
+<pre><code>cd "C:\Users\Lenovo\Documents\ChatGPT\EuroSkill AI"
+.\.venv\Scripts\tactigraph.exe serve --host 127.0.0.1 --port 8003</code></pre>
+<p>Keep that terminal open while using the app. Stop that foreground server with Ctrl+C. For launcher startup errors, read <code>output/local-server.stderr.log</code>; normal server output goes to <code>output/local-server.stdout.log</code>.</p>
+<p>Check <a href="http://127.0.0.1:8003/api/v1/health">/api/v1/health</a> for server availability. A successful response includes <code>status: ok</code> and <code>mode: local</code>. The different <code>/api/v1/ready</code> endpoint is a public-release review gate: it intentionally returns 503 while human approval is pending. That 503 does not mean the local research app is broken.</p>
+<p><strong>Port 8002</strong> is the isolated Docker/PostgreSQL public-mode rehearsal, if Docker and that stack are running. Older tabs on 8000 or 8001 may point to servers that are no longer running. Use 8003 for your normal local workspace.</p>
+</section>
+<section id="tour"><h2>4. Navigation and a first walkthrough</h2>
+<p>The main sections are <strong>Overview, Match Lab, Evidence Analyst, Experiments and Methodology</strong>. The application uses a horizontal navigation bar; narrow screens show its icons with accessible names.</p>
+<ol><li>Start with <strong>Overview</strong> to see coverage and data quality.</li>
+<li>Open <strong>Match Lab</strong>, select a season and match, and examine the shot map and timeline. Arsenal WFC–Liverpool WFC, match 19717, is one available example.</li>
+<li>Filter to a team and the second half. Inspect a shot or the supporting evidence for a count.</li>
+<li>In <strong>Periods &amp; passing networks</strong>, compare second-half 0–15 against 15–30 minutes. Read both measurements, then inspect their source references.</li>
+<li>Visit <strong>Evidence Analyst</strong>. Select <strong>Deterministic</strong> for a first guided report without any model service.</li>
+<li>Use <strong>Experiments</strong> to understand the models and their limitations before interpreting predictions.</li></ol>
+<div class="notice"><strong>Time convention:</strong> bounds are relative to the selected half. In the second half, 0–15 means match minutes 45–60; 15–30 means 60–75. Windows include the start and exclude the end. Do not enter 45–60 when you intend the first fifteen minutes of the second half.</div>
+</section>
+<section id="overview"><h2>5. Overview: understand the dataset</h2>
+<p>Overview presents source coverage, audit information and exploratory summaries. Use it to check what is actually ingested and whether quality warnings or exclusions exist before drawing a match-level conclusion.</p>
+<p>Charts include event distributions, shot origins, temporal patterns, team profiles and players with recorded shots. The exploratory research summaries use the training portion to reduce leakage into later model evaluation.</p>
+<p>The frozen chronological split contains <strong>194 training, 89 tuning, 42 calibration and 132 test matches</strong>. Training covers 2018/19 and 2019/20; 2020/21 is split chronologically between tuning and calibration; 2023/24 supplies the historical test partition.</p>
+<p>In the public rehearsal, only twelve selected matches are hosted. Stored aggregate research reports can still describe the original 457-match corpus. Do not confuse a model's original research sample with the number of matches in the demo database.</p>
+</section>
+<section id="lab"><h2>6. Match Lab: inspect a match</h2>
+<h3>Match selection and shots</h3>
+<p>Use the season, search and match controls to find a fixture. The match summary shows recorded match information and stored model results. The shot map places eligible shots on the pitch, and the timeline helps connect shots to their time within the game.</p>
+<ol><li>Choose <strong>Team</strong>, <strong>Period</strong> and, when useful, a player.</li><li>Set start/end minutes for a period-local window.</li><li>Compare the filtered count and visible shots. Missing locations can affect map coverage without removing shots from the underlying count.</li><li>Click a shot marker or focus it and press Enter to open its evidence. Use <strong>Inspect evidence</strong> for the aggregate count.</li><li>Read event IDs, timestamps, pinned source links and model provenance. Close the evidence panel with its button or Escape where supported.</li></ol>
+<p>An empty selection can be a valid zero result. An unavailable prediction is different from zero xG; the app should not replace missing model output with a fabricated number.</p>
+<h3>Compare periods and passing networks</h3>
+<p>Select the team, half and two chronological, non-overlapping windows. Run the comparison. Read shot counts, xG, pass volume/completion, entry rates, field tilt and signed movement xT, together with their units and denominators. Unequal window lengths can make raw totals misleading; use rates where provided.</p>
+<p>The two directed networks summarize completed passes. Nodes represent players and arrows represent observed sender-to-recipient connections. Player locations are averages of on-ball actions, not actual positions throughout the match or a detected formation. Sparse windows can produce unstable networks.</p>
+<h3>Remove a player</h3>
+<p>Select a network player and choose <strong>Remove selected player from observed network</strong>. Compare connectivity, components and retained pass weight. Use <strong>Restore observed network</strong> to undo the view change. This removes a node and its edges from a fixed historical graph; it does not simulate substitutions, replacement behaviour or what the team would actually have done.</p>
+<h3>Trends, forecasts and styles</h3>
+<p>Trend displays show separate five-minute xG and signed-xT curves, match context and candidate changes. They are not a single control score or proof of a turning point's cause.</p>
+<p><strong>Will this episode produce a shot?</strong> lists stored forecasts made at the third completed pass of eligible open-play control episodes. Inspect the cutoff and model evidence. The serving predictor is LightGBM; a graph neural network was evaluated but did not beat it. Training-sample predictions are labelled and should not be treated as independent test performance.</p>
+<p><strong>Measured patterns of play</strong> assigns eligible 15-minute team windows to one of four passing profiles. Read each profile's measured averages, then inspect source passes for the window. These descriptive clusters use passing features; they are not definitive team identities or tactical labels. Stoppage time and incomplete/insufficient-data windows are excluded from this particular analysis.</p>
+</section>
+<section id="analyst"><h2>7. Evidence Analyst and cached reports</h2>
+<h3>Generate a local guided report</h3><ol>
+<li>Choose a match and open <strong>Evidence Analyst</strong>.</li><li>Choose <strong>Deterministic</strong> for the simplest setup. No language model or external generation request is needed.</li>
+<li>Select the team and one of three guided questions: progression, chance creation or passing concentration.</li>
+<li>Select the half and valid before/after windows, then generate the report.</li><li>Read the claims and qualifications. Open before/after evidence for a numerical statement. Expand verification details to see denominators, versions and limitations.</li></ol>
+<p>The optional question field accepts supported phrasings of the guided tasks. This is not unrestricted football chat. Unsupported requests, such as identifying an off-ball run from absent tracking, should be refused or qualified rather than answered with invented information.</p>
+<h3>Understand provider choices</h3>
+<ul><li><strong>Deterministic:</strong> analytical code calculates values and fixed templates express verified comparisons.</li><li><strong>Groq · GPT-OSS 20B:</strong> requires a configured backend key and network access. The model selects supported claims; it does not invent their statistics or wording. The adapter can fall back to deterministic results.</li><li><strong>Local Ollama · Qwen3 4B:</strong> requires a running Ollama service and the configured, digest-checked model. Download completion alone does not establish successful serving or evaluated quality.</li></ul>
+<p>A “verified” report has passed the implemented machine checks for its claims and evidence. Independent semantic review remains a separate task. Sixty authored deterministic cases and the Groq regression passed the recorded checks; these results are not guarantees for arbitrary questions.</p>
+<h3>Prepared showcase</h3>
+<p>The <strong>Cached showcase</strong> contains 36 frozen reports for twelve quality-selected matches: three reports per match, all for the home team and the same second-half comparison. Select <strong>Prepared report</strong>, inspect a claim, or choose <strong>Open this match</strong>.</p>
+<p>In the local workspace these are explicitly labelled drafts awaiting human review. Public mode hides them until approval is recorded. The public-mode analyst has no live generation controls. Reports are bound to fingerprints and source/model versions so changed or stale content cannot silently inherit approval.</p>
+<h3>Search definitions</h3>
+<p>In the local analyst, search the methodology for phrases such as “field tilt” or “final third entries.” Search retrieves project definitions and limitations, not new match statistics. The local hybrid method uses a pinned encoder when available; the production image falls back to BM25. Read the method returned rather than assuming every environment uses the hybrid benchmark.</p>
+</section>
+<section id="experiments"><h2>8. Experiments: read the research</h2>
+<p>This section documents what was actually trained and measured, including unsuccessful hypotheses. Consult the sample size, data partition, selected model, calibration, intervals, ablations and provenance alongside any headline score.</p>
+<div class="table-wrap"><table><thead><tr><th>Experiment</th><th>Recorded finding</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>xG</td><td>Logistic regression retained; test log loss 0.3146, Brier 0.0907 on 3,506 non-penalty shots.</td><td>These evaluate probabilities; they are not an accuracy percentage or a guarantee for an individual shot.</td></tr>
+<tr><td>xT</td><td>12×8 grid; 35,899 test episodes; Brier 0.010676.</td><td>A spatial threat model whose values depend on the stated episode and turnover rules.</td></tr>
+<tr><td>Third-pass forecast</td><td>LightGBM log loss 0.2491 vs mean GINE 0.2607 on 6,607 test samples.</td><td>The graph-learning contribution was not established; the tabular fallback serves forecasts.</td></tr>
+<tr><td>Methodology retrieval</td><td>Hybrid Recall@5 96.7%; MRR@5 77.4%.</td><td>The recorded MRR target of 80% was missed. These metrics do not measure numerical match analysis.</td></tr>
+<tr><td>Passing styles</td><td>2,326 training windows; silhouette 0.2675; seed ARI 0.9807–0.9988; bootstrap ARI 0.8382–0.9585.</td><td>Assignments are reasonably stable in these tests, but cluster separation is modest and tactical validity is not proven.</td></tr>
+</tbody></table></div>
+<p>The historical final test has already been inspected. Future improvements must disclose that and use an appropriate new protocol rather than claiming the same test remains untouched.</p>
+</section>
+<section id="metrics"><h2>9. Metric reference</h2>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>How to read it</th></tr></thead><tbody>
+<tr><td>xG</td><td>Estimated probability that a shot becomes a goal. A sum describes the modelled quality of recorded chances, not the actual score. Penalties are modelled separately.</td></tr>
+<tr><td>Signed movement xT</td><td>Change in the spatial threat value associated with observed movement/loss actions. Negative totals can occur. It is not a goal count.</td></tr>
+<tr><td>Pass completion</td><td>Completed divided by attempted passes. A fraction of 0.75 means 75%; zero attempts produces unavailable, not 0%.</td></tr>
+<tr><td>Final-third entries/minute</td><td>Completed passes or carries crossing from x&lt;80 to x≥80 on the 120×80 pitch, divided by elapsed window minutes.</td></tr>
+<tr><td>Field tilt</td><td>A team's share of both teams' completed passes ending in their attacking third. It is not possession time.</td></tr>
+<tr><td>HHI concentration</td><td>Sum of squared outgoing pass shares. Higher values indicate more concentration through fewer senders in that observed network.</td></tr>
+<tr><td>Network strength / density</td><td>Strength summarizes pass counts; density measures observed directed links relative to possible links. Neither alone measures tactical quality.</td></tr>
+<tr><td>Log loss / Brier</td><td>Probability error measures; lower is better on comparable tasks and samples. Scores from different targets are not directly interchangeable.</td></tr>
+<tr><td>Recall@5 / MRR@5</td><td>Retrieval measures of whether relevant material appears in five results and how highly it ranks.</td></tr>
+<tr><td>Silhouette / ARI</td><td>Silhouette describes cluster separation; ARI measures agreement between assignments. Neither establishes a real tactical cause.</td></tr>
+</tbody></table></div>
+</section>
+<section id="architecture"><h2>10. Architecture and reproducibility</h2>
+<p><strong>Flow:</strong> pinned StatsBomb files → checksum-checked ingestion → normalized database → offline experiments and stored predictions → FastAPI analytical endpoints → React/Vite interface and evidence views.</p>
+<p>SQLite is used for the local research workspace; PostgreSQL is supported for deployment. SQLAlchemy and Alembic manage database access and schema evolution. Python implements the analytics. React displays returned measurements; it does not perform model training.</p>
+<p>Source commit and file hashes establish which data was used. Frozen match splits establish the experiment boundaries. Model hashes, protocol files and aggregate reports establish what was fitted and evaluated. Evidence links lead back to event IDs and timestamps in the pinned upstream files.</p>
+<p>Important folders: <code>src/tactigraph/</code> for backend/analytics, <code>frontend/src/</code> for UI, <code>configs/</code> for protocols, <code>experiments/</code> for aggregate results, <code>docs/</code> for model cards and methods, and <code>tests/</code> for synthetic checks. Private local data lives under <code>data/</code>, models under <code>artifacts/</code>, and review/verification outputs under <code>output/</code>.</p>
+<p>The production Docker image excludes databases, raw files, private review packets, credentials and ML model artifacts. It reads precomputed results from its database. The deployment preparation included transfer of twelve selected matches and a successful PostgreSQL backup/restore rehearsal.</p>
+</section>
+<section id="limits"><h2>11. Limitations and interpretation</h2>
+<ul><li>Historical WSL event data does not establish performance on other leagues, men's football or future seasons.</li><li>Events are not continuous tracking. Unobserved defensive shape, movement and alternatives remain unobserved.</li><li>Small windows, game state, opponents and dismissals can influence every comparison.</li><li>Player-removal results are fixed-graph sensitivity, not causal football counterfactuals.</li><li>Style labels describe measured passing patterns; clusters are not natural tactical categories proven by the model.</li><li>Model probabilities have uncertainty and can be wrong. No betting or match-result guarantee is supported.</li><li>Human review of the cached reports and publication terms is still pending.</li><li>The application is not a permanently hosted service. Local availability depends on a running server; public hosting has not been set up.</li></ul>
+<p>Data is provided by <strong>StatsBomb</strong>. The code licence does not grant ownership or unrestricted redistribution of upstream data. Before public use, review the <a href="https://github.com/hudl/open-data#terms--conditions">official attribution instructions</a> and <a href="https://github.com/hudl/open-data/blob/master/LICENSE.pdf">data agreement</a>.</p>
+</section>
+<section id="operations"><h2>12. Maintenance and next steps</h2>
+<h3>Routine use</h3><p>Use the launcher rather than rerunning ingestion or model development every time. Keep the database and model artifacts. Back up private data before upgrades, and do not delete evaluation locks to repeat model selection against a previously inspected test.</p>
+<h3>Useful troubleshooting</h3><ul>
+<li><strong>Page loads but requests fail:</strong> check the server health link, run the launcher and refresh.</li><li><strong>Server cannot start:</strong> inspect the error log for a port conflict, missing environment, missing data or an application error.</li><li><strong>Invalid comparison:</strong> confirm the selected half, period-local minutes, chronological order and non-overlapping bounds.</li><li><strong>Model unavailable:</strong> distinguish a missing stored analytical model from a missing optional language-model service.</li><li><strong>Report hidden in public mode:</strong> review approval is pending or its source/model changed; do not bypass that label.</li><li><strong>Slow first methodology search:</strong> a local encoder may be loading. The production fallback has different behaviour and measured quality.</li></ul>
+<h3>Before a genuine public release</h3><ol><li>Complete an independent review of <code>output/release-review/index.html</code> and its 36 reports; record approvals against the exact fingerprints.</li><li>Complete publication/attribution checks.</li><li>Create a code-only repository and hosting account, choose a budget and validate the hosting configuration.</li><li>Import the reviewed database into private PostgreSQL and deploy the web image.</li><li>Verify live readiness, citations, accessibility, load behaviour, backups and actual costs.</li></ol>
+<p>The detailed deployment procedure is in <code>docs/public-release.md</code>. Hosting was deliberately deferred at the user's request. No cloud resources or hosting bill were created during preparation.</p>
+<h3>Potential future improvements</h3><p>Useful additions could include a French interface, more onboarding, easier exports for analysts, broader independent evaluation, improved retrieval and monitoring for a hosted service. These are possible extensions, not claims that they already exist or requirements to add complexity before the current workflows are reviewed.</p>
+</section>
+</main><footer>TactiGraph AI · Project report and user guide · 27 September 2026.<br>Data provided by StatsBomb Open Data. Report based on the local implementation, recorded experiments and release verification; no public-launch claim.</footer>
+</body></html>

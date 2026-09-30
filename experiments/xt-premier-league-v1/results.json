@@ -1,0 +1,496 @@
+{
+  "version": "xt-premier-league-v1",
+  "status": "evaluated",
+  "generated_at": "2026-09-26T14:46:49.855238+00:00",
+  "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "protocol": {
+    "version": "xt-premier-league-v1",
+    "grids": [
+      [
+        12,
+        8
+      ],
+      [
+        8,
+        6
+      ]
+    ],
+    "action_prior_mass": 10,
+    "scoring_prior_strength": 20,
+    "tolerance": 1e-08,
+    "max_iterations": 10000,
+    "bootstrap_replicates": 1000,
+    "seed": 2026,
+    "selection": "Fit each grid on train only. Choose minimum tuning episode-goal Brier; exact ties retain 12x8. Refit chosen grid on train+tuning. Calibration partition is not used.",
+    "global_baseline": "Fitting eligible-episode goal rate, unsmoothed.",
+    "zone_baseline": "Smoothed immediate shot-goal reward with retained transitions removed.",
+    "smoothing": "Joint categorical distribution over shot, loss, and each retained destination: total prior 10 centered on fitting-global category frequencies. Zone shot conversion prior 20 centered on fitting-global shot conversion.",
+    "eligibility": "Periods 1-4; use normalized owner-only control episodes. Exclude whole episodes with an invalid required spatial coordinate; do not bridge missing states. Skip successful dribbles/recoveries/interceptions because they are not specified retained moves. Exclude episodes without an eligible modeled action.",
+    "terminal_rules": "Shot, failed pass, incomplete dribble, dispossession or miscontrol terminates. Completed pass/carry continues. Every remaining episode ends with exactly one loss at its final retained destination. Rebounds/restarts/period ends are separated by foundation-v1 episodes. No double terminal.",
+    "test_policy": "Premier League 2015/16 whole-date chronological holdout. All protocols frozen before evaluation; later model evaluations share the xG holdout and are not independent untouched tests.",
+    "interpretation": "Value under the observed historical action policy; no tracking, defensive shape, optimal decision or causal interpretation. Shots receive xG in the app, never movement-xT credit.",
+    "split_manifest": "configs/splits/premier-league-v1.json",
+    "test_disclosure": "Premier League 2015/16 whole-date chronological holdout. All protocols frozen before evaluation; later model evaluations share the xG holdout and are not independent untouched tests."
+  },
+  "lock": {
+    "created_at": "2026-09-26T14:46:32.359467+00:00",
+    "run_id": "53bdc2f5fa21482ab9abc6a4449b8c36",
+    "protocol_hash": "3582a3964cb3531d4ab4c788e2df689ddb9b565d7349d3a72292c51bd8187374",
+    "code_hash": "411f6bd6072b33c27fc2646d7a17f7b4ed18d975d0431eaabb86a4d12d9c9c9b",
+    "split_hash": "a82f8aa502ee6f3c1b7f37b210f00ca3b5eb28f7b776c5bd74f1f18e1065a27a",
+    "source_hash": "503fdfd1cb676c2b577449c557183e58a13a2090df9b7343dfdbce560aff06b9",
+    "artifact_hash": "b50c29a27112236ea580db17e6e5d71bd20f430e989d85a0e482d30a296d3e0c"
+  },
+  "model": {
+    "grid": [
+      8,
+      6
+    ],
+    "values": [
+      0.0025575682836320186,
+      0.0032495962061736814,
+      0.004135379404115191,
+      0.005214532290069591,
+      0.0069848103893709905,
+      0.009872471177770794,
+      0.012621775414200504,
+      0.015600132367381789,
+      0.0032933684720197164,
+      0.004133702304249682,
+      0.004918260969853538,
+      0.006022742035923297,
+      0.007814727843005579,
+      0.011380181393819133,
+      0.017579178226701336,
+      0.021940832103003276,
+      0.0034027885953578705,
+      0.004289091202110709,
+      0.0051077065342701325,
+      0.006231012118320709,
+      0.008164911912089795,
+      0.012131354638955502,
+      0.028515794167772553,
+      0.10054658749411388,
+      0.003372698847101438,
+      0.0042820088364390295,
+      0.005038534761514751,
+      0.006101014105089614,
+      0.007741628462487587,
+      0.012116377559595447,
+      0.02615216901220257,
+      0.12135984459865949,
+      0.0032606463756934575,
+      0.004030858806571024,
+      0.004782142614501459,
+      0.005842094599708712,
+      0.007427616857558824,
+      0.010768279449715992,
+      0.016026836574939946,
+      0.022419198738388418,
+      0.0024790939127010696,
+      0.0031769644881738963,
+      0.0039829137194253945,
+      0.004993466888503637,
+      0.006516462316606743,
+      0.00907391867728816,
+      0.012750948132418444,
+      0.018172711883803594
+    ],
+    "no_transition": [
+      8.207966775902753e-06,
+      3.0484792805184027e-06,
+      1.3786189166974307e-06,
+      9.316029315678433e-07,
+      5.8505772131800815e-06,
+      1.6699486997003353e-05,
+      7.930540244780839e-06,
+      1.930785966173197e-05,
+      7.093548561745519e-06,
+      2.1389808889003256e-06,
+      8.518316798860162e-06,
+      9.20198636109265e-07,
+      1.2299840029203334e-05,
+      8.491322749364078e-05,
+      0.001656548502258587,
+      0.0020880698077439847,
+      1.8548785550478966e-06,
+      2.4360615679142597e-06,
+      1.3335717200167852e-06,
+      7.269165363360348e-06,
+      1.4864233368625272e-05,
+      0.00017436150261822736,
+      0.01073849947132564,
+      0.07605005580602983,
+      1.5948582336810397e-06,
+      2.3415925560625304e-06,
+      1.4043752133014434e-06,
+      1.3399218557653734e-05,
+      2.3984581950017326e-05,
+      0.000530466276659411,
+      0.00930315115072317,
+      0.09329862321064818,
+      7.547797316980247e-06,
+      2.3427095504444972e-06,
+      1.229824738125663e-06,
+      6.909553339281885e-06,
+      6.871189236552319e-06,
+      7.863384312526332e-05,
+      0.0007703489041626024,
+      0.001986380478399367,
+      8.84882904669396e-06,
+      3.36069807544376e-06,
+      1.4988098029242564e-06,
+      9.36279890870961e-07,
+      8.096554576438666e-07,
+      8.060674232818384e-07,
+      7.843455677276061e-06,
+      3.048224604041585e-05
+    ],
+    "global_episode_rate": 0.008842413780256082,
+    "iterations": 69,
+    "maximum_delta": 8.756340538068619e-09,
+    "action_counts": [
+      1785,
+      4823,
+      10677,
+      15805,
+      18181,
+      17212,
+      13410,
+      8343,
+      2067,
+      6878,
+      12484,
+      16001,
+      15420,
+      12981,
+      9218,
+      4831,
+      7933,
+      6038,
+      11038,
+      14631,
+      12758,
+      9937,
+      6583,
+      3196,
+      9228,
+      6282,
+      10481,
+      14154,
+      13985,
+      10178,
+      6332,
+      3154,
+      1942,
+      6279,
+      11970,
+      15393,
+      15479,
+      12720,
+      8525,
+      4625,
+      1655,
+      4374,
+      9820,
+      15726,
+      18187,
+      18268,
+      13559,
+      8713
+    ],
+    "shot_counts": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      2,
+      26,
+      464,
+      241,
+      0,
+      0,
+      0,
+      1,
+      2,
+      167,
+      1231,
+      1549,
+      0,
+      0,
+      0,
+      2,
+      4,
+      200,
+      1246,
+      1565,
+      0,
+      0,
+      0,
+      1,
+      1,
+      21,
+      357,
+      249,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      3
+    ],
+    "goal_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      14,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      70,
+      245,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      58,
+      297,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_actions": 483259,
+    "episodes": 80521,
+    "terminal_count": 80521,
+    "row_probability_error": 2.220446049250313e-16,
+    "version": "xt-premier-league-v1",
+    "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+    "pipeline_version": "foundation-v1"
+  },
+  "development": {
+    "version": "xt-premier-league-v1",
+    "status": "locked",
+    "selected_grid": [
+      8,
+      6
+    ],
+    "candidates": [
+      {
+        "grid": [
+          12,
+          8
+        ],
+        "scores": {
+          "xt": {
+            "log_loss": 0.04359589024414902,
+            "brier": 0.008082267587853673,
+            "roc_auc": 0.7228903061879219,
+            "pr_auc": 0.060584282592226354,
+            "n": 16721,
+            "goals": 141
+          },
+          "no_transition": {
+            "log_loss": 0.07521620877656432,
+            "brier": 0.008162564962715611,
+            "roc_auc": 0.6754431554722857,
+            "pr_auc": 0.05899559878728269,
+            "n": 16721,
+            "goals": 141
+          },
+          "global": {
+            "log_loss": 0.04868304719071712,
+            "brier": 0.008361670425835015,
+            "roc_auc": 0.5,
+            "pr_auc": 0.00843251001734346,
+            "n": 16721,
+            "goals": 141
+          }
+        },
+        "iterations": 70
+      },
+      {
+        "grid": [
+          8,
+          6
+        ],
+        "scores": {
+          "xt": {
+            "log_loss": 0.04326097101767856,
+            "brier": 0.008056754129745028,
+            "roc_auc": 0.7253792059133024,
+            "pr_auc": 0.06335187189486773,
+            "n": 16721,
+            "goals": 141
+          },
+          "no_transition": {
+            "log_loss": 0.07600515176323991,
+            "brier": 0.008147986277793888,
+            "roc_auc": 0.6917070896320441,
+            "pr_auc": 0.061531147390998596,
+            "n": 16721,
+            "goals": 141
+          },
+          "global": {
+            "log_loss": 0.04868304719071712,
+            "brier": 0.008361670425835015,
+            "roc_auc": 0.5,
+            "pr_auc": 0.00843251001734346,
+            "n": 16721,
+            "goals": 141
+          }
+        },
+        "iterations": 69
+      }
+    ],
+    "train": {
+      "source_episodes": 63858,
+      "eligible_episodes": 63800,
+      "excluded_episodes": {
+        "No eligible modeled actions": 57,
+        "Invalid origin": 1
+      },
+      "matches": 228
+    },
+    "tuning": {
+      "source_episodes": 16736,
+      "eligible_episodes": 16721,
+      "excluded_episodes": {
+        "No eligible modeled actions": 15
+      },
+      "matches": 58
+    },
+    "fitting_episodes": 80521,
+    "iterations": 69
+  },
+  "test": {
+    "source_episodes": 15818,
+    "eligible_episodes": 15807,
+    "excluded_episodes": {
+      "No eligible modeled actions": 10,
+      "Invalid origin": 1
+    },
+    "matches": 57
+  },
+  "results": {
+    "xt": {
+      "log_loss": 0.052559226491160925,
+      "brier": 0.010057126469299748,
+      "roc_auc": 0.7189659475444132,
+      "pr_auc": 0.06694962255241607,
+      "n": 15807,
+      "goals": 166,
+      "intervals": {
+        "log_loss": [
+          0.046288523181984426,
+          0.058804691838979295
+        ],
+        "brier": [
+          0.008735818277475339,
+          0.011385167539757471
+        ]
+      }
+    },
+    "no_transition": {
+      "log_loss": 0.09445050790933116,
+      "brier": 0.010198136445484679,
+      "roc_auc": 0.7294234799950393,
+      "pr_auc": 0.06733151113702966,
+      "n": 15807,
+      "goals": 166,
+      "intervals": {
+        "log_loss": [
+          0.07962233288637682,
+          0.10944367952655298
+        ],
+        "brier": [
+          0.008859698000363837,
+          0.011561046316071497
+        ]
+      }
+    },
+    "global": {
+      "log_loss": 0.058442445017275524,
+      "brier": 0.010394144416398628,
+      "roc_auc": 0.5,
+      "pr_auc": 0.010501676472448915,
+      "n": 15807,
+      "goals": 166,
+      "intervals": {
+        "log_loss": [
+          0.051903757464440016,
+          0.06511265975802953
+        ],
+        "brier": [
+          0.009033130406611693,
+          0.011782535532673498
+        ]
+      }
+    }
+  },
+  "paired_differences": {
+    "global": {
+      "log_loss": [
+        -0.00799641489678557,
+        -0.0038543317079921834
+      ],
+      "brier": [
+        -0.00047935380274075073,
+        -0.00019870936609065506
+      ]
+    },
+    "no_transition": {
+      "log_loss": [
+        -0.050942567540734895,
+        -0.03317940139604714
+      ],
+      "brier": [
+        -0.00019102746199411535,
+        -9.560337542234969e-05
+      ]
+    }
+  },
+  "attribution": "Data provided by StatsBomb Open Data",
+  "source_url": "https://github.com/hudl/open-data/tree/4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "interpretation": "Value under the observed historical action policy; no tracking, defensive shape, optimal decision or causal interpretation. Shots receive xG in the app, never movement-xT credit.",
+  "test_disclosure": "Premier League 2015/16 whole-date chronological holdout. All protocols frozen before evaluation; later model evaluations share the xG holdout and are not independent untouched tests."
+}

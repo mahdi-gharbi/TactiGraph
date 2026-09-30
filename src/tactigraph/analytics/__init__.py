@@ -1,0 +1,1 @@
+"""Deterministic, versioned descriptive analytics."""

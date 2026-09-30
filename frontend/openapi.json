@@ -1,0 +1,6116 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TactiGraph AI",
+    "version": "0.5.0"
+  },
+  "paths": {
+    "/api/v1/matches/{match_id}/trends": {
+      "get": {
+        "tags": [
+          "tactical analytics"
+        ],
+        "summary": "Match Trends",
+        "operationId": "match_trends_api_v1_matches__match_id__trends_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          },
+          {
+            "name": "team_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 4,
+              "minimum": 1,
+              "title": "Period"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrendsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments/xt": {
+      "get": {
+        "tags": [
+          "tactical analytics"
+        ],
+        "summary": "Xt Experiment",
+        "operationId": "xt_experiment_api_v1_experiments_xt_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/XTResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/compare": {
+      "post": {
+        "tags": [
+          "tactical analytics"
+        ],
+        "summary": "Compare",
+        "operationId": "compare_api_v1_matches__match_id__compare_post",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComparisonRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/network": {
+      "get": {
+        "tags": [
+          "tactical analytics"
+        ],
+        "summary": "Network",
+        "operationId": "network_api_v1_matches__match_id__network_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          },
+          {
+            "name": "team_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 4,
+              "minimum": 1,
+              "title": "Period"
+            }
+          },
+          {
+            "name": "start_ms",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Start Ms"
+            }
+          },
+          {
+            "name": "end_ms",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "title": "End Ms"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tactical-evidence/{result_id}": {
+      "get": {
+        "tags": [
+          "tactical analytics"
+        ],
+        "summary": "Evidence",
+        "operationId": "evidence_api_v1_tactical_evidence__result_id__get",
+        "parameters": [
+          {
+            "name": "result_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Result Id"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 250,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TacticalEvidence"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments/graph": {
+      "get": {
+        "tags": [
+          "graph experiment"
+        ],
+        "summary": "Graph Experiment",
+        "operationId": "graph_experiment_api_v1_experiments_graph_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GraphResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/third-pass": {
+      "get": {
+        "tags": [
+          "graph experiment"
+        ],
+        "summary": "Third Pass Predictions",
+        "operationId": "third_pass_predictions_api_v1_matches__match_id__third_pass_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          },
+          {
+            "name": "team_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 4,
+              "minimum": 1,
+              "title": "Period"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ThirdPassResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments/analyst": {
+      "get": {
+        "tags": [
+          "verified analyst"
+        ],
+        "summary": "Research Results",
+        "operationId": "research_results_api_v1_experiments_analyst_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analyst/report": {
+      "post": {
+        "tags": [
+          "verified analyst"
+        ],
+        "summary": "Analyst Report",
+        "operationId": "analyst_report_api_v1_analyst_report_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalystRequest-Input"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalystReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/methodology/search": {
+      "get": {
+        "tags": [
+          "verified analyst"
+        ],
+        "summary": "Methodology Search",
+        "operationId": "methodology_search_api_v1_methodology_search_get",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "title": "Query"
+            }
+          },
+          {
+            "name": "topic",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Topic"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Version"
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 8,
+              "default": "en",
+              "title": "Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MethodologyResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tactical-evidence/{result_id}/remove-player/{player_id}": {
+      "get": {
+        "tags": [
+          "network structural sensitivity"
+        ],
+        "summary": "Sensitivity",
+        "operationId": "sensitivity_api_v1_tactical_evidence__result_id__remove_player__player_id__get",
+        "parameters": [
+          {
+            "name": "result_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Result Id"
+            }
+          },
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "title": "Player Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensitivityResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments/styles": {
+      "get": {
+        "tags": [
+          "style discovery"
+        ],
+        "summary": "Experiment",
+        "operationId": "experiment_api_v1_experiments_styles_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StylesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/styles": {
+      "get": {
+        "tags": [
+          "style discovery"
+        ],
+        "summary": "Match Styles",
+        "operationId": "match_styles_api_v1_matches__match_id__styles_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StylesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/showcase": {
+      "get": {
+        "tags": [
+          "cached showcase"
+        ],
+        "summary": "Cached Reports",
+        "operationId": "cached_reports_api_v1_showcase_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Match Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowcaseResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ready": {
+      "get": {
+        "tags": [
+          "cached showcase"
+        ],
+        "summary": "Ready",
+        "operationId": "ready_api_v1_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/dataset": {
+      "get": {
+        "summary": "Dataset",
+        "operationId": "dataset_api_v1_dataset_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatasetOverview"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches": {
+      "get": {
+        "summary": "Matches",
+        "operationId": "matches_api_v1_matches_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments": {
+      "get": {
+        "summary": "Experiments",
+        "operationId": "experiments_api_v1_experiments_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExperimentsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/summary": {
+      "get": {
+        "summary": "Summary",
+        "operationId": "summary_api_v1_matches__match_id__summary_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchSummary"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/shots": {
+      "get": {
+        "summary": "Shots",
+        "operationId": "shots_api_v1_matches__match_id__shots_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          },
+          {
+            "name": "team_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 4,
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Period"
+            }
+          },
+          {
+            "name": "start_ms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 7200000,
+              "minimum": 0,
+              "default": 0,
+              "title": "Start Ms"
+            }
+          },
+          {
+            "name": "end_ms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 7200000,
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End Ms"
+            }
+          },
+          {
+            "name": "player_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Player Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShotLayer"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/evidence/{evidence_id}": {
+      "get": {
+        "summary": "Evidence",
+        "operationId": "evidence_api_v1_evidence__evidence_id__get",
+        "parameters": [
+          {
+            "name": "evidence_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Evidence Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShotEvidence"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}/events": {
+      "get": {
+        "summary": "Events",
+        "operationId": "events_api_v1_matches__match_id__events_get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Match Id"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 250,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocalEvents"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalystReport": {
+        "properties": {
+          "report_id": {
+            "type": "string",
+            "title": "Report Id"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "analyst-v1"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "abstained"
+            ],
+            "title": "Status"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "local_selection",
+              "groq_selection",
+              "deterministic_fallback"
+            ],
+            "title": "Mode",
+            "default": "deterministic"
+          },
+          "generation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GenerationMetadata"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "generated_at": {
+            "type": "string",
+            "title": "Generated At"
+          },
+          "arguments": {
+            "$ref": "#/components/schemas/AnalystRequest-Output"
+          },
+          "claims": {
+            "items": {
+              "$ref": "#/components/schemas/VerifiedClaim"
+            },
+            "type": "array",
+            "title": "Claims"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/ToolResult"
+          },
+          "trace": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Trace"
+          },
+          "tool_calls": {
+            "type": "integer",
+            "title": "Tool Calls"
+          },
+          "verification_rejections": {
+            "type": "integer",
+            "title": "Verification Rejections"
+          },
+          "qualifications": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Qualifications"
+          },
+          "attribution": {
+            "type": "string",
+            "title": "Attribution",
+            "default": "Data provided by StatsBomb Open Data"
+          },
+          "publication_label": {
+            "type": "string",
+            "title": "Publication Label",
+            "default": "Deterministic, machine-verified report; human review pending"
+          }
+        },
+        "type": "object",
+        "required": [
+          "report_id",
+          "version",
+          "status",
+          "mode",
+          "generation",
+          "generated_at",
+          "arguments",
+          "claims",
+          "evidence",
+          "trace",
+          "tool_calls",
+          "verification_rejections",
+          "qualifications",
+          "attribution",
+          "publication_label"
+        ],
+        "title": "AnalystReport"
+      },
+      "AnalystRequest-Input": {
+        "properties": {
+          "match_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Team Id"
+          },
+          "intent": {
+            "type": "string",
+            "enum": [
+              "period_comparison",
+              "chance_creation",
+              "network_concentration"
+            ],
+            "title": "Intent"
+          },
+          "generation": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "local",
+              "groq"
+            ],
+            "title": "Generation",
+            "default": "deterministic"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          },
+          "before": {
+            "$ref": "#/components/schemas/Window"
+          },
+          "after": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "match_id",
+          "team_id",
+          "intent"
+        ],
+        "title": "AnalystRequest"
+      },
+      "AnalystRequest-Output": {
+        "properties": {
+          "match_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Team Id"
+          },
+          "intent": {
+            "type": "string",
+            "enum": [
+              "period_comparison",
+              "chance_creation",
+              "network_concentration"
+            ],
+            "title": "Intent"
+          },
+          "generation": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "local",
+              "groq"
+            ],
+            "title": "Generation",
+            "default": "deterministic"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          },
+          "before": {
+            "$ref": "#/components/schemas/Window"
+          },
+          "after": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "match_id",
+          "team_id",
+          "intent",
+          "generation",
+          "question",
+          "before",
+          "after"
+        ],
+        "title": "AnalystRequest"
+      },
+      "AnalystScore": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "title": "Mode"
+          },
+          "partition": {
+            "type": "string",
+            "title": "Partition"
+          },
+          "cases": {
+            "type": "integer",
+            "title": "Cases"
+          },
+          "passed": {
+            "type": "integer",
+            "title": "Passed"
+          },
+          "local_generations": {
+            "type": "integer",
+            "title": "Local Generations"
+          },
+          "remote_generations": {
+            "type": "integer",
+            "title": "Remote Generations",
+            "default": 0
+          },
+          "generation_cases": {
+            "type": "integer",
+            "title": "Generation Cases",
+            "default": 0
+          },
+          "fallbacks": {
+            "type": "integer",
+            "title": "Fallbacks",
+            "default": 0
+          },
+          "repairs": {
+            "type": "integer",
+            "title": "Repairs",
+            "default": 0
+          },
+          "selection_rejections": {
+            "type": "integer",
+            "title": "Selection Rejections",
+            "default": 0
+          },
+          "input_tokens": {
+            "type": "integer",
+            "title": "Input Tokens",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "title": "Output Tokens",
+            "default": 0
+          },
+          "generation_p95_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Generation P95 Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "partition",
+          "cases",
+          "passed",
+          "local_generations",
+          "remote_generations",
+          "generation_cases",
+          "fallbacks",
+          "repairs",
+          "selection_rejections",
+          "input_tokens",
+          "output_tokens",
+          "generation_p95_ms"
+        ],
+        "title": "AnalystScore"
+      },
+      "CachedReport": {
+        "properties": {
+          "report": {
+            "$ref": "#/components/schemas/AnalystReport"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "review_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "approved"
+            ],
+            "title": "Review Status"
+          },
+          "publication_label": {
+            "type": "string",
+            "title": "Publication Label"
+          },
+          "cached": {
+            "type": "boolean",
+            "title": "Cached",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "report",
+          "sha256",
+          "review_status",
+          "publication_label"
+        ],
+        "title": "CachedReport"
+      },
+      "CalibrationDecision": {
+        "properties": {
+          "retain_sigmoid": {
+            "type": "boolean",
+            "title": "Retain Sigmoid"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/ProbabilityScores"
+          },
+          "sigmoid": {
+            "$ref": "#/components/schemas/ProbabilityScores"
+          }
+        },
+        "type": "object",
+        "required": [
+          "retain_sigmoid",
+          "raw",
+          "sigmoid"
+        ],
+        "title": "CalibrationDecision"
+      },
+      "CalibrationParameters": {
+        "properties": {
+          "intercept": {
+            "type": "number",
+            "title": "Intercept"
+          },
+          "slope": {
+            "type": "number",
+            "title": "Slope"
+          }
+        },
+        "type": "object",
+        "required": [
+          "intercept",
+          "slope"
+        ],
+        "title": "CalibrationParameters"
+      },
+      "CandidateShift": {
+        "properties": {
+          "boundary_ms": {
+            "type": "integer",
+            "title": "Boundary Ms"
+          },
+          "before_count": {
+            "type": "integer",
+            "title": "Before Count"
+          },
+          "after_count": {
+            "type": "integer",
+            "title": "After Count"
+          },
+          "rate_difference": {
+            "type": "number",
+            "title": "Rate Difference"
+          },
+          "before_evidence_id": {
+            "type": "string",
+            "title": "Before Evidence Id"
+          },
+          "after_evidence_id": {
+            "type": "string",
+            "title": "After Evidence Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "boundary_ms",
+          "before_count",
+          "after_count",
+          "rate_difference",
+          "before_evidence_id",
+          "after_evidence_id"
+        ],
+        "title": "CandidateShift"
+      },
+      "Coefficient": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature"
+          },
+          "coefficient": {
+            "type": "number",
+            "title": "Coefficient"
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature",
+          "coefficient"
+        ],
+        "title": "Coefficient"
+      },
+      "ComparisonRequest": {
+        "properties": {
+          "team_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Team Id"
+          },
+          "before": {
+            "$ref": "#/components/schemas/Window"
+          },
+          "after": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "type": "object",
+        "required": [
+          "team_id",
+          "before",
+          "after"
+        ],
+        "title": "ComparisonRequest"
+      },
+      "ComparisonResponse": {
+        "properties": {
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "before": {
+            "$ref": "#/components/schemas/WindowAnalysis"
+          },
+          "after": {
+            "$ref": "#/components/schemas/WindowAnalysis"
+          },
+          "differences": {
+            "items": {
+              "$ref": "#/components/schemas/MetricDifference"
+            },
+            "type": "array",
+            "title": "Differences"
+          },
+          "statement": {
+            "type": "string",
+            "title": "Statement"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "xt_status": {
+            "type": "string",
+            "enum": [
+              "not_trained",
+              "ready"
+            ],
+            "title": "Xt Status",
+            "default": "not_trained"
+          },
+          "xt_model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "result_id",
+          "match_id",
+          "team_id",
+          "before",
+          "after",
+          "differences",
+          "statement",
+          "model",
+          "provenance",
+          "xt_status",
+          "xt_model"
+        ],
+        "title": "ComparisonResponse"
+      },
+      "DatasetOverview": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_audited",
+              "audited"
+            ],
+            "title": "Status"
+          },
+          "ingested_matches": {
+            "type": "integer",
+            "title": "Ingested Matches"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FoundationReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "ingested_matches",
+          "report",
+          "provenance"
+        ],
+        "title": "DatasetOverview"
+      },
+      "DevelopmentResults": {
+        "properties": {
+          "search": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Search"
+          },
+          "calibration_decisions": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CalibrationDecision"
+            },
+            "type": "object",
+            "title": "Calibration Decisions"
+          },
+          "tuning_paired_difference": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Tuning Paired Difference"
+          },
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Counts"
+          },
+          "penalty": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Penalty"
+          },
+          "protocol": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Protocol"
+          }
+        },
+        "type": "object",
+        "required": [
+          "search",
+          "calibration_decisions",
+          "tuning_paired_difference",
+          "counts",
+          "penalty",
+          "protocol"
+        ],
+        "title": "DevelopmentResults"
+      },
+      "DocumentChunk": {
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "title": "Document Id"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "section": {
+            "type": "string",
+            "title": "Section"
+          },
+          "chunk_id": {
+            "type": "string",
+            "title": "Chunk Id"
+          },
+          "topic": {
+            "type": "string",
+            "title": "Topic"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "default": "en"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "document_id",
+          "version",
+          "section",
+          "chunk_id",
+          "topic",
+          "language",
+          "text",
+          "score"
+        ],
+        "title": "DocumentChunk"
+      },
+      "EntityStatistics": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "matches": {
+            "type": "integer",
+            "title": "Matches"
+          },
+          "shots": {
+            "type": "integer",
+            "title": "Shots"
+          },
+          "passes": {
+            "type": "integer",
+            "title": "Passes"
+          },
+          "events": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Events"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "matches",
+          "shots",
+          "passes",
+          "events"
+        ],
+        "title": "EntityStatistics"
+      },
+      "EvaluatedModel": {
+        "properties": {
+          "log_loss": {
+            "type": "number",
+            "title": "Log Loss"
+          },
+          "brier": {
+            "type": "number",
+            "title": "Brier"
+          },
+          "roc_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Roc Auc"
+          },
+          "pr_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pr Auc"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "goals": {
+            "type": "integer",
+            "title": "Goals"
+          },
+          "intervals": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Intervals"
+          },
+          "reliability": {
+            "items": {
+              "$ref": "#/components/schemas/ReliabilityBin"
+            },
+            "type": "array",
+            "title": "Reliability"
+          },
+          "calibration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CalibrationParameters"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "log_loss",
+          "brier",
+          "roc_auc",
+          "pr_auc",
+          "n",
+          "goals",
+          "intervals",
+          "reliability",
+          "calibration"
+        ],
+        "title": "EvaluatedModel"
+      },
+      "EventReference": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "player_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Player Name"
+          },
+          "team_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Name"
+          },
+          "outcome": {
+            "type": "string",
+            "title": "Outcome"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "event_id",
+          "index",
+          "period",
+          "timestamp",
+          "player_name",
+          "team_name",
+          "outcome",
+          "source_url"
+        ],
+        "title": "EventReference"
+      },
+      "ExperimentReport": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "serving": {
+            "type": "string",
+            "title": "Serving"
+          },
+          "evaluated_at": {
+            "type": "string",
+            "title": "Evaluated At"
+          },
+          "lock": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Lock"
+          },
+          "test_matches": {
+            "type": "integer",
+            "title": "Test Matches"
+          },
+          "test_non_penalty_shots": {
+            "type": "integer",
+            "title": "Test Non Penalty Shots"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EvaluatedModel"
+            },
+            "type": "object",
+            "title": "Metrics"
+          },
+          "paired_lightgbm_minus_logistic": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Paired Lightgbm Minus Logistic"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/ReferenceResult"
+          },
+          "penalties": {
+            "$ref": "#/components/schemas/PenaltyEvaluation"
+          },
+          "slices": {
+            "items": {
+              "$ref": "#/components/schemas/SliceEvaluation"
+            },
+            "type": "array",
+            "title": "Slices"
+          },
+          "logistic_coefficients": {
+            "items": {
+              "$ref": "#/components/schemas/Coefficient"
+            },
+            "type": "array",
+            "title": "Logistic Coefficients"
+          },
+          "permutation_importance": {
+            "items": {
+              "$ref": "#/components/schemas/Importance"
+            },
+            "type": "array",
+            "title": "Permutation Importance"
+          },
+          "team_stress": {
+            "items": {
+              "$ref": "#/components/schemas/StressFold"
+            },
+            "type": "array",
+            "title": "Team Stress"
+          },
+          "prediction_batch_ms": {
+            "type": "number",
+            "title": "Prediction Batch Ms"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "development": {
+            "$ref": "#/components/schemas/DevelopmentResults"
+          },
+          "feature_names": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Feature Names"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "status",
+          "serving",
+          "evaluated_at",
+          "lock",
+          "test_matches",
+          "test_non_penalty_shots",
+          "metrics",
+          "paired_lightgbm_minus_logistic",
+          "reference",
+          "penalties",
+          "slices",
+          "logistic_coefficients",
+          "permutation_importance",
+          "team_stress",
+          "prediction_batch_ms",
+          "limitations",
+          "development",
+          "feature_names"
+        ],
+        "title": "ExperimentReport"
+      },
+      "ExperimentsResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_trained",
+              "evaluated",
+              "unavailable"
+            ],
+            "title": "Status"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExperimentReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance",
+            "default": {
+              "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+              "metric_version": "shot-count-v1",
+              "coordinate_frame": "StatsBomb event-team attacking frame, 120 \u00d7 80"
+            }
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "report",
+          "model",
+          "provenance"
+        ],
+        "title": "ExperimentsResponse"
+      },
+      "Fact": {
+        "properties": {
+          "metric": {
+            "type": "string",
+            "title": "Metric"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Denominator"
+          },
+          "denominator_unit": {
+            "type": "string",
+            "title": "Denominator Unit"
+          },
+          "evidence_id": {
+            "type": "string",
+            "title": "Evidence Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "metric",
+          "value",
+          "unit",
+          "numerator",
+          "denominator",
+          "denominator_unit",
+          "evidence_id"
+        ],
+        "title": "Fact"
+      },
+      "FoundationReport": {
+        "properties": {
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          },
+          "pipeline_version": {
+            "type": "string",
+            "title": "Pipeline Version"
+          },
+          "generated_at": {
+            "type": "string",
+            "title": "Generated At"
+          },
+          "expected_matches": {
+            "type": "integer",
+            "title": "Expected Matches"
+          },
+          "ingested_matches": {
+            "type": "integer",
+            "title": "Ingested Matches"
+          },
+          "ready_matches": {
+            "type": "integer",
+            "title": "Ready Matches"
+          },
+          "failed_matches": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Failed Matches"
+          },
+          "pending_matches": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Pending Matches"
+          },
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Counts"
+          },
+          "seasons": {
+            "items": {
+              "$ref": "#/components/schemas/SeasonCoverage"
+            },
+            "type": "array",
+            "title": "Seasons"
+          },
+          "partitions": {
+            "items": {
+              "$ref": "#/components/schemas/PartitionCoverage"
+            },
+            "type": "array",
+            "title": "Partitions"
+          },
+          "schema_versions": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Schema Versions"
+          },
+          "missing_fields": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Missing Fields"
+          },
+          "quality_issues": {
+            "items": {
+              "$ref": "#/components/schemas/NamedCount"
+            },
+            "type": "array",
+            "title": "Quality Issues"
+          },
+          "integrity_checks": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "type": "object",
+            "title": "Integrity Checks"
+          },
+          "split_manifest_hash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Split Manifest Hash"
+          },
+          "coverage_complete": {
+            "type": "boolean",
+            "title": "Coverage Complete"
+          },
+          "training_eda": {
+            "$ref": "#/components/schemas/TrainingEDA"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source_commit",
+          "pipeline_version",
+          "generated_at",
+          "expected_matches",
+          "ingested_matches",
+          "ready_matches",
+          "failed_matches",
+          "pending_matches",
+          "counts",
+          "seasons",
+          "partitions",
+          "schema_versions",
+          "missing_fields",
+          "quality_issues",
+          "integrity_checks",
+          "split_manifest_hash",
+          "coverage_complete",
+          "training_eda"
+        ],
+        "title": "FoundationReport"
+      },
+      "GenerationMetadata": {
+        "properties": {
+          "provider": {
+            "type": "string",
+            "enum": [
+              "ollama",
+              "groq"
+            ],
+            "title": "Provider",
+            "default": "ollama"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          },
+          "system_fingerprint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Fingerprint"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "digest": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Digest"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts"
+          },
+          "repairs": {
+            "type": "integer",
+            "title": "Repairs"
+          },
+          "rejections": {
+            "type": "integer",
+            "title": "Rejections"
+          },
+          "input_tokens": {
+            "type": "integer",
+            "title": "Input Tokens"
+          },
+          "output_tokens": {
+            "type": "integer",
+            "title": "Output Tokens"
+          },
+          "latency_ms": {
+            "type": "number",
+            "title": "Latency Ms"
+          },
+          "fallback_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "provider",
+          "request_id",
+          "system_fingerprint",
+          "model",
+          "digest",
+          "attempts",
+          "repairs",
+          "rejections",
+          "input_tokens",
+          "output_tokens",
+          "latency_ms",
+          "fallback_reason"
+        ],
+        "title": "GenerationMetadata"
+      },
+      "GraphCalibrationBin": {
+        "properties": {
+          "lower": {
+            "type": "number",
+            "title": "Lower"
+          },
+          "upper": {
+            "type": "number",
+            "title": "Upper"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "predicted": {
+            "type": "number",
+            "title": "Predicted"
+          },
+          "observed": {
+            "type": "number",
+            "title": "Observed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "lower",
+          "upper",
+          "n",
+          "predicted",
+          "observed"
+        ],
+        "title": "GraphCalibrationBin"
+      },
+      "GraphCoverage": {
+        "properties": {
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "positive_episodes": {
+            "type": "integer",
+            "title": "Positive Episodes"
+          },
+          "matches": {
+            "type": "integer",
+            "title": "Matches"
+          },
+          "source_episodes": {
+            "type": "integer",
+            "title": "Source Episodes"
+          },
+          "exclusions": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Exclusions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n",
+          "positive_episodes",
+          "matches",
+          "source_episodes",
+          "exclusions"
+        ],
+        "title": "GraphCoverage"
+      },
+      "GraphDecision": {
+        "properties": {
+          "justified": {
+            "type": "boolean",
+            "title": "Justified"
+          },
+          "strongest_test_baseline": {
+            "type": "string",
+            "title": "Strongest Test Baseline"
+          },
+          "gates": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "type": "object",
+            "title": "Gates"
+          },
+          "paired_differences": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              "type": "object"
+            },
+            "type": "object",
+            "title": "Paired Differences"
+          },
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "justified",
+          "strongest_test_baseline",
+          "gates",
+          "paired_differences",
+          "interpretation"
+        ],
+        "title": "GraphDecision"
+      },
+      "GraphMetrics": {
+        "properties": {
+          "log_loss": {
+            "type": "number",
+            "title": "Log Loss"
+          },
+          "brier": {
+            "type": "number",
+            "title": "Brier"
+          },
+          "roc_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Roc Auc"
+          },
+          "pr_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pr Auc"
+          }
+        },
+        "type": "object",
+        "required": [
+          "log_loss",
+          "brier",
+          "roc_auc",
+          "pr_auc"
+        ],
+        "title": "GraphMetrics"
+      },
+      "GraphReport": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "generated_at": {
+            "type": "string",
+            "title": "Generated At"
+          },
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          },
+          "lock": {
+            "$ref": "#/components/schemas/XTLock"
+          },
+          "test": {
+            "$ref": "#/components/schemas/GraphCoverage"
+          },
+          "development_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Development Counts"
+          },
+          "results": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/GraphScore"
+            },
+            "type": "object",
+            "title": "Results"
+          },
+          "seed_aggregates": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/GraphSeedAggregate"
+            },
+            "type": "object",
+            "title": "Seed Aggregates"
+          },
+          "decision": {
+            "$ref": "#/components/schemas/GraphDecision"
+          },
+          "serving": {
+            "type": "string",
+            "title": "Serving"
+          },
+          "stress": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/GraphStress"
+            },
+            "type": "object",
+            "title": "Stress"
+          },
+          "latency_definition": {
+            "type": "string",
+            "title": "Latency Definition"
+          },
+          "seed_definition": {
+            "type": "string",
+            "title": "Seed Definition"
+          },
+          "attribution": {
+            "type": "string",
+            "title": "Attribution"
+          },
+          "test_disclosure": {
+            "type": "string",
+            "title": "Test Disclosure"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "generated_at",
+          "source_commit",
+          "lock",
+          "test",
+          "development_counts",
+          "results",
+          "seed_aggregates",
+          "decision",
+          "serving",
+          "stress",
+          "latency_definition",
+          "seed_definition",
+          "attribution",
+          "test_disclosure"
+        ],
+        "title": "GraphReport"
+      },
+      "GraphResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "evaluated",
+              "not_trained"
+            ],
+            "title": "Status"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GraphReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "report"
+        ],
+        "title": "GraphResponse"
+      },
+      "GraphScore": {
+        "properties": {
+          "log_loss": {
+            "type": "number",
+            "title": "Log Loss"
+          },
+          "brier": {
+            "type": "number",
+            "title": "Brier"
+          },
+          "roc_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Roc Auc"
+          },
+          "pr_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pr Auc"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "positive_episodes": {
+            "type": "integer",
+            "title": "Positive Episodes"
+          },
+          "intervals": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Intervals"
+          },
+          "reliability": {
+            "items": {
+              "$ref": "#/components/schemas/GraphCalibrationBin"
+            },
+            "type": "array",
+            "title": "Reliability"
+          },
+          "calibration": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration"
+          },
+          "uncalibrated": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GraphMetrics"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prepared_inference_p95_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prepared Inference P95 Ms"
+          },
+          "artifact_hash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Artifact Hash"
+          }
+        },
+        "type": "object",
+        "required": [
+          "log_loss",
+          "brier",
+          "roc_auc",
+          "pr_auc",
+          "n",
+          "positive_episodes",
+          "intervals",
+          "reliability",
+          "calibration",
+          "uncalibrated",
+          "prepared_inference_p95_ms",
+          "artifact_hash"
+        ],
+        "title": "GraphScore"
+      },
+      "GraphSeedAggregate": {
+        "properties": {
+          "seeds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Seeds"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/GraphMetrics"
+          },
+          "intervals": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Intervals"
+          }
+        },
+        "type": "object",
+        "required": [
+          "seeds",
+          "metrics",
+          "intervals"
+        ],
+        "title": "GraphSeedAggregate"
+      },
+      "GraphStress": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "evaluated",
+              "no_eligible_test_samples"
+            ],
+            "title": "Status"
+          },
+          "held_out_teams": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Held Out Teams"
+          },
+          "development_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Development Counts"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "matches": {
+            "type": "integer",
+            "title": "Matches"
+          },
+          "results": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/GraphScore"
+            },
+            "type": "object",
+            "title": "Results"
+          },
+          "paired_difference": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Paired Difference"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "held_out_teams",
+          "development_counts",
+          "n",
+          "matches",
+          "results",
+          "paired_difference"
+        ],
+        "title": "GraphStress"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Importance": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature"
+          },
+          "mean_log_loss_increase": {
+            "type": "number",
+            "title": "Mean Log Loss Increase"
+          },
+          "std": {
+            "type": "number",
+            "title": "Std"
+          },
+          "repeats": {
+            "type": "integer",
+            "title": "Repeats"
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature",
+          "mean_log_loss_increase",
+          "std",
+          "repeats"
+        ],
+        "title": "Importance"
+      },
+      "LocalEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "team_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Name"
+          },
+          "player_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Player Name"
+          },
+          "x": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "X"
+          },
+          "y": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Y"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "index",
+          "period",
+          "timestamp",
+          "type",
+          "team_name",
+          "player_name",
+          "x",
+          "y"
+        ],
+        "title": "LocalEvent"
+      },
+      "LocalEvents": {
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/LocalEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "events",
+          "offset",
+          "limit",
+          "total",
+          "provenance"
+        ],
+        "title": "LocalEvents"
+      },
+      "MatchCard": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "competition": {
+            "type": "string",
+            "title": "Competition"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "home": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "away": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "event_count": {
+            "type": "integer",
+            "title": "Event Count"
+          },
+          "source_schema": {
+            "type": "string",
+            "title": "Source Schema"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "competition",
+          "season",
+          "home",
+          "away",
+          "event_count",
+          "source_schema",
+          "provenance"
+        ],
+        "title": "MatchCard"
+      },
+      "MatchList": {
+        "properties": {
+          "matches": {
+            "items": {
+              "$ref": "#/components/schemas/MatchCard"
+            },
+            "type": "array",
+            "title": "Matches"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "local",
+              "public"
+            ],
+            "title": "Mode"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "matches",
+          "mode",
+          "provenance"
+        ],
+        "title": "MatchList"
+      },
+      "MatchSummary": {
+        "properties": {
+          "match": {
+            "$ref": "#/components/schemas/MatchCard"
+          },
+          "teams": {
+            "items": {
+              "$ref": "#/components/schemas/TeamStats"
+            },
+            "type": "array",
+            "title": "Teams"
+          },
+          "periods": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Periods"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prediction_split": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prediction Split"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "match",
+          "teams",
+          "periods",
+          "model",
+          "prediction_split",
+          "provenance"
+        ],
+        "title": "MatchSummary"
+      },
+      "Measurement": {
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "shots",
+              "xg",
+              "passes",
+              "completed_passes",
+              "final_third_entries",
+              "field_tilt",
+              "network",
+              "movement_xt"
+            ],
+            "title": "Metric"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Denominator"
+          },
+          "denominator_unit": {
+            "type": "string",
+            "title": "Denominator Unit"
+          },
+          "evidence_id": {
+            "type": "string",
+            "title": "Evidence Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "metric",
+          "value",
+          "unit",
+          "numerator",
+          "denominator",
+          "denominator_unit",
+          "evidence_id"
+        ],
+        "title": "Measurement"
+      },
+      "MethodologyResponse": {
+        "properties": {
+          "method": {
+            "type": "string",
+            "title": "Method"
+          },
+          "chunks": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentChunk"
+            },
+            "type": "array",
+            "title": "Chunks"
+          }
+        },
+        "type": "object",
+        "required": [
+          "method",
+          "chunks"
+        ],
+        "title": "MethodologyResponse"
+      },
+      "MetricDifference": {
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "shots",
+              "xg",
+              "passes",
+              "completed_passes",
+              "final_third_entries",
+              "field_tilt",
+              "network",
+              "movement_xt"
+            ],
+            "title": "Metric"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "metric",
+          "value",
+          "unit"
+        ],
+        "title": "MetricDifference"
+      },
+      "ModelProvenance": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "family": {
+            "type": "string",
+            "title": "Family"
+          },
+          "artifact_hash": {
+            "type": "string",
+            "title": "Artifact Hash"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "feature_version": {
+            "type": "string",
+            "title": "Feature Version"
+          },
+          "sample_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Id"
+          },
+          "split": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Split"
+          },
+          "penalty": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Penalty"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "family",
+          "artifact_hash",
+          "run_id",
+          "feature_version",
+          "sample_id",
+          "split",
+          "penalty"
+        ],
+        "title": "ModelProvenance"
+      },
+      "MomentumPoint": {
+        "properties": {
+          "start_ms": {
+            "type": "integer",
+            "title": "Start Ms"
+          },
+          "end_ms": {
+            "type": "integer",
+            "title": "End Ms"
+          },
+          "xg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Xg"
+          },
+          "movement_xt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Movement Xt"
+          },
+          "shots": {
+            "type": "integer",
+            "title": "Shots"
+          },
+          "predicted_shots": {
+            "type": "integer",
+            "title": "Predicted Shots"
+          },
+          "valued_actions": {
+            "type": "integer",
+            "title": "Valued Actions"
+          },
+          "eligible_actions": {
+            "type": "integer",
+            "title": "Eligible Actions"
+          },
+          "xg_evidence_id": {
+            "type": "string",
+            "title": "Xg Evidence Id"
+          },
+          "xt_evidence_id": {
+            "type": "string",
+            "title": "Xt Evidence Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "start_ms",
+          "end_ms",
+          "xg",
+          "movement_xt",
+          "shots",
+          "predicted_shots",
+          "valued_actions",
+          "eligible_actions",
+          "xg_evidence_id",
+          "xt_evidence_id"
+        ],
+        "title": "MomentumPoint"
+      },
+      "NamedCount": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "count"
+        ],
+        "title": "NamedCount"
+      },
+      "NetworkEdge": {
+        "properties": {
+          "sender": {
+            "type": "integer",
+            "title": "Sender"
+          },
+          "recipient": {
+            "type": "integer",
+            "title": "Recipient"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sender",
+          "recipient",
+          "count"
+        ],
+        "title": "NetworkEdge"
+      },
+      "NetworkNode": {
+        "properties": {
+          "player_id": {
+            "type": "integer",
+            "title": "Player Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "x": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "X"
+          },
+          "y": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Y"
+          },
+          "position_samples": {
+            "type": "integer",
+            "title": "Position Samples"
+          },
+          "exposure_minutes": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exposure Minutes"
+          },
+          "in_strength": {
+            "type": "integer",
+            "title": "In Strength"
+          },
+          "out_strength": {
+            "type": "integer",
+            "title": "Out Strength"
+          },
+          "betweenness": {
+            "type": "number",
+            "title": "Betweenness"
+          },
+          "movement_xt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Movement Xt"
+          },
+          "valued_actions": {
+            "type": "integer",
+            "title": "Valued Actions",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "player_id",
+          "name",
+          "x",
+          "y",
+          "position_samples",
+          "exposure_minutes",
+          "in_strength",
+          "out_strength",
+          "betweenness",
+          "movement_xt",
+          "valued_actions"
+        ],
+        "title": "NetworkNode"
+      },
+      "NetworkResponse": {
+        "properties": {
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "analysis": {
+            "$ref": "#/components/schemas/WindowAnalysis"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "xt_model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "match_id",
+          "team_id",
+          "analysis",
+          "model",
+          "provenance",
+          "xt_model"
+        ],
+        "title": "NetworkResponse"
+      },
+      "PartitionCoverage": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "expected": {
+            "type": "integer",
+            "title": "Expected"
+          },
+          "ingested": {
+            "type": "integer",
+            "title": "Ingested"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "expected",
+          "ingested"
+        ],
+        "title": "PartitionCoverage"
+      },
+      "PassingNetwork": {
+        "properties": {
+          "nodes": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkNode"
+            },
+            "type": "array",
+            "title": "Nodes"
+          },
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkEdge"
+            },
+            "type": "array",
+            "title": "Edges"
+          },
+          "pass_count": {
+            "type": "integer",
+            "title": "Pass Count"
+          },
+          "excluded_passes": {
+            "type": "integer",
+            "title": "Excluded Passes"
+          },
+          "density": {
+            "type": "number",
+            "title": "Density"
+          },
+          "concentration": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Concentration"
+          },
+          "evidence_id": {
+            "type": "string",
+            "title": "Evidence Id"
+          },
+          "position_definition": {
+            "type": "string",
+            "title": "Position Definition",
+            "default": "Mean completed-pass origin and reception locations; not tracking"
+          }
+        },
+        "type": "object",
+        "required": [
+          "nodes",
+          "edges",
+          "pass_count",
+          "excluded_passes",
+          "density",
+          "concentration",
+          "evidence_id",
+          "position_definition"
+        ],
+        "title": "PassingNetwork"
+      },
+      "PenaltyEvaluation": {
+        "properties": {
+          "probability": {
+            "type": "number",
+            "title": "Probability"
+          },
+          "test_metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProbabilityScores"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "probability",
+          "test_metrics"
+        ],
+        "title": "PenaltyEvaluation"
+      },
+      "ProbabilityScores": {
+        "properties": {
+          "log_loss": {
+            "type": "number",
+            "title": "Log Loss"
+          },
+          "brier": {
+            "type": "number",
+            "title": "Brier"
+          },
+          "roc_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Roc Auc"
+          },
+          "pr_auc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pr Auc"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "goals": {
+            "type": "integer",
+            "title": "Goals"
+          }
+        },
+        "type": "object",
+        "required": [
+          "log_loss",
+          "brier",
+          "roc_auc",
+          "pr_auc",
+          "n",
+          "goals"
+        ],
+        "title": "ProbabilityScores"
+      },
+      "Provenance": {
+        "properties": {
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit",
+            "default": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb"
+          },
+          "metric_version": {
+            "type": "string",
+            "title": "Metric Version",
+            "default": "shot-count-v1"
+          },
+          "coordinate_frame": {
+            "type": "string",
+            "title": "Coordinate Frame",
+            "default": "StatsBomb event-team attacking frame, 120 \u00d7 80"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source_commit",
+          "metric_version",
+          "coordinate_frame"
+        ],
+        "title": "Provenance"
+      },
+      "ReferenceResult": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProbabilityScores"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "metrics"
+        ],
+        "title": "ReferenceResult"
+      },
+      "ReliabilityBin": {
+        "properties": {
+          "lower": {
+            "type": "number",
+            "title": "Lower"
+          },
+          "upper": {
+            "type": "number",
+            "title": "Upper"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "predicted": {
+            "type": "number",
+            "title": "Predicted"
+          },
+          "observed": {
+            "type": "number",
+            "title": "Observed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "lower",
+          "upper",
+          "n",
+          "predicted",
+          "observed"
+        ],
+        "title": "ReliabilityBin"
+      },
+      "ResearchResponse": {
+        "properties": {
+          "retrieval_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retrieval Version"
+          },
+          "retrieval_selected": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retrieval Selected"
+          },
+          "retrieval_generated_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retrieval Generated At"
+          },
+          "retrieval": {
+            "items": {
+              "$ref": "#/components/schemas/RetrievalScore"
+            },
+            "type": "array",
+            "title": "Retrieval"
+          },
+          "analyst": {
+            "items": {
+              "$ref": "#/components/schemas/AnalystScore"
+            },
+            "type": "array",
+            "title": "Analyst"
+          },
+          "human_review": {
+            "type": "string",
+            "title": "Human Review",
+            "default": "pending"
+          },
+          "local_evaluated": {
+            "type": "boolean",
+            "title": "Local Evaluated",
+            "default": false
+          },
+          "groq_evaluated": {
+            "type": "boolean",
+            "title": "Groq Evaluated",
+            "default": false
+          },
+          "groq_limitations": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Groq Limitations"
+          }
+        },
+        "type": "object",
+        "required": [
+          "retrieval_version",
+          "retrieval_selected",
+          "retrieval_generated_at",
+          "retrieval",
+          "analyst",
+          "human_review",
+          "local_evaluated",
+          "groq_evaluated",
+          "groq_limitations"
+        ],
+        "title": "ResearchResponse"
+      },
+      "RetrievalScore": {
+        "properties": {
+          "partition": {
+            "type": "string",
+            "title": "Partition"
+          },
+          "method": {
+            "type": "string",
+            "title": "Method"
+          },
+          "queries": {
+            "type": "integer",
+            "title": "Queries"
+          },
+          "recall_at_5": {
+            "type": "number",
+            "title": "Recall At 5"
+          },
+          "mrr_at_5": {
+            "type": "number",
+            "title": "Mrr At 5"
+          }
+        },
+        "type": "object",
+        "required": [
+          "partition",
+          "method",
+          "queries",
+          "recall_at_5",
+          "mrr_at_5"
+        ],
+        "title": "RetrievalScore"
+      },
+      "SeasonCoverage": {
+        "properties": {
+          "season_id": {
+            "type": "integer",
+            "title": "Season Id"
+          },
+          "expected": {
+            "type": "integer",
+            "title": "Expected"
+          },
+          "ingested": {
+            "type": "integer",
+            "title": "Ingested"
+          },
+          "ready": {
+            "type": "integer",
+            "title": "Ready"
+          },
+          "events": {
+            "type": "integer",
+            "title": "Events"
+          },
+          "shots": {
+            "type": "integer",
+            "title": "Shots"
+          },
+          "passes": {
+            "type": "integer",
+            "title": "Passes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "season_id",
+          "expected",
+          "ingested",
+          "ready",
+          "events",
+          "shots",
+          "passes"
+        ],
+        "title": "SeasonCoverage"
+      },
+      "SensitivityResponse": {
+        "properties": {
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "metric_version": {
+            "type": "string",
+            "title": "Metric Version",
+            "default": "network-removal-v1"
+          },
+          "evidence_id": {
+            "type": "string",
+            "title": "Evidence Id"
+          },
+          "player_id": {
+            "type": "integer",
+            "title": "Player Id"
+          },
+          "player_name": {
+            "type": "string",
+            "title": "Player Name"
+          },
+          "before": {
+            "$ref": "#/components/schemas/Structure"
+          },
+          "after": {
+            "$ref": "#/components/schemas/Structure"
+          },
+          "removed_pass_weight": {
+            "type": "integer",
+            "title": "Removed Pass Weight"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Sha256"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "limitation": {
+            "type": "string",
+            "title": "Limitation",
+            "default": "Structural sensitivity of a fixed historical passing graph. The selected node and its incident edges are deleted; every other observed edge and isolated player is retained. This does not predict replacement behaviour, goals or what would have happened without the player. Reachability counts ordered pairs connected by a directed path, excluding self-pairs; weak components ignore direction, strong components require paths both ways."
+          }
+        },
+        "type": "object",
+        "required": [
+          "result_id",
+          "metric_version",
+          "evidence_id",
+          "player_id",
+          "player_name",
+          "before",
+          "after",
+          "removed_pass_weight",
+          "source_sha256",
+          "provenance",
+          "limitation"
+        ],
+        "title": "SensitivityResponse"
+      },
+      "ShotEvidence": {
+        "properties": {
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "predicate": {
+            "type": "string",
+            "const": "shot_count",
+            "title": "Predicate",
+            "default": "shot_count"
+          },
+          "value": {
+            "type": "integer",
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "const": "shots",
+            "title": "Unit",
+            "default": "shots"
+          },
+          "team_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Id"
+          },
+          "player_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Player Id"
+          },
+          "period": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Period"
+          },
+          "start_ms": {
+            "type": "integer",
+            "title": "Start Ms"
+          },
+          "end_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Ms"
+          },
+          "definition": {
+            "type": "string",
+            "title": "Definition"
+          },
+          "statement": {
+            "type": "string",
+            "title": "Statement"
+          },
+          "references": {
+            "items": {
+              "$ref": "#/components/schemas/EventReference"
+            },
+            "type": "array",
+            "title": "References"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Sha256"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "result_id",
+          "match_id",
+          "predicate",
+          "value",
+          "unit",
+          "team_id",
+          "player_id",
+          "period",
+          "start_ms",
+          "end_ms",
+          "definition",
+          "statement",
+          "references",
+          "source_sha256",
+          "provenance"
+        ],
+        "title": "ShotEvidence"
+      },
+      "ShotLayer": {
+        "properties": {
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "shots": {
+            "items": {
+              "$ref": "#/components/schemas/ShotPoint"
+            },
+            "type": "array",
+            "title": "Shots"
+          },
+          "total_shots": {
+            "type": "integer",
+            "title": "Total Shots"
+          },
+          "located_shots": {
+            "type": "integer",
+            "title": "Located Shots"
+          },
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "match_id",
+          "shots",
+          "total_shots",
+          "located_shots",
+          "result_id",
+          "provenance"
+        ],
+        "title": "ShotLayer"
+      },
+      "ShotPoint": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "period_ms": {
+            "type": "integer",
+            "title": "Period Ms"
+          },
+          "minute": {
+            "type": "integer",
+            "title": "Minute"
+          },
+          "second": {
+            "type": "integer",
+            "title": "Second"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "player_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Player Id"
+          },
+          "player_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Player Name"
+          },
+          "x": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "X"
+          },
+          "y": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Y"
+          },
+          "outcome": {
+            "type": "string",
+            "title": "Outcome"
+          },
+          "goal": {
+            "type": "boolean",
+            "title": "Goal"
+          },
+          "body_part": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body Part"
+          },
+          "shot_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Shot Type"
+          },
+          "location_status": {
+            "type": "string",
+            "enum": [
+              "valid",
+              "missing",
+              "outside_pitch"
+            ],
+            "title": "Location Status"
+          },
+          "xg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Xg"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "event_id",
+          "index",
+          "period",
+          "timestamp",
+          "period_ms",
+          "minute",
+          "second",
+          "team_id",
+          "player_id",
+          "player_name",
+          "x",
+          "y",
+          "outcome",
+          "goal",
+          "body_part",
+          "shot_type",
+          "location_status",
+          "xg",
+          "model"
+        ],
+        "title": "ShotPoint"
+      },
+      "ShotTimeBin": {
+        "properties": {
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "start_minute": {
+            "type": "integer",
+            "title": "Start Minute"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "period",
+          "start_minute",
+          "count"
+        ],
+        "title": "ShotTimeBin"
+      },
+      "ShotZone": {
+        "properties": {
+          "x_bin": {
+            "type": "integer",
+            "title": "X Bin"
+          },
+          "y_bin": {
+            "type": "integer",
+            "title": "Y Bin"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "x_bin",
+          "y_bin",
+          "count"
+        ],
+        "title": "ShotZone"
+      },
+      "ShowcaseResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_prepared",
+              "review_pending",
+              "available",
+              "stale"
+            ],
+            "title": "Status"
+          },
+          "reports": {
+            "items": {
+              "$ref": "#/components/schemas/CachedReport"
+            },
+            "type": "array",
+            "title": "Reports",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "ShowcaseResponse"
+      },
+      "SliceEvaluation": {
+        "properties": {
+          "field": {
+            "type": "string",
+            "title": "Field"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProbabilityScores"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warning": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warning"
+          }
+        },
+        "type": "object",
+        "required": [
+          "field",
+          "value",
+          "n",
+          "metrics",
+          "warning"
+        ],
+        "title": "SliceEvaluation"
+      },
+      "StressFold": {
+        "properties": {
+          "group": {
+            "type": "integer",
+            "title": "Group"
+          },
+          "teams": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Teams"
+          },
+          "fit_shots": {
+            "type": "integer",
+            "title": "Fit Shots"
+          },
+          "fit_matches": {
+            "type": "integer",
+            "title": "Fit Matches"
+          },
+          "calibration_shots": {
+            "type": "integer",
+            "title": "Calibration Shots"
+          },
+          "test_shots": {
+            "type": "integer",
+            "title": "Test Shots"
+          },
+          "test_matches": {
+            "type": "integer",
+            "title": "Test Matches"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProbabilityScores"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "group",
+          "teams",
+          "fit_shots",
+          "fit_matches",
+          "calibration_shots",
+          "test_shots",
+          "test_matches",
+          "status",
+          "metrics"
+        ],
+        "title": "StressFold"
+      },
+      "Structure": {
+        "properties": {
+          "players": {
+            "type": "integer",
+            "title": "Players"
+          },
+          "directed_edges": {
+            "type": "integer",
+            "title": "Directed Edges"
+          },
+          "pass_weight": {
+            "type": "integer",
+            "title": "Pass Weight"
+          },
+          "density": {
+            "type": "number",
+            "title": "Density"
+          },
+          "isolated_players": {
+            "type": "integer",
+            "title": "Isolated Players"
+          },
+          "weak_component_sizes": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Weak Component Sizes"
+          },
+          "strong_component_sizes": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Strong Component Sizes"
+          },
+          "reachable_ordered_pairs": {
+            "type": "integer",
+            "title": "Reachable Ordered Pairs"
+          },
+          "possible_ordered_pairs": {
+            "type": "integer",
+            "title": "Possible Ordered Pairs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "players",
+          "directed_edges",
+          "pass_weight",
+          "density",
+          "isolated_players",
+          "weak_component_sizes",
+          "strong_component_sizes",
+          "reachable_ordered_pairs",
+          "possible_ordered_pairs"
+        ],
+        "title": "Structure"
+      },
+      "StyleCluster": {
+        "properties": {
+          "cluster": {
+            "type": "integer",
+            "title": "Cluster"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "training_windows": {
+            "type": "integer",
+            "title": "Training Windows"
+          },
+          "means": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Means"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cluster",
+          "label",
+          "training_windows",
+          "means"
+        ],
+        "title": "StyleCluster"
+      },
+      "StyleReport": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Features"
+          },
+          "training_windows": {
+            "type": "integer",
+            "title": "Training Windows"
+          },
+          "training_matches": {
+            "type": "integer",
+            "title": "Training Matches"
+          },
+          "projected_windows": {
+            "type": "integer",
+            "title": "Projected Windows"
+          },
+          "clusters": {
+            "items": {
+              "$ref": "#/components/schemas/StyleCluster"
+            },
+            "type": "array",
+            "title": "Clusters"
+          },
+          "pca_explained_variance": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Pca Explained Variance"
+          },
+          "training_silhouette": {
+            "type": "number",
+            "title": "Training Silhouette"
+          },
+          "seed_ari": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Seed Ari"
+          },
+          "match_bootstrap_ari": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Match Bootstrap Ari"
+          },
+          "limitation": {
+            "type": "string",
+            "title": "Limitation"
+          },
+          "model_sha256": {
+            "type": "string",
+            "title": "Model Sha256"
+          },
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "features",
+          "training_windows",
+          "training_matches",
+          "projected_windows",
+          "clusters",
+          "pca_explained_variance",
+          "training_silhouette",
+          "seed_ari",
+          "match_bootstrap_ari",
+          "limitation",
+          "model_sha256",
+          "source_commit"
+        ],
+        "title": "StyleReport"
+      },
+      "StyleWindow": {
+        "properties": {
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "start_ms": {
+            "type": "integer",
+            "title": "Start Ms"
+          },
+          "end_ms": {
+            "type": "integer",
+            "title": "End Ms"
+          },
+          "pass_count": {
+            "type": "integer",
+            "title": "Pass Count"
+          },
+          "spatial_pass_count": {
+            "type": "integer",
+            "title": "Spatial Pass Count"
+          },
+          "features": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Features"
+          },
+          "evidence_id": {
+            "type": "string",
+            "title": "Evidence Id"
+          },
+          "partition": {
+            "type": "string",
+            "title": "Partition"
+          },
+          "cluster": {
+            "type": "integer",
+            "title": "Cluster"
+          }
+        },
+        "type": "object",
+        "required": [
+          "match_id",
+          "team_id",
+          "period",
+          "start_ms",
+          "end_ms",
+          "pass_count",
+          "spatial_pass_count",
+          "features",
+          "evidence_id",
+          "partition",
+          "cluster"
+        ],
+        "title": "StyleWindow"
+      },
+      "StylesResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "available",
+              "not_trained",
+              "stale"
+            ],
+            "title": "Status"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StyleReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "windows": {
+            "items": {
+              "$ref": "#/components/schemas/StyleWindow"
+            },
+            "type": "array",
+            "title": "Windows",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "StylesResponse"
+      },
+      "TacticalEvidence": {
+        "properties": {
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "window": {
+            "$ref": "#/components/schemas/Window"
+          },
+          "metric": {
+            "type": "string",
+            "enum": [
+              "shots",
+              "xg",
+              "passes",
+              "completed_passes",
+              "final_third_entries",
+              "field_tilt",
+              "network",
+              "movement_xt"
+            ],
+            "title": "Metric"
+          },
+          "definition": {
+            "type": "string",
+            "title": "Definition"
+          },
+          "measurement": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Measurement"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "network": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PassingNetwork"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "references": {
+            "items": {
+              "$ref": "#/components/schemas/EventReference"
+            },
+            "type": "array",
+            "title": "References"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Sha256"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "xt_model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "result_id",
+          "match_id",
+          "team_id",
+          "window",
+          "metric",
+          "definition",
+          "measurement",
+          "network",
+          "references",
+          "total",
+          "offset",
+          "limit",
+          "source_sha256",
+          "model",
+          "xt_model",
+          "provenance"
+        ],
+        "title": "TacticalEvidence"
+      },
+      "Team": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "score": {
+            "type": "integer",
+            "title": "Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "score"
+        ],
+        "title": "Team"
+      },
+      "TeamStats": {
+        "properties": {
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "shots": {
+            "type": "integer",
+            "title": "Shots"
+          },
+          "goals_from_shots": {
+            "type": "integer",
+            "title": "Goals From Shots"
+          },
+          "passes": {
+            "type": "integer",
+            "title": "Passes"
+          },
+          "completed_passes": {
+            "type": "integer",
+            "title": "Completed Passes"
+          },
+          "located_shots": {
+            "type": "integer",
+            "title": "Located Shots"
+          },
+          "xg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Xg"
+          },
+          "non_penalty_xg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Non Penalty Xg"
+          },
+          "penalty_xg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Penalty Xg"
+          },
+          "predicted_shots": {
+            "type": "integer",
+            "title": "Predicted Shots",
+            "default": 0
+          },
+          "xg_status": {
+            "type": "string",
+            "enum": [
+              "not_trained",
+              "ready",
+              "partial",
+              "unavailable"
+            ],
+            "title": "Xg Status",
+            "default": "not_trained"
+          }
+        },
+        "type": "object",
+        "required": [
+          "team_id",
+          "shots",
+          "goals_from_shots",
+          "passes",
+          "completed_passes",
+          "located_shots",
+          "xg",
+          "non_penalty_xg",
+          "penalty_xg",
+          "predicted_shots",
+          "xg_status"
+        ],
+        "title": "TeamStats"
+      },
+      "ThirdPassPrediction": {
+        "properties": {
+          "sample_id": {
+            "type": "string",
+            "title": "Sample Id"
+          },
+          "cutoff_event_id": {
+            "type": "string",
+            "title": "Cutoff Event Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "cutoff_ms": {
+            "type": "integer",
+            "title": "Cutoff Ms"
+          },
+          "probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability"
+          },
+          "split": {
+            "type": "string",
+            "enum": [
+              "train",
+              "tuning",
+              "calibration",
+              "test"
+            ],
+            "title": "Split"
+          },
+          "observed_later_shot": {
+            "type": "boolean",
+            "title": "Observed Later Shot"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sample_id",
+          "cutoff_event_id",
+          "team_id",
+          "period",
+          "timestamp",
+          "cutoff_ms",
+          "probability",
+          "split",
+          "observed_later_shot"
+        ],
+        "title": "ThirdPassPrediction"
+      },
+      "ThirdPassResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "unavailable"
+            ],
+            "title": "Status"
+          },
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "samples": {
+            "items": {
+              "$ref": "#/components/schemas/ThirdPassPrediction"
+            },
+            "type": "array",
+            "title": "Samples"
+          },
+          "warning": {
+            "type": "string",
+            "title": "Warning",
+            "default": "Train/tuning predictions are in-sample; calibration data fitted the probability mapping. Only test predictions support held-out evaluation. These are historical shot-occurrence predictions, not causal effects or xG."
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "match_id",
+          "source_commit",
+          "model",
+          "total",
+          "samples",
+          "warning"
+        ],
+        "title": "ThirdPassResponse"
+      },
+      "ToolResult": {
+        "properties": {
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "tool": {
+            "type": "string",
+            "enum": [
+              "compare_windows",
+              "get_passing_network",
+              "get_model_outputs"
+            ],
+            "title": "Tool"
+          },
+          "arguments": {
+            "$ref": "#/components/schemas/AnalystRequest-Output"
+          },
+          "before": {
+            "items": {
+              "$ref": "#/components/schemas/Fact"
+            },
+            "type": "array",
+            "title": "Before"
+          },
+          "after": {
+            "items": {
+              "$ref": "#/components/schemas/Fact"
+            },
+            "type": "array",
+            "title": "After"
+          },
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          },
+          "source_sha256": {
+            "type": "string",
+            "title": "Source Sha256"
+          },
+          "metric_version": {
+            "type": "string",
+            "title": "Metric Version"
+          },
+          "model_versions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Model Versions"
+          },
+          "quality_warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Quality Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "result_id",
+          "tool",
+          "arguments",
+          "before",
+          "after",
+          "source_commit",
+          "source_sha256",
+          "metric_version",
+          "model_versions",
+          "quality_warnings"
+        ],
+        "title": "ToolResult"
+      },
+      "TrainingEDA": {
+        "properties": {
+          "partition": {
+            "type": "string",
+            "const": "train",
+            "title": "Partition"
+          },
+          "match_count": {
+            "type": "integer",
+            "title": "Match Count"
+          },
+          "match_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Match Ids"
+          },
+          "event_distribution": {
+            "items": {
+              "$ref": "#/components/schemas/NamedCount"
+            },
+            "type": "array",
+            "title": "Event Distribution"
+          },
+          "shot_zones": {
+            "items": {
+              "$ref": "#/components/schemas/ShotZone"
+            },
+            "type": "array",
+            "title": "Shot Zones"
+          },
+          "shot_time_bins": {
+            "items": {
+              "$ref": "#/components/schemas/ShotTimeBin"
+            },
+            "type": "array",
+            "title": "Shot Time Bins"
+          },
+          "teams": {
+            "items": {
+              "$ref": "#/components/schemas/EntityStatistics"
+            },
+            "type": "array",
+            "title": "Teams"
+          },
+          "players": {
+            "items": {
+              "$ref": "#/components/schemas/EntityStatistics"
+            },
+            "type": "array",
+            "title": "Players"
+          },
+          "episode_lengths": {
+            "items": {
+              "$ref": "#/components/schemas/NamedCount"
+            },
+            "type": "array",
+            "title": "Episode Lengths"
+          },
+          "note": {
+            "type": "string",
+            "title": "Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "partition",
+          "match_count",
+          "match_ids",
+          "event_distribution",
+          "shot_zones",
+          "shot_time_bins",
+          "teams",
+          "players",
+          "episode_lengths",
+          "note"
+        ],
+        "title": "TrainingEDA"
+      },
+      "TrendsResponse": {
+        "properties": {
+          "match_id": {
+            "type": "integer",
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "title": "Team Id"
+          },
+          "period": {
+            "type": "integer",
+            "title": "Period"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/MomentumPoint"
+            },
+            "type": "array",
+            "title": "Points"
+          },
+          "candidate_shifts": {
+            "items": {
+              "$ref": "#/components/schemas/CandidateShift"
+            },
+            "type": "array",
+            "title": "Candidate Shifts"
+          },
+          "key_events": {
+            "items": {
+              "$ref": "#/components/schemas/EventReference"
+            },
+            "type": "array",
+            "title": "Key Events"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "xt_model": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "match_id",
+          "team_id",
+          "period",
+          "points",
+          "candidate_shifts",
+          "key_events",
+          "warnings",
+          "model",
+          "xt_model",
+          "provenance"
+        ],
+        "title": "TrendsResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VerifiedClaim": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "measured_fact",
+              "limitation"
+            ],
+            "title": "Kind"
+          },
+          "predicate": {
+            "type": "string",
+            "title": "Predicate"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "result_id": {
+            "type": "string",
+            "title": "Result Id"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Ids"
+          },
+          "before": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Before"
+          },
+          "after": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "After"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "predicate",
+          "text",
+          "result_id",
+          "evidence_ids",
+          "before",
+          "after",
+          "unit"
+        ],
+        "title": "VerifiedClaim"
+      },
+      "Window": {
+        "properties": {
+          "period": {
+            "type": "integer",
+            "maximum": 4.0,
+            "minimum": 1.0,
+            "title": "Period"
+          },
+          "start_ms": {
+            "type": "integer",
+            "exclusiveMaximum": 7200000.0,
+            "minimum": 0.0,
+            "title": "Start Ms"
+          },
+          "end_ms": {
+            "type": "integer",
+            "maximum": 7200000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "End Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "period",
+          "start_ms",
+          "end_ms"
+        ],
+        "title": "Window"
+      },
+      "WindowAnalysis": {
+        "properties": {
+          "window": {
+            "$ref": "#/components/schemas/Window"
+          },
+          "measurements": {
+            "items": {
+              "$ref": "#/components/schemas/Measurement"
+            },
+            "type": "array",
+            "title": "Measurements"
+          },
+          "network": {
+            "$ref": "#/components/schemas/PassingNetwork"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "window",
+          "measurements",
+          "network",
+          "warnings"
+        ],
+        "title": "WindowAnalysis"
+      },
+      "XTCandidate": {
+        "properties": {
+          "grid": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Grid"
+          },
+          "scores": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/XTTuningScore"
+            },
+            "type": "object",
+            "title": "Scores"
+          },
+          "iterations": {
+            "type": "integer",
+            "title": "Iterations"
+          }
+        },
+        "type": "object",
+        "required": [
+          "grid",
+          "scores",
+          "iterations"
+        ],
+        "title": "XTCandidate"
+      },
+      "XTCoverage": {
+        "properties": {
+          "source_episodes": {
+            "type": "integer",
+            "title": "Source Episodes"
+          },
+          "eligible_episodes": {
+            "type": "integer",
+            "title": "Eligible Episodes"
+          },
+          "excluded_episodes": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Excluded Episodes"
+          },
+          "matches": {
+            "type": "integer",
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source_episodes",
+          "eligible_episodes",
+          "excluded_episodes",
+          "matches"
+        ],
+        "title": "XTCoverage"
+      },
+      "XTDevelopment": {
+        "properties": {
+          "selected_grid": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Selected Grid"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/XTCandidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          },
+          "train": {
+            "$ref": "#/components/schemas/XTCoverage"
+          },
+          "tuning": {
+            "$ref": "#/components/schemas/XTCoverage"
+          },
+          "fitting_episodes": {
+            "type": "integer",
+            "title": "Fitting Episodes"
+          },
+          "iterations": {
+            "type": "integer",
+            "title": "Iterations"
+          }
+        },
+        "type": "object",
+        "required": [
+          "selected_grid",
+          "candidates",
+          "train",
+          "tuning",
+          "fitting_episodes",
+          "iterations"
+        ],
+        "title": "XTDevelopment"
+      },
+      "XTLock": {
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "protocol_hash": {
+            "type": "string",
+            "title": "Protocol Hash"
+          },
+          "code_hash": {
+            "type": "string",
+            "title": "Code Hash"
+          },
+          "split_hash": {
+            "type": "string",
+            "title": "Split Hash"
+          },
+          "source_hash": {
+            "type": "string",
+            "title": "Source Hash"
+          },
+          "artifact_hash": {
+            "type": "string",
+            "title": "Artifact Hash"
+          }
+        },
+        "type": "object",
+        "required": [
+          "created_at",
+          "run_id",
+          "protocol_hash",
+          "code_hash",
+          "split_hash",
+          "source_hash",
+          "artifact_hash"
+        ],
+        "title": "XTLock"
+      },
+      "XTReport": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "generated_at": {
+            "type": "string",
+            "title": "Generated At"
+          },
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          },
+          "model": {
+            "$ref": "#/components/schemas/XTSurface"
+          },
+          "results": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/XTScore"
+            },
+            "type": "object",
+            "title": "Results"
+          },
+          "development": {
+            "$ref": "#/components/schemas/XTDevelopment"
+          },
+          "test": {
+            "$ref": "#/components/schemas/XTCoverage"
+          },
+          "lock": {
+            "$ref": "#/components/schemas/XTLock"
+          },
+          "paired_differences": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              "type": "object"
+            },
+            "type": "object",
+            "title": "Paired Differences"
+          },
+          "attribution": {
+            "type": "string",
+            "title": "Attribution"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          },
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation"
+          },
+          "test_disclosure": {
+            "type": "string",
+            "title": "Test Disclosure"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "generated_at",
+          "source_commit",
+          "model",
+          "results",
+          "development",
+          "test",
+          "lock",
+          "paired_differences",
+          "attribution",
+          "source_url",
+          "interpretation",
+          "test_disclosure"
+        ],
+        "title": "XTReport"
+      },
+      "XTResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "evaluated",
+              "not_trained"
+            ],
+            "title": "Status"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/XTReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "report"
+        ],
+        "title": "XTResponse"
+      },
+      "XTScore": {
+        "properties": {
+          "log_loss": {
+            "type": "number",
+            "title": "Log Loss"
+          },
+          "brier": {
+            "type": "number",
+            "title": "Brier"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "goals": {
+            "type": "integer",
+            "title": "Goals"
+          },
+          "intervals": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Intervals"
+          }
+        },
+        "type": "object",
+        "required": [
+          "log_loss",
+          "brier",
+          "n",
+          "goals",
+          "intervals"
+        ],
+        "title": "XTScore"
+      },
+      "XTSurface": {
+        "properties": {
+          "grid": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Grid"
+          },
+          "values": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Values"
+          },
+          "no_transition": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "No Transition"
+          },
+          "action_counts": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Action Counts"
+          },
+          "shot_counts": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Shot Counts"
+          },
+          "goal_counts": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Goal Counts"
+          },
+          "global_episode_rate": {
+            "type": "number",
+            "title": "Global Episode Rate"
+          },
+          "episodes": {
+            "type": "integer",
+            "title": "Episodes"
+          },
+          "total_actions": {
+            "type": "integer",
+            "title": "Total Actions"
+          },
+          "terminal_count": {
+            "type": "integer",
+            "title": "Terminal Count"
+          },
+          "iterations": {
+            "type": "integer",
+            "title": "Iterations"
+          },
+          "maximum_delta": {
+            "type": "number",
+            "title": "Maximum Delta"
+          },
+          "row_probability_error": {
+            "type": "number",
+            "title": "Row Probability Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "grid",
+          "values",
+          "no_transition",
+          "action_counts",
+          "shot_counts",
+          "goal_counts",
+          "global_episode_rate",
+          "episodes",
+          "total_actions",
+          "terminal_count",
+          "iterations",
+          "maximum_delta",
+          "row_probability_error"
+        ],
+        "title": "XTSurface"
+      },
+      "XTTuningScore": {
+        "properties": {
+          "log_loss": {
+            "type": "number",
+            "title": "Log Loss"
+          },
+          "brier": {
+            "type": "number",
+            "title": "Brier"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          }
+        },
+        "type": "object",
+        "required": [
+          "log_loss",
+          "brier",
+          "n"
+        ],
+        "title": "XTTuningScore"
+      }
+    }
+  }
+}

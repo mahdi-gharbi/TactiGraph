@@ -1,0 +1,31 @@
+name: Analytics and model checks
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.6.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --frozen --extra dev --extra modeling --extra graph
+      - run: uv run --no-sync ruff check src tests
+      - run: uv run --no-sync ruff format --check src tests
+      - run: uv run --no-sync pytest -q
+      - run: npm ci --prefix frontend
+      - run: npm run format:check --prefix frontend
+      - run: uv run --no-sync tactigraph openapi
+      - run: npm run types --prefix frontend
+      - run: git diff --exit-code -- frontend/openapi.json frontend/src/api.generated.ts
+      - run: npm run build --prefix frontend
+      - run: docker build -t tactigraph:test .
+  # Real-data browser checks run locally after ingestion, audit and xG/xT publication.
+  # CI contains only synthetic fixtures; no upstream data is committed.

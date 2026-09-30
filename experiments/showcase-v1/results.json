@@ -1,0 +1,230 @@
+{
+  "version": "showcase-v1",
+  "status": "local_release_candidate",
+  "human_review": "pending",
+  "cloud_deployed": false,
+  "selection_rule": "Three per season; valid quality, complete models and claims; pass endpoint coverage descending then match ID ascending. Home team; H2 0\u201315 vs 15\u201330; all three guided intents.",
+  "matches": [
+    {
+      "match_id": 19716,
+      "season_id": 4,
+      "home": "Reading WFC",
+      "away": "Yeovil Town LFC",
+      "team_id": 974,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 19717,
+      "season_id": 4,
+      "home": "Arsenal WFC",
+      "away": "Liverpool WFC",
+      "team_id": 968,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 19718,
+      "season_id": 4,
+      "home": "Birmingham City WFC",
+      "away": "Everton LFC",
+      "team_id": 969,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 2275026,
+      "season_id": 42,
+      "home": "Bristol City WFC",
+      "away": "Manchester City WFC",
+      "team_id": 973,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 2275029,
+      "season_id": 42,
+      "home": "Bristol City WFC",
+      "away": "Liverpool WFC",
+      "team_id": 973,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 2275036,
+      "season_id": 42,
+      "home": "Everton LFC",
+      "away": "Reading WFC",
+      "team_id": 967,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 3764230,
+      "season_id": 90,
+      "home": "Tottenham Hotspur Women",
+      "away": "West Ham United LFC",
+      "team_id": 749,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 3764231,
+      "season_id": 90,
+      "home": "Brighton & Hove Albion WFC",
+      "away": "Birmingham City WFC",
+      "team_id": 965,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 3764233,
+      "season_id": 90,
+      "home": "Arsenal WFC",
+      "away": "Reading WFC",
+      "team_id": 968,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 3912592,
+      "season_id": 281,
+      "home": "Aston Villa W",
+      "away": "Manchester United W",
+      "team_id": 2647,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 3912593,
+      "season_id": 281,
+      "home": "West Ham United LFC",
+      "away": "Manchester City WFC",
+      "team_id": 972,
+      "pass_endpoint_coverage": 1.0
+    },
+    {
+      "match_id": 3912596,
+      "season_id": 281,
+      "home": "Everton LFC",
+      "away": "Brighton & Hove Albion WFC",
+      "team_id": 967,
+      "pass_endpoint_coverage": 1.0
+    }
+  ],
+  "reports": 36,
+  "report_fingerprints": {
+    "report-5be22fc171f60fc73bff8379": "3bc2f1c1d14036ffffa15cfc13e49b2a42dc3e391ec0b84ca94e71eabd389134",
+    "report-3537f49439747e538796f085": "1a34b8ab4245a83e900d77bca3466a90a4b282dec123e0f197c4b1fe5d6db5a6",
+    "report-b3423b942a7689442087f7a5": "147785f6b3a98b889fa4633114b8e202698f367879d75e45ff09f5befda8471a",
+    "report-63c35e9a8960b312975af45b": "aaa413086ffe145e69addb03c58a4d0cbeb30f92b70a006d9716427bf483ab7c",
+    "report-cec3f176476c872597d015f7": "d329ed8a4886b34d4313319e92fad34aa414d8c399454814ca02dcf59cde4885",
+    "report-e3fe94e4a1d7127d7b761054": "a818120f6e242f703904b35db038d36215362ad14b7ca81ab118652eb5df6e80",
+    "report-bf43ebbecc7a3d418b81218c": "c466e05820ada6f00d39e825d629813d125bd6515c33d432f95c86f034bfa5cc",
+    "report-2b2b9437b1a710d1367bdf9d": "b2fe947c88d1f198a214d5b4cad979112aa647ab6159e9afa4e929df1638fcfd",
+    "report-27e308a56886e4cd838b5c07": "32833f0c0c669c2db1c50061a7a22e6bbb7b4baf3a5bb96e729252ca1de93a7c",
+    "report-7145f6cd06be8e43b732b5c5": "48b50707bf557a4d2ba8753de9428dedb4e31bb2af4acceeb2878099202aa2e5",
+    "report-c47afa2c7f97e3946cf7ab49": "45f7ea1cbdf013793d57e836113af2d2c87b8f7069a4c378c7d78a41f30eaac6",
+    "report-e27d65a468554782cad6c1db": "b380a71d8fea5e55e0d89e57e249286bdda14d0a313bd811da9eae2af2b34bf3",
+    "report-acea3a4e6ff6852e48b645d2": "627f6fe663c8316e9a364c7d2d387a3c8eda4456cf72bd512e8fc2015971d597",
+    "report-24f3811d8317b0adee26f186": "9fe969409a0f5676e52cf1c31587bae1f2330bb4608bac162ac513a8504f4144",
+    "report-ed74625eda4d82e73fc14e2e": "a809b92cd7b46b7a737bb6b702e7e7801bc9156e547dd122026c1dc3cf401349",
+    "report-da297a0f8ed27a7729e517cd": "d0b7a8d47f80eb05bf621c0706e92719ed3483fcb59317dad31b0698576634e7",
+    "report-70246efe330754fdfe7553c4": "429fa3516fd8d4670afbe96b95d89defd65ac2934d070fd16e0104161914262f",
+    "report-8030899b99dcf1ee96dd64f9": "e38625fc9a2bd03f02b6355b792e34d9bad08a2fd644b67f70a1d716fc8167d4",
+    "report-06e9a0cd8bb6503210d40ab7": "13149007998a0eebf0a8c5c5dbf97cf9d5d2600b7becf61d8e1e72100c046b24",
+    "report-b826714a1df49236349adc93": "c6982954539045055a0854a4356e240c146008b3ed7fea589b0760db30cff54c",
+    "report-1168a30a2c27c4c4237a9b7e": "909429a45e74c894545ce0db483f115d72a75678ba7d8c756ad2f215da9f9214",
+    "report-229498bda288889c5a4cb063": "36f6626d026715319b83ce6428e9d6806875ca6488032678dfaad380a619775a",
+    "report-4a758af873a4aff65a1dc8e8": "2f90b9b6827800a7b769a32484788dac0f784e92f8b04920d10271b2e3344ab3",
+    "report-df88a2edc06b38ee189f0206": "c78a28a166262c9d8dc9a52f7bf2f630bdddbaf0b29b6ffdaa5780687910c9f2",
+    "report-309a072e48157113c591d01b": "b9ac5bc68684a9b061397ecdb07e36a214c98197b6759cd56641a614173f8057",
+    "report-5021f6362ff374328361794f": "aa1ff7e46b6288d1c7b1d2a5c4ba0fc4a1b30ede319ac14014e3750b87393b51",
+    "report-b9f3bcaed257b2de553b7cc1": "5d0a2bbdcacf1dd811345f73d2fd670618e62f696ed730a52bcc6a4daae7ff26",
+    "report-bdc2535e7a913c0dd99e6c81": "e9a8a8bcbdad213027946806c2e23ad9ad372913aad8a310ad6255dc4b9ac2f6",
+    "report-e2f8360e167ca69ecca8773d": "67e6f5decc7583c103f032ae8a1a9884af74eb8f5f4436d752d5231464d54c5f",
+    "report-c5d7d119c4ae8bc8881b00be": "0ed0462f247fd4b437c02f1b6155d49760b675128bea41856670bbe8cec9b7b6",
+    "report-ee47bdd73edb1d8cb3e1bd9d": "57a33752517c7ffce833d4de1226388a0ef81cffa53c5827e17a7ff03a5835bb",
+    "report-212f2b195ff0060545c9bcab": "5b818c5bc793a90be9759d706dd0df3310326186469117ca813e94461845ab51",
+    "report-197b607e9c985bd2eb72e83e": "9e530c7f6fd1aa6f44a310bf89b6703e65efb89e714c67a9c5f10d5283f1f996",
+    "report-68871e04ca72669d9de60c91": "3a67b046672f9fbdda5e7c3919ffbcb0f4e0065afe88b38d00c9b4e69c997604",
+    "report-94e736308e6ddd9af77c7c94": "70c1711552768821ce87a4470fe1fb2ed8f123db8a0f894a90feb884b95e347d",
+    "report-b2d69135a3aff15ab0cbc693": "86c0cfeb5b739dfc722064527f64d0de51f5f13f73d8880a58c4c8017fc6bc49"
+  },
+  "verification": {
+    "sqlite": {
+      "dialect": "sqlite",
+      "ingested_matches": 457,
+      "showcase_matches": 12,
+      "reports_recomputed": 36,
+      "raw_oracle_comparisons": 72,
+      "human_review": "pending",
+      "benchmark_scope": "warm single-client TestClient, three warmups then twenty requests; not internet latency",
+      "resolved_evidence_ids": 192,
+      "timings": {
+        "/api/v1/showcase": {
+          "median_ms": 70.12150005903095,
+          "p95_ms": 89.32159980759025
+        },
+        "/api/v1/experiments/styles": {
+          "median_ms": 48.591400031000376,
+          "p95_ms": 109.65100000612438
+        },
+        "/api/v1/matches/19716/summary": {
+          "median_ms": 41.37434996664524,
+          "p95_ms": 100.72429990395904
+        }
+      }
+    },
+    "postgres": {
+      "dialect": "postgresql",
+      "ingested_matches": 12,
+      "showcase_matches": 12,
+      "reports_recomputed": 36,
+      "raw_oracle_comparisons": 0,
+      "human_review": "pending",
+      "benchmark_scope": "warm single-client TestClient, three warmups then twenty requests; not internet latency",
+      "resolved_evidence_ids": 192,
+      "timings": {
+        "/api/v1/showcase": {
+          "median_ms": 99.41011350002782,
+          "p95_ms": 128.76759400000992
+        },
+        "/api/v1/experiments/styles": {
+          "median_ms": 13.558128499937538,
+          "p95_ms": 67.87696700007473
+        },
+        "/api/v1/matches/19716/summary": {
+          "median_ms": 26.473057500027153,
+          "p95_ms": 79.36040800007049
+        }
+      }
+    },
+    "restore": {
+      "dialect": "postgresql",
+      "ingested_matches": 12,
+      "showcase_matches": 12,
+      "reports_recomputed": 36,
+      "raw_oracle_comparisons": 0,
+      "human_review": "pending",
+      "benchmark_scope": "warm single-client TestClient, three warmups then twenty requests; not internet latency",
+      "resolved_evidence_ids": 192,
+      "timings": {
+        "/api/v1/showcase": {
+          "median_ms": 94.54252500000848,
+          "p95_ms": 138.34910799994304
+        },
+        "/api/v1/experiments/styles": {
+          "median_ms": 12.763300000017352,
+          "p95_ms": 66.20359199996528
+        },
+        "/api/v1/matches/19716/summary": {
+          "median_ms": 25.385249500004647,
+          "p95_ms": 71.63392500001464
+        }
+      }
+    }
+  },
+  "private_seed_bytes": 30089216,
+  "private_backup_bytes": 7255736,
+  "cloud_resources_created": 0,
+  "external_generation_requests": 0,
+  "container": {
+    "image_id": "sha256:4d7aa472a7dcb1835bad4759cbf15e9616b9203c50c23f5ac66ef9aa2bcafd29",
+    "image_bytes": 164269334,
+    "postgres_database_bytes": 45063191,
+    "no_private_files_in_image": true,
+    "no_generation_credentials_in_container": true,
+    "no_ml_runtime_in_image": true
+  }
+}

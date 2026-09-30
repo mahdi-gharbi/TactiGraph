@@ -1,0 +1,18 @@
+{
+  "version": "xt-v1",
+  "grids": [[12, 8], [8, 6]],
+  "action_prior_mass": 10,
+  "scoring_prior_strength": 20,
+  "tolerance": 1e-8,
+  "max_iterations": 10000,
+  "bootstrap_replicates": 1000,
+  "seed": 2026,
+  "selection": "Fit each grid on train only. Choose minimum tuning episode-goal Brier; exact ties retain 12x8. Refit chosen grid on train+tuning. Calibration partition is not used.",
+  "global_baseline": "Fitting eligible-episode goal rate, unsmoothed.",
+  "zone_baseline": "Smoothed immediate shot-goal reward with retained transitions removed.",
+  "smoothing": "Joint categorical distribution over shot, loss, and each retained destination: total prior 10 centered on fitting-global category frequencies. Zone shot conversion prior 20 centered on fitting-global shot conversion.",
+  "eligibility": "Periods 1-4; use normalized owner-only control episodes. Exclude whole episodes with an invalid required spatial coordinate; do not bridge missing states. Skip successful dribbles/recoveries/interceptions because they are not specified retained moves. Exclude episodes without an eligible modeled action.",
+  "terminal_rules": "Shot, failed pass, incomplete dribble, dispossession or miscontrol terminates. Completed pass/carry continues. Every remaining episode ends with exactly one loss at its final retained destination. Rebounds/restarts/period ends are separated by foundation-v1 episodes. No double terminal.",
+  "test_policy": "Freeze protocol, fitting code and aggregate artifact before xT final-test evaluation. The same season was already inspected for xg-v1; this is not an untouched project-wide holdout. Do not revise xT choices after evaluation without a new version.",
+  "interpretation": "Value under the observed historical action policy; no tracking, defensive shape, optimal decision or causal interpretation. Shots receive xG in the app, never movement-xT credit."
+}

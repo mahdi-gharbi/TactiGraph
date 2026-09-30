@@ -1,0 +1,36 @@
+{
+  "version": "xg-premier-league-v1",
+  "feature_version": "shot-prefix-v1",
+  "seed": 2026,
+  "logistic_c": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "lightgbm_num_leaves": [
+    7,
+    15
+  ],
+  "lightgbm_min_child_samples": [
+    40,
+    80
+  ],
+  "lightgbm_reg_lambda": [
+    1.0,
+    5.0
+  ],
+  "learning_rate": 0.04,
+  "max_estimators": 1200,
+  "early_stopping_rounds": 70,
+  "calibration_folds": 3,
+  "calibration_min_log_loss_improvement": 0.001,
+  "bootstrap_replicates": 1000,
+  "penalty_prior_successes": 1,
+  "penalty_prior_failures": 1,
+  "selection": "Select by tuning log loss; deploy LightGBM only if the paired tuning match-bootstrap 95% log-loss difference upper bound versus logistic is below zero and Brier is no worse. Otherwise logistic.",
+  "calibration_selection": "Fit sigmoid on three-fold match-grouped training OOF predictions. Retain only if tuning log loss improves by at least 0.001 and Brier does not worsen. Refit base models on train+tuning, then fit retained sigmoid only on calibration.",
+  "test_policy": "Freeze protocol, code hashes and fitted artifacts before reading final-test outcomes. Evaluate once; repeat CLI calls read the stored result. A new version must disclose prior test inspection.",
+  "stress_test": "Use frozen five team-ID groups. For each group exclude every train, tuning and calibration match involving those teams; refit the locked serving family and its preprocessing/calibrator. Evaluate that group's chronologically held-out 2015/16 shots separately. Hyperparameter family is fixed from the primary development experiment; this is not independently retuned unseen-team selection.",
+  "split_manifest": "configs/splits/premier-league-v1.json",
+  "test_disclosure": "Premier League 2015/16 whole-date chronological holdout. All protocols frozen before evaluation; later model evaluations share the xG holdout and are not independent untouched tests."
+}

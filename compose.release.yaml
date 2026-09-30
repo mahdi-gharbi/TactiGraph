@@ -1,0 +1,27 @@
+# Isolated local staging. Does not alter the research compose project or database.
+services:
+  db:
+    image: postgres:16-bookworm
+    environment:
+      POSTGRES_DB: tactigraph
+      POSTGRES_USER: tactigraph
+      POSTGRES_PASSWORD: local-m8-staging-only
+    volumes:
+      - release-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tactigraph -d tactigraph"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8002:8000"
+    environment:
+      TACTIGRAPH_MODE: public
+      TACTIGRAPH_DATABASE_URL: postgresql+psycopg://tactigraph:local-m8-staging-only@db:5432/tactigraph
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  release-db:
