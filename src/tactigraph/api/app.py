@@ -404,9 +404,7 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
     @app.get("/", include_in_schema=False)
     def index():
         if (frontend / "index.html").exists():
-            return FileResponse(
-                frontend / "index.html", headers={"Cache-Control": "no-store"}
-            )
+            return FileResponse(frontend / "index.html", headers={"Cache-Control": "no-store"})
         return {
             "message": "Build frontend with npm run build, or run its Vite dev server.",
             "docs": "/docs",
@@ -417,8 +415,6 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
         path = frontend / "guide.html"
         if not path.is_file():
             raise HTTPException(404, "User guide unavailable; rebuild the frontend")
-        return FileResponse(
-            path, media_type="text/html", headers={"Cache-Control": "no-store"}
-        )
+        return FileResponse(path, media_type="text/html", headers={"Cache-Control": "no-store"})
 
     return app
