@@ -203,6 +203,7 @@ export function Experiments() {
             >
               <option value="logistic">Logistic regression</option>
               <option value="lightgbm">LightGBM</option>
+              <option value="prevalence">Prevalence baseline</option>
             </select>
           </label>
           <svg
@@ -274,6 +275,9 @@ export function Experiments() {
               <small>Ideal: 1</small>
             </span>
           </div>
+          {calibration.calibration_reason && (
+            <p className="experiment-note">{calibration.calibration_reason}</p>
+          )}
           <details className="experiment-details">
             <summary>Inspect bin counts and values</summary>
             <div className="dataset-table-scroll">
@@ -407,6 +411,7 @@ export function Experiments() {
           </div>
         </details>
       </section>
+      <RetrospectiveDiagnostics />
       <section className="panel">
         <header className="panel-header">
           <div>
@@ -541,5 +546,120 @@ export function Experiments() {
       <GraphExperiments />
       <AnalystExperiments />
     </div>
+  );
+}
+
+function RetrospectiveDiagnostics() {
+  const [data, setData] = useState<
+    components["schemas"]["DiagnosticsResponse"] | null
+  >(null);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    const controller = new AbortController();
+    get<components["schemas"]["DiagnosticsResponse"]>(
+      "/experiments/diagnostics",
+      controller.signal,
+    )
+      .then(setData)
+      .catch((e) => {
+        if (e.name !== "AbortError") setError(e.message);
+      });
+    return () => controller.abort();
+  }, []);
+  const report = data?.report;
+  return (
+    <section className="panel" aria-labelledby="diagnostics-title">
+      <header className="panel-header">
+        <div>
+          <span className="eyebrow">RETROSPECTIVE DIAGNOSTICS / V2</span>
+          <h2 id="diagnostics-title">Which groups of inputs matter?</h2>
+          <p>
+            Shuffle related features together to preserve shot geometry and
+            assisting-pass context within each group.
+          </p>
+        </div>
+        <span className="neutral-pill">Previously inspected test set</span>
+      </header>
+      {!report ? (
+        <p role="status">
+          {error
+            ? `Diagnostics unavailable: ${error}`
+            : !data
+              ? "Loading diagnostics…"
+              : data.status === "stale"
+                ? "Diagnostics need to be regenerated after a model or source-data change."
+                : "No retrospective diagnostics have been published for this dataset."}
+        </p>
+      ) : (
+        <>
+          <p className="experiment-note">{report.disclosure}</p>
+          <p>
+            {names[report.serving] || report.serving} · {report.source_version}{" "}
+            · {report.test_non_penalty_shots.toLocaleString()} shots ·{" "}
+            {report.repeats} shuffles per group.
+          </p>
+          <div className="dataset-table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature group</th>
+                  <th>Mean log-loss increase</th>
+                  <th>Shuffle standard deviation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {report.grouped_permutation_importance.map((item) => (
+                  <tr key={item.group}>
+                    <td>
+                      <strong>{item.group.replaceAll("_", " ")}</strong>
+                      <small>{item.features.join(", ")}</small>
+                    </td>
+                    <td>{n(item.mean_log_loss_increase, 5)}</td>
+                    <td>{n(item.std, 5)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <details className="experiment-details">
+            <summary>Calibration diagnostics and provenance</summary>
+            <ul>
+              {Object.entries(report.calibration)
+                .filter(([name]) => !name.endsWith("_raw"))
+                .map(([name, result]) => (
+                  <li key={name}>
+                    <strong>{names[name] || name}</strong>: {result.n} shots.{" "}
+                    {result.calibration_reason ||
+                      `Intercept ${n(result.calibration?.intercept, 3)}, slope ${n(result.calibration?.slope, 3)}.`}
+                  </li>
+                ))}
+            </ul>
+            <p>{report.provenance.test_cache_verification}</p>
+            {!report.provenance.original_code_matches_current && (
+              <p>
+                The original training code hash differs from the current code.
+                The original artifact checksums and replayed scores were
+                verified before producing this report.
+              </p>
+            )}
+            <dl className="provenance-list">
+              <dt>Report</dt>
+              <dd>{report.version}</dd>
+              <dt>Original artifact SHA-256</dt>
+              <dd>{report.provenance.artifact_sha256}</dd>
+              <dt>Cached test SHA-256</dt>
+              <dd>{report.provenance.test_parquet_sha256}</dd>
+              <dt>Generated</dt>
+              <dd>{report.generated_at}</dd>
+            </dl>
+          </details>
+          <ul className="experiment-note">
+            {report.limitations.map((limitation) => (
+              <li key={limitation}>{limitation}</li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
   );
 }

@@ -458,6 +458,47 @@
         }
       }
     },
+    "/api/v1/analyst/query": {
+      "post": {
+        "tags": [
+          "verified analyst"
+        ],
+        "summary": "Analyst Query",
+        "operationId": "analyst_query_api_v1_analyst_query_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalystQueryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalystQueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/methodology/search": {
       "get": {
         "tags": [
@@ -724,6 +765,27 @@
             "content": {
               "application/json": {
                 "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments/diagnostics": {
+      "get": {
+        "tags": [
+          "model diagnostics"
+        ],
+        "summary": "Diagnostics",
+        "operationId": "diagnostics_api_v1_experiments_diagnostics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiagnosticsResponse"
+                }
               }
             }
           }
@@ -1062,6 +1124,129 @@
   },
   "components": {
     "schemas": {
+      "AnalystQueryRequest": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "fr"
+            ],
+            "title": "Language",
+            "default": "en"
+          },
+          "match_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Match Id"
+          },
+          "team_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Team Id"
+          },
+          "before": {
+            "$ref": "#/components/schemas/Window"
+          },
+          "after": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "question",
+          "match_id",
+          "team_id"
+        ],
+        "title": "AnalystQueryRequest"
+      },
+      "AnalystQueryResponse": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "analyst-query-v2"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "answered",
+              "clarification_required",
+              "abstained"
+            ],
+            "title": "Status"
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "fr"
+            ],
+            "title": "Language"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "plan": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Interpretation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnalystReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "methodology": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentChunk"
+            },
+            "type": "array",
+            "title": "Methodology"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/QueryMetadata"
+          },
+          "trace": {
+            "items": {
+              "$ref": "#/components/schemas/QueryStep"
+            },
+            "type": "array",
+            "title": "Trace"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "status",
+          "language",
+          "message",
+          "plan",
+          "report",
+          "methodology",
+          "metadata",
+          "trace"
+        ],
+        "title": "AnalystQueryResponse"
+      },
       "AnalystReport": {
         "properties": {
           "report_id": {
@@ -1440,6 +1625,51 @@
         ],
         "title": "CalibrationDecision"
       },
+      "CalibrationDiagnostic": {
+        "properties": {
+          "calibration": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration"
+          },
+          "calibration_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration Reason"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "positives": {
+            "type": "integer",
+            "title": "Positives"
+          }
+        },
+        "type": "object",
+        "required": [
+          "calibration",
+          "calibration_reason",
+          "n",
+          "positives"
+        ],
+        "title": "CalibrationDiagnostic"
+      },
       "CalibrationParameters": {
         "properties": {
           "intercept": {
@@ -1711,6 +1941,184 @@
         ],
         "title": "DevelopmentResults"
       },
+      "DiagnosticProvenance": {
+        "properties": {
+          "artifact_sha256": {
+            "type": "string",
+            "title": "Artifact Sha256"
+          },
+          "original_evaluation_sha256": {
+            "type": "string",
+            "title": "Original Evaluation Sha256"
+          },
+          "original_lock_sha256": {
+            "type": "string",
+            "title": "Original Lock Sha256"
+          },
+          "original_code_hash": {
+            "type": "string",
+            "title": "Original Code Hash"
+          },
+          "current_code_hash": {
+            "type": "string",
+            "title": "Current Code Hash"
+          },
+          "original_code_matches_current": {
+            "type": "boolean",
+            "title": "Original Code Matches Current"
+          },
+          "test_parquet_sha256": {
+            "type": "string",
+            "title": "Test Parquet Sha256"
+          },
+          "diagnostic_code_sha256": {
+            "type": "string",
+            "title": "Diagnostic Code Sha256"
+          },
+          "protocol_hash": {
+            "type": "string",
+            "title": "Protocol Hash"
+          },
+          "split_hash": {
+            "type": "string",
+            "title": "Split Hash"
+          },
+          "test_cache_verification": {
+            "type": "string",
+            "title": "Test Cache Verification"
+          }
+        },
+        "type": "object",
+        "required": [
+          "artifact_sha256",
+          "original_evaluation_sha256",
+          "original_lock_sha256",
+          "original_code_hash",
+          "current_code_hash",
+          "original_code_matches_current",
+          "test_parquet_sha256",
+          "diagnostic_code_sha256",
+          "protocol_hash",
+          "split_hash",
+          "test_cache_verification"
+        ],
+        "title": "DiagnosticProvenance"
+      },
+      "DiagnosticReport": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "source_version": {
+            "type": "string",
+            "title": "Source Version"
+          },
+          "source_commit": {
+            "type": "string",
+            "title": "Source Commit"
+          },
+          "generated_at": {
+            "type": "string",
+            "title": "Generated At"
+          },
+          "serving": {
+            "type": "string",
+            "title": "Serving"
+          },
+          "test_non_penalty_shots": {
+            "type": "integer",
+            "title": "Test Non Penalty Shots"
+          },
+          "test_matches": {
+            "type": "integer",
+            "title": "Test Matches"
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed"
+          },
+          "repeats": {
+            "type": "integer",
+            "title": "Repeats"
+          },
+          "calibration": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CalibrationDiagnostic"
+            },
+            "type": "object",
+            "title": "Calibration"
+          },
+          "grouped_permutation_importance": {
+            "items": {
+              "$ref": "#/components/schemas/GroupedImportance"
+            },
+            "type": "array",
+            "title": "Grouped Permutation Importance"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/DiagnosticProvenance"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "disclosure": {
+            "type": "string",
+            "title": "Disclosure"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "source_version",
+          "source_commit",
+          "generated_at",
+          "serving",
+          "test_non_penalty_shots",
+          "test_matches",
+          "seed",
+          "repeats",
+          "calibration",
+          "grouped_permutation_importance",
+          "provenance",
+          "limitations",
+          "disclosure"
+        ],
+        "title": "DiagnosticReport"
+      },
+      "DiagnosticsResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_generated",
+              "available",
+              "stale"
+            ],
+            "title": "Status"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DiagnosticReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "report"
+        ],
+        "title": "DiagnosticsResponse"
+      },
       "DocumentChunk": {
         "properties": {
           "document_id": {
@@ -1871,6 +2279,17 @@
                 "type": "null"
               }
             ]
+          },
+          "calibration_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration Reason"
           }
         },
         "type": "object",
@@ -1883,7 +2302,8 @@
           "goals",
           "intervals",
           "reliability",
-          "calibration"
+          "calibration",
+          "calibration_reason"
         ],
         "title": "EvaluatedModel"
       },
@@ -2771,6 +3191,17 @@
             ],
             "title": "Calibration"
           },
+          "calibration_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration Reason"
+          },
           "uncalibrated": {
             "anyOf": [
               {
@@ -2815,6 +3246,7 @@
           "intervals",
           "reliability",
           "calibration",
+          "calibration_reason",
           "uncalibrated",
           "prepared_inference_p95_ms",
           "artifact_hash"
@@ -2914,6 +3346,42 @@
         ],
         "title": "GraphStress"
       },
+      "GroupedImportance": {
+        "properties": {
+          "group": {
+            "type": "string",
+            "title": "Group"
+          },
+          "features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Features"
+          },
+          "mean_log_loss_increase": {
+            "type": "number",
+            "title": "Mean Log Loss Increase"
+          },
+          "std": {
+            "type": "number",
+            "title": "Std"
+          },
+          "repeats": {
+            "type": "integer",
+            "title": "Repeats"
+          }
+        },
+        "type": "object",
+        "required": [
+          "group",
+          "features",
+          "mean_log_loss_increase",
+          "std",
+          "repeats"
+        ],
+        "title": "GroupedImportance"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -2954,6 +3422,104 @@
           "repeats"
         ],
         "title": "Importance"
+      },
+      "Interpretation": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "clarification_required",
+              "abstained"
+            ],
+            "title": "Status"
+          },
+          "intent": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "period_comparison",
+                  "chance_creation",
+                  "network_concentration"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intent"
+          },
+          "before": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Window"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "after": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Window"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "methodology_topics": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "movement_xt",
+                "passes",
+                "completed_passes",
+                "shots",
+                "xg",
+                "final_third_entries",
+                "field_tilt",
+                "network",
+                "limitations",
+                "graph",
+                "windows"
+              ]
+            },
+            "type": "array",
+            "maxItems": 2,
+            "title": "Methodology Topics"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "ambiguous",
+                  "context_mismatch",
+                  "unsupported",
+                  "insufficient_data"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "intent",
+          "before",
+          "after",
+          "methodology_topics",
+          "reason"
+        ],
+        "title": "Interpretation"
       },
       "LocalEvent": {
         "properties": {
@@ -3849,6 +4415,187 @@
         ],
         "title": "Provenance"
       },
+      "QueryMetadata": {
+        "properties": {
+          "provider": {
+            "type": "string",
+            "title": "Provider",
+            "default": "groq"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "provider_success": {
+            "type": "boolean",
+            "title": "Provider Success",
+            "default": false
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts",
+            "default": 0
+          },
+          "repairs": {
+            "type": "integer",
+            "title": "Repairs",
+            "default": 0
+          },
+          "provider_errors": {
+            "type": "integer",
+            "title": "Provider Errors",
+            "default": 0
+          },
+          "provider_error_status": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider Error Status"
+          },
+          "usage_complete": {
+            "type": "boolean",
+            "title": "Usage Complete",
+            "default": true
+          },
+          "input_tokens": {
+            "type": "integer",
+            "title": "Input Tokens",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "title": "Output Tokens",
+            "default": 0
+          },
+          "latency_ms": {
+            "type": "number",
+            "title": "Latency Ms",
+            "default": 0
+          },
+          "fallback_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Reason"
+          },
+          "retrieval_method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retrieval Method"
+          },
+          "corpus_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Corpus Version"
+          },
+          "corpus_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Corpus Sha256"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          },
+          "system_fingerprint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Fingerprint"
+          }
+        },
+        "type": "object",
+        "required": [
+          "provider",
+          "model",
+          "provider_success",
+          "attempts",
+          "repairs",
+          "provider_errors",
+          "provider_error_status",
+          "usage_complete",
+          "input_tokens",
+          "output_tokens",
+          "latency_ms",
+          "fallback_reason",
+          "retrieval_method",
+          "corpus_version",
+          "corpus_sha256",
+          "request_id",
+          "system_fingerprint"
+        ],
+        "title": "QueryMetadata"
+      },
+      "QueryStep": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "duration_ms": {
+            "type": "number",
+            "title": "Duration Ms"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "duration_ms",
+          "status"
+        ],
+        "title": "QueryStep"
+      },
       "ReferenceResult": {
         "properties": {
           "name": {
@@ -3980,6 +4727,26 @@
               }
             ],
             "title": "Groq Limitations"
+          },
+          "retrieval_serving_v1": {
+            "type": "string",
+            "title": "Retrieval Serving V1",
+            "default": "BM25"
+          },
+          "query_retrieval_method": {
+            "type": "string",
+            "title": "Query Retrieval Method",
+            "default": "BM25 v2"
+          },
+          "query_corpus_version": {
+            "type": "string",
+            "title": "Query Corpus Version",
+            "default": "methodology-v2"
+          },
+          "query_evaluation_status": {
+            "type": "string",
+            "title": "Query Evaluation Status",
+            "default": "independent_review_pending"
           }
         },
         "type": "object",
@@ -3992,7 +4759,11 @@
           "human_review",
           "local_evaluated",
           "groq_evaluated",
-          "groq_limitations"
+          "groq_limitations",
+          "retrieval_serving_v1",
+          "query_retrieval_method",
+          "query_corpus_version",
+          "query_evaluation_status"
         ],
         "title": "ResearchResponse"
       },

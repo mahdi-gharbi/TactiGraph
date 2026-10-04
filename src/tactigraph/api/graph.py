@@ -3,8 +3,9 @@
 from typing import Literal
 
 from fastapi import APIRouter, HTTPException, Query, Request
-from pydantic import Field
+from pydantic import Field, model_validator
 
+from tactigraph.api.diagnostics import calibration_summary_reason
 from tactigraph.api.schemas import BaseModel, ModelProvenance
 from tactigraph.api.xt_schemas import XTLock
 from tactigraph.db import DatasetReport, Match
@@ -31,6 +32,7 @@ class GraphScore(GraphMetrics):
     intervals: dict[str, list[float]]
     reliability: list[GraphCalibrationBin]
     calibration: dict[str, float] | None
+    calibration_reason: str | None = None
     uncalibrated: GraphMetrics | None = None
     prepared_inference_p95_ms: float | None = None
     artifact_hash: str | None = None
@@ -84,6 +86,17 @@ class GraphReport(BaseModel):
     seed_definition: str
     attribution: str
     test_disclosure: str
+
+    @model_validator(mode="after")
+    def guard_legacy_calibration(self):
+        studies = [self.results, *(study.results for study in self.stress.values())]
+        for results in studies:
+            for name, result in results.items():
+                reason = calibration_summary_reason(name, result.n, result.positive_episodes)
+                if reason:
+                    result.calibration = None
+                    result.calibration_reason = reason
+        return self
 
 
 class GraphResponse(BaseModel):

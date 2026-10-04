@@ -8,6 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy import func, select
 
 from tactigraph.api.analyst import router as analyst_router
+from tactigraph.api.diagnostics import router as diagnostics_router
 from tactigraph.api.experiment_schemas import ExperimentsResponse
 from tactigraph.api.graph import router as graph_router
 from tactigraph.api.schemas import (
@@ -44,6 +45,7 @@ from tactigraph.db import (
 )
 from tactigraph.models.serving import latest_release, match_predictions
 from tactigraph.models.serving import provenance as model_provenance
+from tactigraph.observability import RequestTelemetryMiddleware, Telemetry, instrument_engine
 
 
 def card(match: Match) -> MatchCard:
@@ -118,12 +120,15 @@ def result_id(match_id, team_id, period, start_ms, end_ms, player_id):
     )
 
 
-def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
+def create_app(
+    settings: Settings | None = None, engine=None, *, include_secondary_league=True
+) -> FastAPI:
     settings = settings or Settings()
     engine = engine or make_engine(settings)
+    instrument_engine(engine)
     premier_app = (
         create_app(settings.for_league("premier-league"))
-        if settings.mode == "local" and settings.league == "wsl"
+        if include_secondary_league and settings.mode == "local" and settings.league == "wsl"
         else None
     )
 
@@ -138,7 +143,10 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
 
     app = FastAPI(title="TactiGraph AI", version="0.5.0", lifespan=lifespan)
     app.state.settings = settings
+    app.state.telemetry = Telemetry()
+    app.add_middleware(RequestTelemetryMiddleware, telemetry=app.state.telemetry)
     if premier_app is not None:
+        premier_app.state.telemetry = app.state.telemetry
         app.mount("/leagues/premier-league", premier_app)
     app.include_router(tactics_router)
     app.include_router(graph_router)
@@ -146,6 +154,13 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
     app.include_router(sensitivity_router)
     app.include_router(styles_router)
     app.include_router(showcase_router)
+    app.include_router(diagnostics_router)
+
+    @app.get("/api/v1/operations", include_in_schema=False)
+    def operations():
+        if settings.mode != "local":
+            raise HTTPException(404, "Operational diagnostics are local-only")
+        return app.state.telemetry.snapshot()
 
     @app.get("/api/v1/health")
     def health():

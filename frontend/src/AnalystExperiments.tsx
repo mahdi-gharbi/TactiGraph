@@ -27,6 +27,16 @@ export function AnalystExperiments() {
         <>
           <h3>Methodology retrieval</h3>
           <p>
+            Offline benchmark: {data.retrieval_selected ?? "not evaluated"}.
+            Effective guided search: {data.retrieval_serving_v1}.
+            Natural-language analyst: {data.query_retrieval_method} ·{" "}
+            {data.query_corpus_version}.
+          </p>
+          <p>
+            Query v2 independent evaluation: {data.query_evaluation_status}. No
+            final quality claim is made before independent review.
+          </p>
+          <p>
             30 development and 30 held-out authored queries. Recall@5 measures
             relevant chunks found; MRR@5 rewards an earlier first relevant
             result. Targets: 90% and 80%, respectively.

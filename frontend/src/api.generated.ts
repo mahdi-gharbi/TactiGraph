@@ -157,6 +157,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/analyst/query": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Analyst Query */
+        post: operations["analyst_query_api_v1_analyst_query_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/methodology/search": {
         parameters: {
             query?: never;
@@ -251,6 +268,23 @@ export interface paths {
         };
         /** Ready */
         get: operations["ready_api_v1_ready_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/experiments/diagnostics": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Diagnostics */
+        get: operations["diagnostics_api_v1_experiments_diagnostics_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -399,6 +433,50 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** AnalystQueryRequest */
+        AnalystQueryRequest: {
+            /** Question */
+            question: string;
+            /**
+             * Language
+             * @default en
+             * @enum {string}
+             */
+            language: "en" | "fr";
+            /** Match Id */
+            match_id: number;
+            /** Team Id */
+            team_id: number;
+            before?: components["schemas"]["Window"];
+            after?: components["schemas"]["Window"];
+        };
+        /** AnalystQueryResponse */
+        AnalystQueryResponse: {
+            /**
+             * Version
+             * @default analyst-query-v2
+             */
+            version: string;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "answered" | "clarification_required" | "abstained";
+            /**
+             * Language
+             * @enum {string}
+             */
+            language: "en" | "fr";
+            /** Message */
+            message: string;
+            plan: components["schemas"]["Interpretation"] | null;
+            report: components["schemas"]["AnalystReport"] | null;
+            /** Methodology */
+            methodology: components["schemas"]["DocumentChunk"][];
+            metadata: components["schemas"]["QueryMetadata"];
+            /** Trace */
+            trace: components["schemas"]["QueryStep"][];
+        };
         /** AnalystReport */
         AnalystReport: {
             /** Report Id */
@@ -564,6 +642,19 @@ export interface components {
             raw: components["schemas"]["ProbabilityScores"];
             sigmoid: components["schemas"]["ProbabilityScores"];
         };
+        /** CalibrationDiagnostic */
+        CalibrationDiagnostic: {
+            /** Calibration */
+            calibration: {
+                [key: string]: number;
+            } | null;
+            /** Calibration Reason */
+            calibration_reason: string | null;
+            /** N */
+            n: number;
+            /** Positives */
+            positives: number;
+        };
         /** CalibrationParameters */
         CalibrationParameters: {
             /** Intercept */
@@ -663,6 +754,72 @@ export interface components {
                 [key: string]: unknown;
             };
         };
+        /** DiagnosticProvenance */
+        DiagnosticProvenance: {
+            /** Artifact Sha256 */
+            artifact_sha256: string;
+            /** Original Evaluation Sha256 */
+            original_evaluation_sha256: string;
+            /** Original Lock Sha256 */
+            original_lock_sha256: string;
+            /** Original Code Hash */
+            original_code_hash: string;
+            /** Current Code Hash */
+            current_code_hash: string;
+            /** Original Code Matches Current */
+            original_code_matches_current: boolean;
+            /** Test Parquet Sha256 */
+            test_parquet_sha256: string;
+            /** Diagnostic Code Sha256 */
+            diagnostic_code_sha256: string;
+            /** Protocol Hash */
+            protocol_hash: string;
+            /** Split Hash */
+            split_hash: string;
+            /** Test Cache Verification */
+            test_cache_verification: string;
+        };
+        /** DiagnosticReport */
+        DiagnosticReport: {
+            /** Version */
+            version: string;
+            /** Source Version */
+            source_version: string;
+            /** Source Commit */
+            source_commit: string;
+            /** Generated At */
+            generated_at: string;
+            /** Serving */
+            serving: string;
+            /** Test Non Penalty Shots */
+            test_non_penalty_shots: number;
+            /** Test Matches */
+            test_matches: number;
+            /** Seed */
+            seed: number;
+            /** Repeats */
+            repeats: number;
+            /** Calibration */
+            calibration: {
+                [key: string]: components["schemas"]["CalibrationDiagnostic"];
+            };
+            /** Grouped Permutation Importance */
+            grouped_permutation_importance: components["schemas"]["GroupedImportance"][];
+            provenance: components["schemas"]["DiagnosticProvenance"];
+            /** Limitations */
+            limitations: string[];
+            /** Disclosure */
+            disclosure: string;
+        };
+        /** DiagnosticsResponse */
+        DiagnosticsResponse: {
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "not_generated" | "available" | "stale";
+            report: components["schemas"]["DiagnosticReport"] | null;
+        };
         /** DocumentChunk */
         DocumentChunk: {
             /** Document Id */
@@ -721,6 +878,8 @@ export interface components {
             /** Reliability */
             reliability: components["schemas"]["ReliabilityBin"][];
             calibration: components["schemas"]["CalibrationParameters"] | null;
+            /** Calibration Reason */
+            calibration_reason: string | null;
         };
         /** EventReference */
         EventReference: {
@@ -1024,6 +1183,8 @@ export interface components {
             calibration: {
                 [key: string]: number;
             } | null;
+            /** Calibration Reason */
+            calibration_reason: string | null;
             uncalibrated: components["schemas"]["GraphMetrics"] | null;
             /** Prepared Inference P95 Ms */
             prepared_inference_p95_ms: number | null;
@@ -1066,6 +1227,19 @@ export interface components {
                 [key: string]: number[];
             };
         };
+        /** GroupedImportance */
+        GroupedImportance: {
+            /** Group */
+            group: string;
+            /** Features */
+            features: string[];
+            /** Mean Log Loss Increase */
+            mean_log_loss_increase: number;
+            /** Std */
+            std: number;
+            /** Repeats */
+            repeats: number;
+        };
         /** HTTPValidationError */
         HTTPValidationError: {
             /** Detail */
@@ -1081,6 +1255,22 @@ export interface components {
             std: number;
             /** Repeats */
             repeats: number;
+        };
+        /** Interpretation */
+        Interpretation: {
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "ready" | "clarification_required" | "abstained";
+            /** Intent */
+            intent: ("period_comparison" | "chance_creation" | "network_concentration") | null;
+            before: components["schemas"]["Window"] | null;
+            after: components["schemas"]["Window"] | null;
+            /** Methodology Topics */
+            methodology_topics: ("movement_xt" | "passes" | "completed_passes" | "shots" | "xg" | "final_third_entries" | "field_tilt" | "network" | "limitations" | "graph" | "windows")[];
+            /** Reason */
+            reason: ("ambiguous" | "context_mismatch" | "unsupported" | "insufficient_data") | null;
         };
         /** LocalEvent */
         LocalEvent: {
@@ -1362,6 +1552,79 @@ export interface components {
              */
             coordinate_frame: string;
         };
+        /** QueryMetadata */
+        QueryMetadata: {
+            /**
+             * Provider
+             * @default groq
+             */
+            provider: string;
+            /** Model */
+            model: string | null;
+            /**
+             * Provider Success
+             * @default false
+             */
+            provider_success: boolean;
+            /**
+             * Attempts
+             * @default 0
+             */
+            attempts: number;
+            /**
+             * Repairs
+             * @default 0
+             */
+            repairs: number;
+            /**
+             * Provider Errors
+             * @default 0
+             */
+            provider_errors: number;
+            /** Provider Error Status */
+            provider_error_status: number | null;
+            /**
+             * Usage Complete
+             * @default true
+             */
+            usage_complete: boolean;
+            /**
+             * Input Tokens
+             * @default 0
+             */
+            input_tokens: number;
+            /**
+             * Output Tokens
+             * @default 0
+             */
+            output_tokens: number;
+            /**
+             * Latency Ms
+             * @default 0
+             */
+            latency_ms: number;
+            /** Fallback Reason */
+            fallback_reason: string | null;
+            /** Retrieval Method */
+            retrieval_method: string | null;
+            /** Corpus Version */
+            corpus_version: string | null;
+            /** Corpus Sha256 */
+            corpus_sha256: string | null;
+            /** Request Id */
+            request_id: string | null;
+            /** System Fingerprint */
+            system_fingerprint: string | null;
+        };
+        /** QueryStep */
+        QueryStep: {
+            /** Name */
+            name: string;
+            /** Duration Ms */
+            duration_ms: number;
+            /** Status */
+            status: string;
+        };
         /** ReferenceResult */
         ReferenceResult: {
             /** Name */
@@ -1410,6 +1673,26 @@ export interface components {
             groq_evaluated: boolean;
             /** Groq Limitations */
             groq_limitations: string | null;
+            /**
+             * Retrieval Serving V1
+             * @default BM25
+             */
+            retrieval_serving_v1: string;
+            /**
+             * Query Retrieval Method
+             * @default BM25 v2
+             */
+            query_retrieval_method: string;
+            /**
+             * Query Corpus Version
+             * @default methodology-v2
+             */
+            query_corpus_version: string;
+            /**
+             * Query Evaluation Status
+             * @default independent_review_pending
+             */
+            query_evaluation_status: string;
         };
         /** RetrievalScore */
         RetrievalScore: {
@@ -2400,6 +2683,39 @@ export interface operations {
             };
         };
     };
+    analyst_query_api_v1_analyst_query_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AnalystQueryRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AnalystQueryResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     methodology_search_api_v1_methodology_search_get: {
         parameters: {
             query: {
@@ -2564,6 +2880,26 @@ export interface operations {
                 };
                 content: {
                     "application/json": unknown;
+                };
+            };
+        };
+    };
+    diagnostics_api_v1_experiments_diagnostics_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiagnosticsResponse"];
                 };
             };
         };

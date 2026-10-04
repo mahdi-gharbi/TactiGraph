@@ -1,0 +1,10 @@
+{
+  "development": {
+    "wsl": {"match_id": null, "team_id": null},
+    "premier-league": {"match_id": null, "team_id": null}
+  },
+  "final": {
+    "wsl": {"match_id": null, "team_id": null},
+    "premier-league": {"match_id": null, "team_id": null}
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-10-04T13:26:30.648187+00:00",
+  "scope": "Invented 88-event SQLite match; one local uvicorn process; actual HTTP sockets; no real LLM or upstream data. Not a production capacity claim.",
+  "method": "Closed-loop concurrent clients without think time; 4 warmup calls per scenario; nearest-rank percentiles include failures; client and server share host when using default URL.",
+  "client": {
+    "python": "3.12.10",
+    "os": "Windows",
+    "os_release": "10",
+    "machine": "AMD64",
+    "logical_cpus": 8,
+    "httpx": "0.28.1"
+  },
+  "requests_per_user": 40,
+  "timeout_seconds": 20,
+  "scenarios": [
+    {
+      "concurrent_users": 1,
+      "requests": 40,
+      "duration_seconds": 0.649,
+      "requests_per_second": 61.67,
+      "errors": {},
+      "error_rate": 0.0,
+      "p50_ms": 13.623,
+      "p95_ms": 28.742,
+      "p99_ms": 40.65,
+      "routes": [
+        {
+          "route": "GET /api/v1/evidence/shots-900001-0-0-0-0-0",
+          "requests": 10,
+          "errors": 0,
+          "p50_ms": 9.624,
+          "p95_ms": 10.768,
+          "p99_ms": 10.768
+        },
+        {
+          "route": "GET /api/v1/matches/900001/shots",
+          "requests": 10,
+          "errors": 0,
+          "p50_ms": 11.216,
+          "p95_ms": 14.488,
+          "p99_ms": 14.488
+        },
+        {
+          "route": "GET /api/v1/matches/900001/summary",
+          "requests": 10,
+          "errors": 0,
+          "p50_ms": 16.407,
+          "p95_ms": 22.919,
+          "p99_ms": 22.919
+        },
+        {
+          "route": "POST /api/v1/analyst/report",
+          "requests": 10,
+          "errors": 0,
+          "p50_ms": 24.229,
+          "p95_ms": 40.65,
+          "p99_ms": 40.65
+        }
+      ]
+    },
+    {
+      "concurrent_users": 5,
+      "requests": 200,
+      "duration_seconds": 1.501,
+      "requests_per_second": 133.223,
+      "errors": {},
+      "error_rate": 0.0,
+      "p50_ms": 22.477,
+      "p95_ms": 96.585,
+      "p99_ms": 131.736,
+      "routes": [
+        {
+          "route": "GET /api/v1/evidence/shots-900001-0-0-0-0-0",
+          "requests": 50,
+          "errors": 0,
+          "p50_ms": 9.946,
+          "p95_ms": 20.126,
+          "p99_ms": 51.651
+        },
+        {
+          "route": "GET /api/v1/matches/900001/shots",
+          "requests": 50,
+          "errors": 0,
+          "p50_ms": 13.079,
+          "p95_ms": 21.802,
+          "p99_ms": 63.346
+        },
+        {
+          "route": "GET /api/v1/matches/900001/summary",
+          "requests": 50,
+          "errors": 0,
+          "p50_ms": 31.859,
+          "p95_ms": 76.76,
+          "p99_ms": 85.733
+        },
+        {
+          "route": "POST /api/v1/analyst/report",
+          "requests": 50,
+          "errors": 0,
+          "p50_ms": 84.725,
+          "p95_ms": 131.736,
+          "p99_ms": 142.078
+        }
+      ]
+    },
+    {
+      "concurrent_users": 10,
+      "requests": 400,
+      "duration_seconds": 3.43,
+      "requests_per_second": 116.619,
+      "errors": {},
+      "error_rate": 0.0,
+      "p50_ms": 41.242,
+      "p95_ms": 263.127,
+      "p99_ms": 301.971,
+      "routes": [
+        {
+          "route": "GET /api/v1/evidence/shots-900001-0-0-0-0-0",
+          "requests": 100,
+          "errors": 0,
+          "p50_ms": 13.441,
+          "p95_ms": 29.699,
+          "p99_ms": 64.139
+        },
+        {
+          "route": "GET /api/v1/matches/900001/shots",
+          "requests": 100,
+          "errors": 0,
+          "p50_ms": 15.591,
+          "p95_ms": 31.681,
+          "p99_ms": 68.286
+        },
+        {
+          "route": "GET /api/v1/matches/900001/summary",
+          "requests": 100,
+          "errors": 0,
+          "p50_ms": 65.294,
+          "p95_ms": 109.597,
+          "p99_ms": 128.226
+        },
+        {
+          "route": "POST /api/v1/analyst/report",
+          "requests": 100,
+          "errors": 0,
+          "p50_ms": 225.126,
+          "p95_ms": 301.747,
+          "p99_ms": 322.506
+        }
+      ]
+    }
+  ],
+  "machine_conditions": {
+    "cpu_model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+    "physical_memory_bytes": 21300441088,
+    "hardware_source": "Windows CIM read-only query",
+    "server": "one uvicorn process, SQLite invented fixture, local loopback",
+    "background_load": "Playwright desktop/mobile checks were running on the same host; other desktop processes uncontrolled. Not isolated production capacity."
+  }
+}

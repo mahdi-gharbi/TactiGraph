@@ -1,8 +1,11 @@
 # M8 release candidate — local preparation
 
-The user requested a deployable package only: no GitHub repository, Render resource,
-cloud upload or paid service has been created. This is a release candidate, not a
-public launch. Independent report and publication review remain pending.
+The source repository is public at [mahdi-gharbi/TactiGraph](https://github.com/mahdi-gharbi/TactiGraph).
+GitHub provides the code and research reports; it does not provide a hosted application.
+This package is a release candidate. No Render resource or paid hosting service has
+been created. Independent report and publication review remain pending.
+The bilingual query analyst is delivered locally; public interactive access requires
+a separate access, quota and budget decision. See [query v2](analyst-query-v2.md).
 
 ## Contents and publication boundary
 
@@ -40,7 +43,7 @@ Do not mark review complete merely because the automated checks pass. Re-exporti
 with `tactigraph showcase export` preserves an existing approvals file.
 The local workspace can preview pending reports. Public `/api/v1/showcase` hides
 all pending reports, and `/api/v1/ready` returns 503 until 36 current reports have
-recorded review. The raw-event endpoint and live analyst generation stay disabled.
+recorded review. The raw-event endpoint, guided generation and free-question analyst stay disabled.
 
 ## Publication review sources
 
@@ -115,9 +118,9 @@ destructive downgrade or automated volume deletion is included in these scripts.
 
 Cloud spend during preparation: none; cloud infrastructure was not provisioned.
 Generation requests for the 36 reports: zero; they are deterministic.
-Hosting prices are not a measured deployment cost and must be confirmed before
-launch on [Render pricing](https://render.com/pricing). Runtime, storage, bandwidth,
-backups and taxes can contribute to the eventual bill.
+The compute/storage estimate is **$45.50 USD/month**, checked on 4 October 2026;
+see [configuration, sources and excluded costs](operations-v2.md#hosting-estimate).
+This is not a measured deployment bill. Recheck prices before creating paid resources.
 
 Local verification results live in `output/m8-*-verification.json`. Benchmarks use
 a warm single-client FastAPI TestClient, three warmups and twenty measured calls;

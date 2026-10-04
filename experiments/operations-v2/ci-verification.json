@@ -1,0 +1,172 @@
+{
+  "version": "operations-ci-v2",
+  "checked_on": "2026-10-04",
+  "commit": "e5a96563b24d47a4205d5071e97269b202f6567a",
+  "workflow_url": "https://github.com/mahdi-gharbi/TactiGraph/actions/runs/37207971434",
+  "pull_request": "https://github.com/mahdi-gharbi/TactiGraph/pull/1",
+  "scope": "GitHub Ubuntu runners; invented fixtures; mocked question provider; separate from real-provider quality evaluation and production load",
+  "jobs": [
+    {
+      "name": "verify",
+      "id": 111453060675,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run astral-sh/setup-uv@v6",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --frozen --extra dev --extra modeling --extra graph",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run --no-sync ruff check src tests scripts infra",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run --no-sync ruff format --check src tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run --no-sync pytest -q",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --prefix frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run format:check --prefix frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run --no-sync tactigraph openapi",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run types --prefix frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run git diff --exit-code -- frontend/openapi.json frontend/src/api.generated.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build --prefix frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run docker build -t tactigraph:test .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Start production container without reviewed data",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify public HTTP boundaries and closed readiness gate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify production excludes training runtimes",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop production smoke container",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "integration",
+      "id": 111453060756,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Initialize containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run astral-sh/setup-uv@v6",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --frozen --extra dev",
+          "conclusion": "success"
+        },
+        {
+          "name": "PostgreSQL migration, invented ingestion, predictions and evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore invented PostgreSQL backup into a separate new database",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --prefix frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build --prefix frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install browser",
+          "conclusion": "success"
+        },
+        {
+          "name": "Start disposable synthetic server with mocked query provider",
+          "conclusion": "success"
+        },
+        {
+          "name": "Desktop and mobile invented-data browser journeys",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual HTTP concurrency benchmark",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop disposable server",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}
