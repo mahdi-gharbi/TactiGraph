@@ -13,6 +13,8 @@
 | HTTP concurrency | 640 calls, 0 errors across 1 / 5 / 10 concurrent clients; actual sockets, invented fixture |
 | Load p50 / p95 | 13.623 / 28.742 ms (n=40); 22.477 / 96.585 (n=200); 41.242 / 263.127 (n=400) |
 | Recorded walkthrough | Three minutes; actual local FR/EN requests, proof opening and clarification |
+| GitHub Docker verification | Production image built and started; public endpoint boundaries and exclusion of training runtimes pass |
+| GitHub PostgreSQL / restore | Migration, invented ingestion, stored predictions, evidence and restore into a separate new database pass |
 | Human review | Twelve v1 worksheets and 200-question v2 packet prepared; scores/approvals remain blank |
 
 Load hardware: Intel i7-10510U, 8 logical CPUs, 21,300,441,088 bytes physical RAM reported
@@ -29,8 +31,13 @@ These retrospective diagnostics are not a new untouched holdout evaluation.
 
 The current independent quality benchmark is intentionally unrun while the user
 prepares review for later. Proposed 90%/95% targets are not achieved-score claims.
-The Docker daemon is unavailable locally; the CI jobs validate the production image
-and PostgreSQL on GitHub. Record their actual outcome before claiming those checks pass.
+Both GitHub jobs passed on implementation commit `e5a9656`: full checks and production
+Docker smoke, plus PostgreSQL, backup/restore, desktop/mobile journeys and HTTP load.
+The restore compares every invented-data table's row count and content fingerprint
+before verifying the API. This is not a production recovery-time objective.
+[Observed CI steps](../experiments/operations-v2/ci-verification.json) ·
+[GitHub run](https://github.com/mahdi-gharbi/TactiGraph/actions/runs/37207971434).
+The Docker daemon is unavailable on the local Windows host; Docker verification used CI.
 
 ## M5 graph experiment — 24 September 2026
 
