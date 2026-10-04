@@ -1,0 +1,175 @@
+{
+  "version": "diagnostics-premier-league-v2",
+  "source_version": "xg-premier-league-v1",
+  "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "generated_at": "2026-10-04T00:42:28.221823+00:00",
+  "serving": "logistic",
+  "test_non_penalty_shots": 1551,
+  "test_matches": 57,
+  "seed": 2026,
+  "repeats": 20,
+  "calibration": {
+    "prevalence": {
+      "calibration": null,
+      "calibration_reason": "Constant predictions cannot identify both a calibration intercept and slope.",
+      "n": 1551,
+      "positives": 156
+    },
+    "logistic_raw": {
+      "calibration": {
+        "intercept": 0.1906556565770932,
+        "slope": 1.0207021900981292
+      },
+      "calibration_reason": null,
+      "n": 1551,
+      "positives": 156
+    },
+    "logistic": {
+      "calibration": {
+        "intercept": 0.1906556565770932,
+        "slope": 1.0207021900981292
+      },
+      "calibration_reason": null,
+      "n": 1551,
+      "positives": 156
+    },
+    "lightgbm_raw": {
+      "calibration": {
+        "intercept": 0.30664201150856324,
+        "slope": 1.090132581373463
+      },
+      "calibration_reason": null,
+      "n": 1551,
+      "positives": 156
+    },
+    "lightgbm": {
+      "calibration": {
+        "intercept": 0.30664201150856324,
+        "slope": 1.090132581373463
+      },
+      "calibration_reason": null,
+      "n": 1551,
+      "positives": 156
+    }
+  },
+  "grouped_permutation_importance": [
+    {
+      "group": "shot_geometry",
+      "features": [
+        "x",
+        "y",
+        "distance",
+        "opening_angle"
+      ],
+      "mean_log_loss_increase": 0.1378909757962428,
+      "std": 0.010029473355229688,
+      "repeats": 20
+    },
+    {
+      "group": "body_part",
+      "features": [
+        "body_part"
+      ],
+      "mean_log_loss_increase": 0.004440825042677657,
+      "std": 0.0015289424329181522,
+      "repeats": 20
+    },
+    {
+      "group": "previous_elapsed_seconds",
+      "features": [
+        "previous_elapsed_seconds"
+      ],
+      "mean_log_loss_increase": 0.0040662165545126555,
+      "std": 0.001757042073252416,
+      "repeats": 20
+    },
+    {
+      "group": "play_pattern",
+      "features": [
+        "play_pattern"
+      ],
+      "mean_log_loss_increase": 0.003030334151398395,
+      "std": 0.0014351840097832308,
+      "repeats": 20
+    },
+    {
+      "group": "first_time",
+      "features": [
+        "first_time"
+      ],
+      "mean_log_loss_increase": 0.002313061604877939,
+      "std": 0.0008316438971215454,
+      "repeats": 20
+    },
+    {
+      "group": "technique",
+      "features": [
+        "technique"
+      ],
+      "mean_log_loss_increase": 0.0019265780615472933,
+      "std": 0.0009988932492097772,
+      "repeats": 20
+    },
+    {
+      "group": "previous_action",
+      "features": [
+        "previous_action"
+      ],
+      "mean_log_loss_increase": 0.0019073228135442239,
+      "std": 0.00138982704810401,
+      "repeats": 20
+    },
+    {
+      "group": "assisting_pass_context",
+      "features": [
+        "assist_cross",
+        "assist_cutback",
+        "assist_x",
+        "assist_y",
+        "assist_height"
+      ],
+      "mean_log_loss_increase": 0.001128276153103791,
+      "std": 0.0013934794591752382,
+      "repeats": 20
+    },
+    {
+      "group": "pressure",
+      "features": [
+        "pressure"
+      ],
+      "mean_log_loss_increase": 0.0005388637936272839,
+      "std": 0.0006766772092684231,
+      "repeats": 20
+    },
+    {
+      "group": "shot_type",
+      "features": [
+        "shot_type"
+      ],
+      "mean_log_loss_increase": 3.1623822421919526e-05,
+      "std": 0.00018294518414050168,
+      "repeats": 20
+    }
+  ],
+  "provenance": {
+    "artifact_sha256": "bfbdb8bdc210d0f22b618e0de446eba5bf58607d7874048cd02a64fa1df096ae",
+    "original_evaluation_sha256": "36be2f551147add0834d9f8cb07951014bcde65ee96f4a7fb26c0a3379ea3f87",
+    "original_lock_sha256": "9dfe89acf98eccf9ac8261e7ff159ae9fb333cb240853a368cc8c357ff44aa41",
+    "original_code_hash": "40e5ca787daf671bf535169cccc249c92098426ad4632ee3041741b58ab592bb",
+    "current_code_hash": "40e5ca787daf671bf535169cccc249c92098426ad4632ee3041741b58ab592bb",
+    "original_code_matches_current": true,
+    "test_parquet_sha256": "b6c7c9eeeffcd2cbf66c7ebd457d8a0a970a35c99a255272b2d9411afc94f11b",
+    "diagnostic_code_sha256": "a1c29b5672049e53090e00aa287f19dbf8e98697d4ab514aaae0cdf856cf712d",
+    "protocol_hash": "9f6fe3be56080c59ca8a35a25399f3604ad556272b3284d78e884a22560c0b80",
+    "split_hash": "a82f8aa502ee6f3c1b7f37b210f00ca3b5eb28f7b776c5bd74f1f18e1065a27a",
+    "test_cache_verification": "Original v1 did not hash test.parquet. Its checksum is first recorded here. Frozen split membership, unique samples, counts and all original probability metrics were checked by replay; this is not an original byte-for-byte attestation."
+  },
+  "limitations": [
+    "Retrospective explanation of an already-inspected test set; no new held-out performance claim.",
+    "Geometry and assisting-pass features each move together from one donor row. Dependencies between groups may still be broken.",
+    "Importance is descriptive, not causal; shuffle standard deviation is not a confidence interval.",
+    "Calibration fits are diagnostics only and are never applied to serving predictions.",
+    "Calibration diagnostics require 20 observations, both outcomes and at least two of each; passing these guards does not establish precise calibration."
+  ],
+  "disclosure": "Additive diagnostics-v2. Original v1 scores, predictions, artifacts and serving selection are preserved."
+}

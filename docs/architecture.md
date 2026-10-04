@@ -1,4 +1,21 @@
-# M4 architecture and contracts
+# Architecture and contracts
+
+## Bilingual analyst v2
+
+The local `POST /api/v1/analyst/query` route interprets a bounded EN/FR question
+through strict Groq JSON, validates server-selected context and windows, executes
+existing analytical functions, and renders fixed bilingual templates. Every
+returned claim is verified for values, units, denominators, source and event support.
+Methodology-v2 uses accent-normalized BM25 over 22 project-authored definition/limit
+excerpts; it supplies no match facts. Metadata discloses the exact serving method,
+version, hash and observed consumption. A single repair fits inside a 30-second total
+deadline. Unavailable interpretation offers the existing guided path.
+
+The Premier League mounted prefix selects a separate session factory/database.
+Query output and pending evidence are invalidated after a frontend context change.
+Public mode disables interactive endpoints. Existing report/retrieval v1 artifacts
+remain unchanged. See [query contracts](analyst-query-v2.md) and
+[review and evaluation gates](evaluation-v2.md).
 
 ## Execution path
 

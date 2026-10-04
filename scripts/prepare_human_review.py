@@ -6,7 +6,6 @@ import hashlib
 import json
 from pathlib import Path
 
-
 INTENTS = ("period_comparison", "chance_creation", "network_concentration")
 FIELDNAMES = (
     "report_id",
@@ -85,7 +84,15 @@ def prepare(source: Path, destination: Path) -> list[dict]:
             }
         )
     destination.parent.mkdir(parents=True, exist_ok=True)
-    with destination.open("w", encoding="utf-8-sig", newline="") as stream:
+    if destination.exists():
+        with destination.open(encoding="utf-8-sig", newline="") as stream:
+            existing = list(csv.DictReader(stream))
+        if [(r["report_id"], r["sha256"]) for r in existing] != [
+            (r["report_id"], r["sha256"]) for r in selected
+        ]:
+            raise ValueError("Existing ratings refer to different reports; use a new destination")
+        return selected
+    with destination.open("x", encoding="utf-8-sig", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=FIELDNAMES)
         writer.writeheader()
         writer.writerows(selected)
@@ -94,12 +101,8 @@ def prepare(source: Path, destination: Path) -> list[dict]:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--source", type=Path, default=Path("output/release-review/reports.json")
-    )
-    parser.add_argument(
-        "--output", type=Path, default=Path("output/human-evaluation/ratings.csv")
-    )
+    parser.add_argument("--source", type=Path, default=Path("output/release-review/reports.json"))
+    parser.add_argument("--output", type=Path, default=Path("output/human-evaluation/ratings.csv"))
     args = parser.parse_args()
     rows = prepare(args.source, args.output)
     print(f"Prepared {len(rows)} unscored reports at {args.output}")

@@ -2,12 +2,79 @@
 
 <img src="frontend/src/assets/statsbomb-logo.png" alt="StatsBomb — data provider" width="130" />
 
-**Football intelligence you can trace back to the evidence.**
+**Explain football statistics in French or English, then inspect their evidence.**
 
-A Data Science and Applied AI portfolio project built on official StatsBomb open data.
-This repository implements **M1–M7 functionality and an M8 release candidate**, not the complete
-eight-milestone MVP. The Match Lab connects four pinned WSL seasons to analytical views and
-exact event citations. No xG, xT, GNN, LLM, or retrieval metrics are fabricated.
+## The problem
+
+A tactical summary needs more than fluent text: its numbers, denominators, time
+windows and sources must be inspectable. TactiGraph combines reproducible football
+models with an analyst whose factual statements come from verified Python calculations.
+The local application supports four WSL seasons (457 matches) and Premier League
+2015/16 (380 matches), with separate databases and model versions.
+
+## Demonstration
+
+![Local bilingual Evidence Analyst](docs/assets/query-analyst-v2.png)
+
+Interface capture on the invented CI match with a simulated interpreter.
+
+Select a league, match and team, then ask:
+
+> Compare la création d’occasions entre les minutes 45–60 et 60–75, et explique le xG.
+
+**Evidence Analyst → Question libre** interprets one comparison and up to two
+methodology topics. It returns verified EN/FR sentences, exact BM25 definition
+excerpts and links to supporting events. Incomplete questions ask for clarification;
+provider outages offer the guided form. [Usage and API](docs/analyst-query-v2.md)
+ · [Three-minute demonstration](docs/demonstration-v2.md)
+
+This public GitHub repository contains the source code. The application currently
+runs locally; an independently reviewed public showcase and interactive hosting
+remain pending. [Deployment preparation](docs/operations-v2.md)
+
+## Measured results and current limits
+
+| Component | Observation | Scope / limit |
+| --- | --- | --- |
+| xG | Logistic regression: log loss **0.3146**, Brier **0.0907** | WSL v1; 3,506 non-penalty test shots |
+| Third-pass forecast | LightGBM: log loss **0.2491**, PR-AUC **0.3510** | 6,607 test episodes; GNN contribution not established |
+| Guided analyst | **60/60** authored machine checks | Independent semantic review pending |
+| Retrieval v1 | Held-out Recall@5 **96.7%**, MRR@5 **77.4%** | Offline hybrid; MRR target missed; effective runtime disclosed |
+| Free-question analyst v2 | Real FR/EN integration checks on both leagues | Integration evidence; independent accuracy benchmark pending |
+| Evaluation v2 | **100 semantic scenarios / 200 translations**, grouped 60/40 split | Draft reviewed later; no achieved 90% accuracy claim |
+| Scientific diagnostics v2 | Constant-prediction calibration unavailable; grouped permutation importance | Retrospective reports separate from unchanged v1 results |
+| Operations | PostgreSQL CI, desktop/mobile browser tests and HTTP load at 1/5/10 clients | Invented fixtures; workload and environment disclosed |
+
+See [verification](docs/verification.md), [evaluation protocol](docs/evaluation-v2.md),
+and versioned reports under `experiments/`. Human review worksheets are prepared
+with blank scores and approvals. No independent review or model quality score is fabricated.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[Selected league / match / team] --> B[Typed query plan via Groq]
+    Q[FR or EN question] --> B
+    B --> C[Context and window validation]
+    C --> D[Python analytical tools]
+    D --> E[Verify every claim and its source]
+    B --> F[BM25 bilingual methodology v2]
+    E --> G[EN / FR templates and event evidence]
+    F --> G
+```
+
+Data ingestion uses pinned StatsBomb JSON, SHA-256 manifests and Alembic-managed
+SQLite/PostgreSQL. Models fit offline; application requests read published
+predictions. React consumes generated FastAPI contracts. Structured request traces
+record stages, durations, provider usage and fallback without logging prompts or keys.
+[Architecture and contracts](docs/architecture.md)
+
+## Reproduce
+
+The setup and experiment commands below reproduce the existing models. To exercise
+the new analyst, configure [Groq](docs/groq-setup.md) and use the local application.
+Tests use a simulated provider; the independent benchmark has an explicit review/freeze gate.
+[CI and local load reproduction](docs/operations-v2.md)
 
 ## Available now
 

@@ -1,5 +1,37 @@
 # Verification
 
+## Additive analyst and diagnostics v2 — 4 October 2026
+
+| Check | Observed result |
+| --- | --- |
+| Backend suite | **203 passed**; two upstream deprecations and a Windows core-count warning |
+| Ruff / generated contracts / frontend build | Passed |
+| Synthetic Chromium journeys | **6 passed**, desktop and mobile; guided/free bilingual output, citations, clarification, API error recovery, stale-team response rejection |
+| Real Groq integration | User-example FR/EN questions answered on both leagues; intended windows and tool claims checked; separate from final benchmark |
+| Scientific diagnostics | 20 seeded permutations/group; WSL 3,506 shots / 132 matches; EPL 1,551 / 57; original predictive metrics replayed |
+| Constant calibration | Unavailable with reason; original v1 result files preserved |
+| HTTP concurrency | 640 calls, 0 errors across 1 / 5 / 10 concurrent clients; actual sockets, invented fixture |
+| Load p50 / p95 | 13.623 / 28.742 ms (n=40); 22.477 / 96.585 (n=200); 41.242 / 263.127 (n=400) |
+| Recorded walkthrough | Three minutes; actual local FR/EN requests, proof opening and clarification |
+| Human review | Twelve v1 worksheets and 200-question v2 packet prepared; scores/approvals remain blank |
+
+Load hardware: Intel i7-10510U, 8 logical CPUs, 21,300,441,088 bytes physical RAM reported
+by Windows CIM. Client and single-process SQLite server share this Windows/Python 3.12.10
+host. Chromium tests ran concurrently; background desktop load was uncontrolled.
+These measurements exclude real-provider calls and cannot estimate production capacity.
+[Full request counts, routes and conditions](../experiments/operations-v2/synthetic-http.json).
+
+The WSL v1 lock already had a different original code hash before these changes.
+Diagnostics disclose it, verify artifact/development hashes and reproduce all original
+probability scores. The original v1 test cache had no recorded byte hash; v2 records
+its first checksum after checking membership, sample counts and replayed scores.
+These retrospective diagnostics are not a new untouched holdout evaluation.
+
+The current independent quality benchmark is intentionally unrun while the user
+prepares review for later. Proposed 90%/95% targets are not achieved-score claims.
+The Docker daemon is unavailable locally; the CI jobs validate the production image
+and PostgreSQL on GitHub. Record their actual outcome before claiming those checks pass.
+
 ## M5 graph experiment — 24 September 2026
 
 | Check | Observed result |

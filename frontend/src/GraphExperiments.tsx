@@ -143,6 +143,9 @@ export function GraphExperiments() {
                 {number(result.prepared_inference_p95_ms)} ms · calibration
                 intercept {number(result.calibration?.intercept)}, slope{" "}
                 {number(result.calibration?.slope)}
+                {result.calibration_reason && (
+                  <p>{result.calibration_reason}</p>
+                )}
                 <ul>
                   {result.reliability.map((bin) => (
                     <li key={bin.lower}>

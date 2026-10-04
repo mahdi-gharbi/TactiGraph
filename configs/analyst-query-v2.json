@@ -1,0 +1,20 @@
+{
+  "version": "analyst-query-v2",
+  "status": "draft",
+  "authors": ["TactiGraph project author", "Codex", "mahdi-gharbi", "mahdi elgharbi"],
+  "scenario_file": "configs/analyst-query-scenarios-v2.json",
+  "corpus_version": "methodology-v2",
+  "method": "BM25 bilingual v2",
+  "languages": ["en", "fr"],
+  "semantic_scenarios": 100,
+  "language_variants": 200,
+  "partitions": {"development": 60, "final": 40},
+  "categories": {"analytic": 50, "methodology_or_mixed": 30, "ambiguity_or_unsupported": 20},
+  "grouping": "Translations of one scenario stay together. This draft is authored from scenario families and parameterized windows; it is not independent human ground truth. The final partition must never guide model, prompt or retrieval selection.",
+  "selection": "Freeze candidate code, model, prompt and corpus before opening final results. Development smoke is a mocked execution contract check, not a model benchmark.",
+  "review_gate": "A reviewer independent of the project authors must approve every bilingual scenario, expected plan, relevance label and translation before freezing or any live-provider benchmark. Exact scenario, protocol, corpus and review hashes are recorded. Agent-authored scores never count as human review.",
+  "targets": {"supported_task_success": 0.90, "unsupported_abstention": 0.95, "all_numeric_claims_verified": 1.0},
+  "metrics": ["task_success", "plan_exact_match", "all_claims_verified", "citation_coverage", "retrieval_recall_at_5", "retrieval_mrr_at_5", "provider_success", "fallback", "abstention", "repairs", "provider_errors", "usage_incomplete_cases", "input_tokens", "output_tokens", "latency_p50_ms", "latency_p95_ms"],
+  "pair_review": {"cases": 12, "selection": "Two leagues by three analytical intents by two languages; blinded A/B assignment based on a frozen pair hash.", "dimensions": ["factual_accuracy", "source_support", "limits_clear", "usefulness"], "score_range": [0, 2]},
+  "limitations": "Targets are proposed acceptance thresholds, not achieved results. Translated variants are correlated and do not double the number of independent semantic scenarios. Numerical verification checks deterministic tools; it does not establish independent human judgment or causal truth. No generalization claim is made for this draft."
+}

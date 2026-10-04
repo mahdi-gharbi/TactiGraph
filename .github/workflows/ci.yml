@@ -17,7 +17,7 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: uv sync --frozen --extra dev --extra modeling --extra graph
-      - run: uv run --no-sync ruff check src tests
+      - run: uv run --no-sync ruff check src tests scripts infra
       - run: uv run --no-sync ruff format --check src tests
       - run: uv run --no-sync pytest -q
       - run: npm ci --prefix frontend
@@ -27,5 +27,88 @@ jobs:
       - run: git diff --exit-code -- frontend/openapi.json frontend/src/api.generated.ts
       - run: npm run build --prefix frontend
       - run: docker build -t tactigraph:test .
-  # Real-data browser checks run locally after ingestion, audit and xG/xT publication.
-  # CI contains only synthetic fixtures; no upstream data is committed.
+      - name: Start production container without reviewed data
+        run: docker run -d --name tactigraph-ci-public -p 127.0.0.1:8012:8000 tactigraph:test
+      - name: Verify public HTTP boundaries and closed readiness gate
+        run: uv run --no-sync python infra/smoke_http.py --base-url http://127.0.0.1:8012 --public
+      - name: Verify production excludes training runtimes
+        run: docker exec tactigraph-ci-public python -c "import importlib.util; assert all(importlib.util.find_spec(m) is None for m in ['torch', 'sklearn', 'lightgbm', 'mlflow'])"
+      - name: Stop production smoke container
+        if: always()
+        run: docker rm -f tactigraph-ci-public || true
+
+  integration:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-bookworm
+        env:
+          POSTGRES_USER: synthetic
+          POSTGRES_PASSWORD: synthetic-ci-only
+          POSTGRES_DB: tactigraph_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U synthetic -d tactigraph_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.6.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --frozen --extra dev
+      - name: PostgreSQL migration, invented ingestion, predictions and evidence
+        env:
+          TACTIGRAPH_TEST_DATABASE_URL: postgresql+psycopg://synthetic:synthetic-ci-only@localhost:5432/tactigraph_test
+        run: uv run --no-sync pytest tests/test_integration.py -q
+      - name: Restore invented PostgreSQL backup into a separate new database
+        env:
+          POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
+          TACTIGRAPH_RESTORE_SOURCE_URL: postgresql+psycopg://synthetic:synthetic-ci-only@localhost:5432/tactigraph_test
+          TACTIGRAPH_RESTORE_TARGET_URL: postgresql+psycopg://synthetic:synthetic-ci-only@localhost:5432/tactigraph_restore_test
+        run: |
+          mkdir -p output
+          docker exec "$POSTGRES_CONTAINER" pg_dump -U synthetic -d tactigraph_test -Fc > output/synthetic-backup.dump
+          docker exec "$POSTGRES_CONTAINER" createdb -U synthetic tactigraph_restore_test
+          docker exec -i "$POSTGRES_CONTAINER" pg_restore -U synthetic -d tactigraph_restore_test --exit-on-error --no-owner < output/synthetic-backup.dump
+          uv run --no-sync python infra/verify_restore.py > output/restore-verification.json
+      - run: npm ci --prefix frontend
+      - run: npm run build --prefix frontend
+      - name: Install browser
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium
+      - name: Start disposable synthetic server with mocked query provider
+        run: |
+          mkdir -p output
+          uv run --no-sync python infra/serve_synthetic.py --port 8011 > output/synthetic-server.log 2>&1 &
+          echo $! > output/synthetic-server.pid
+          uv run --no-sync python infra/smoke_http.py --base-url http://127.0.0.1:8011
+      - name: Desktop and mobile invented-data browser journeys
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BASE_URL: http://127.0.0.1:8011
+          TACTIGRAPH_SYNTHETIC_E2E: '1'
+        run: npx playwright test synthetic.spec.ts
+      - name: Actual HTTP concurrency benchmark
+        run: uv run --no-sync python infra/benchmark_http.py --users 1 5 10 --requests-per-user 12
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: synthetic-integration-evidence
+          path: |
+            output/benchmarks/*.json
+            output/synthetic-server.log
+            output/restore-verification.json
+            frontend/test-results/
+      - name: Stop disposable server
+        if: always()
+        run: if test -f output/synthetic-server.pid; then kill "$(cat output/synthetic-server.pid)" || true; fi
+  # The committed fixtures are invented. Real-data research journeys remain a local check.

@@ -1,5 +1,23 @@
 # Approved milestone sequence
 
+## Additive improvement release — October 2026
+
+Implemented: bilingual free questions, typed Groq interpretation, deterministic
+calculation/rendering, all-claim verification, BM25 corpus v2, effective retrieval
+disclosure, separate scientific diagnostics, structured telemetry, PostgreSQL CI,
+synthetic desktop/mobile journeys and actual HTTP load tooling. The legacy models,
+research scores and frozen v1 hash inputs are preserved.
+
+Evaluation preparation: 100 semantic scenarios in EN/FR, grouped 60/40 split,
+independent-review worksheets, immutable freeze and final-access gates, actual-output
+blinded comparison tooling. The user requested review folders for later; independent
+scores, final quality assessment and public opening remain pending. Acceptance
+thresholds are proposed targets. See [evaluation v2](evaluation-v2.md).
+
+Hosting is prepared with availability/restore procedures and a current estimate.
+Paid resource creation and interactive public access need separate decisions.
+Model generalization, scouting and model promotion remain future work.
+
 ## M1 — implemented first vertical slice
 
 Pinned ingestion for match 19717; normalized match/event/pass/shot tables; local lineup

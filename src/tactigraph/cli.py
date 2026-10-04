@@ -9,6 +9,11 @@ def main():
     parser = argparse.ArgumentParser(description="TactiGraph reproducible local workbench")
     parser.add_argument("--league", choices=["wsl", "premier-league"], default="wsl")
     sub = parser.add_subparsers(dest="command", required=True)
+    diagnostics = sub.add_parser(
+        "diagnostics", help="Add retrospective v2 diagnostics without changing v1"
+    )
+    diagnostics.add_argument("--repeats", type=int, default=20)
+    diagnostics.add_argument("--seed", type=int, default=2026)
     transfer_parser = sub.add_parser(
         "transfer-showcase", help="Copy selected data to an EMPTY configured database"
     )
@@ -67,6 +72,7 @@ def main():
             "xt",
             "graph",
             "develop-styles",
+            "diagnostics",
         }:
             parser.error(
                 "This command has no Premier League workflow. "
@@ -84,6 +90,28 @@ def main():
         from tactigraph.transfer import transfer
 
         print(json.dumps(transfer(args.source, settings), indent=2))
+        return
+    if args.command == "diagnostics":
+        from tactigraph.models.diagnostics import generate_diagnostics
+
+        if not 2 <= args.repeats <= 100:
+            parser.error("Use 2–100 permutation repeats")
+        report = generate_diagnostics(settings, repeats=args.repeats, seed=args.seed)
+        print(
+            json.dumps(
+                {
+                    key: report[key]
+                    for key in (
+                        "version",
+                        "test_non_penalty_shots",
+                        "test_matches",
+                        "repeats",
+                        "provenance",
+                    )
+                },
+                indent=2,
+            )
+        )
         return
     if args.command == "showcase":
         from tactigraph.db import DatasetReport, initialize, make_engine

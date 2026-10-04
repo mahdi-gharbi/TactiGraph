@@ -1,5 +1,8 @@
 from typing import Any, Literal
 
+from pydantic import model_validator
+
+from tactigraph.api.diagnostics import calibration_summary_reason
 from tactigraph.api.schemas import BaseModel, ModelProvenance, Provenance
 
 
@@ -29,6 +32,7 @@ class EvaluatedModel(ProbabilityScores):
     intervals: dict[str, list[float]]
     reliability: list[ReliabilityBin]
     calibration: CalibrationParameters | None
+    calibration_reason: str | None = None
 
 
 class ReferenceResult(BaseModel):
@@ -108,6 +112,15 @@ class ExperimentReport(BaseModel):
     limitations: list[str]
     development: DevelopmentResults
     feature_names: list[str]
+
+    @model_validator(mode="after")
+    def guard_legacy_calibration(self):
+        for name, result in self.metrics.items():
+            reason = calibration_summary_reason(name, result.n, result.goals)
+            if reason:
+                result.calibration = None
+                result.calibration_reason = reason
+        return self
 
 
 class ExperimentsResponse(BaseModel):
